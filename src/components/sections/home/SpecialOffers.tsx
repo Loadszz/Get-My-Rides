@@ -39,7 +39,7 @@ export const SpecialOffers = () => {
 								</div>
 								{/* button */}
 								<Button
-									className='relative inline-block rounded-xl py-[16px] pl-[24px] w-[153px] max-md:py-[12px] max-md:w-full'
+									className='relative inline-block rounded-xl py-[16px] pl-[24px] w-[153px] max-md:py-[12px] max-sm:w-full'
 									href='/about'
 									variant='primary'
 								>
