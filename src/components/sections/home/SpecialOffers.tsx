@@ -8,7 +8,7 @@ export const SpecialOffers = () => {
 		<section>
 			<div className='__container'>
 				{/* title */}
-				<div className='title max-w-[784px] mb-[48px]'>
+				<div className='title max-w-[784px] mb-[48px] max-md:mb-[32px]'>
 					Check out current promotions and special offers for car rental
 				</div>
 				{/* body */}
@@ -25,10 +25,10 @@ export const SpecialOffers = () => {
 								alt={card.title}
 								width={index === 0 ? 1368 : 676}
 								height={index === 0 ? 489 : 489}
-								className='w-full h-full object-cover max-xl:h-[343px]'
+								className='w-full h-full object-cover max-xl:h-[408px]'
 							/>
 							{/* items */}
-							<div className='absolute left-[32px] right-[20px] bottom-[40px] max-w-[484px] max-2xl:bottom-[24px] max-md:left-[16px] max-md:right-[16px]'>
+							<div className='absolute left-[32px] right-[20px] bottom-[40px] max-w-[484px] max-2xl:bottom-[24px] max-sm:left-[16px] max-sm:right-[16px] max-sm:max-w-full'>
 								{/* title */}
 								<div className='font-black text-[2rem] mb-[16px] max-md:text-2xl max-2xl:mb-[8px]'>
 									{card.title}
@@ -39,12 +39,12 @@ export const SpecialOffers = () => {
 								</div>
 								{/* button */}
 								<Button
-									className='relative inline-block rounded-xl py-[16px] pl-[24px] w-[153px] max-md:py-[12px] max-sm:w-full'
-									href='/about'
+									className='flex rounded-xl py-[12px] pl-[24px] w-[153px] max-sm:w-full max-sm:justify-center'
+									href='#'
 									variant='primary'
 								>
-									<ArrowRight className='absolute right-[23px] w-[24px] max-lg:right-[10px] max-md:right-[43px] max-sm:right-[28px]' />
-									{card.buttonText}
+									<span className='mr-[10px]'>{card.buttonText}</span>
+									<ArrowRight className='w-[24px]' />
 								</Button>
 							</div>
 							{/* discount */}

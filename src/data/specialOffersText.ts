@@ -13,7 +13,7 @@ export type PromoCard = {
 		after: string
 	}
 	buttonText: string
-	image: StaticImageData // Изменяем тип с string на StaticImageData
+	image: StaticImageData
 }
 
 export const promoCards: PromoCard[] = [

@@ -21,7 +21,7 @@ export const Button = ({
 	const variants: Record<string, string> = {
 		primary:
 			'font-dmSans font-medium text-base bg-[#FFFFFF3D] border border-[#FFFFFF8F]',
-		secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800',
+		secondary: 'font-dmSans font-medium text-base bg-[#0a58ca]',
 	}
 
 	const finalClassName = `${variants[variant]} ${className}`
