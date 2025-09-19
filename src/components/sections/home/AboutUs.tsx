@@ -1,15 +1,11 @@
 'use client'
-import 'swiper/css'
-import 'swiper/css/grid'
-import 'swiper/css/pagination'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
 import Quotes from '@/assets/icons/quotes.svg'
 import StarIcon from '@/assets/icons/star.svg'
 import SwiperButtons from '@/components/ui/SwiperButtons'
 import { aboutUsCards } from '@/data/aboutUsItem'
 import Image from 'next/image'
 import { Grid, Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 export const AboutUs = () => {
 	return (
@@ -21,7 +17,7 @@ export const AboutUs = () => {
 						What customers are saying about us
 					</div>
 					{/* swiper-buttons */}
-					<SwiperButtons className='max-md:hidden' />
+					<SwiperButtons name='about-us' className='max-md:hidden' />
 				</div>
 			</div>
 			{/* body */}
@@ -42,8 +38,8 @@ export const AboutUs = () => {
 					}}
 					modules={[Grid, Navigation]}
 					navigation={{
-						prevEl: '.prev-btn',
-						nextEl: '.next-btn',
+						prevEl: '.about-us-prev-btn',
+						nextEl: '.about-us-next-btn',
 					}}
 				>
 					{aboutUsCards.map((card, index) => (

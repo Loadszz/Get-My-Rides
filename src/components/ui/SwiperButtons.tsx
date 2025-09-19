@@ -5,11 +5,13 @@ type SwiperButtonsProps = {
 	className?: string
 	prevClass?: string
 	nextClass?: string
+	name?: string
 }
 const SwiperButtons = ({
+	name,
 	className = '',
-	prevClass = 'prev-btn',
-	nextClass = 'next-btn',
+	prevClass = `${name}-prev-btn`,
+	nextClass = `${name}-next-btn`,
 }: SwiperButtonsProps) => {
 	return (
 		<div className={`${className} flex gap-x-[12px] z-10`}>
