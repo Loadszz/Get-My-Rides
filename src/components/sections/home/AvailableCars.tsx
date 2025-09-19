@@ -12,7 +12,7 @@ export const AvailableCars = () => {
 	return (
 		<section className='pt-[64px] pb-[146px] max-md:pt-[44px] max-md:pb-[54px]'>
 			<div className='__container'>
-				<div className='flex justify-between items-center mb-[48px]'>
+				<div className='flex justify-between items-center mb-[48px] max-sm:mb-[32px]'>
 					{/* title */}
 					<div className='title max-lg:max-w-[500px]'>
 						Explore the available car fleet

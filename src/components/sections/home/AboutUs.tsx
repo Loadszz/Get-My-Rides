@@ -11,7 +11,7 @@ export const AboutUs = () => {
 	return (
 		<section className='bg-[#f5f5f5] py-[48px] max-md:py-[32px]'>
 			<div className='__container'>
-				<div className='flex justify-between items-center mb-[48px]'>
+				<div className='flex justify-between items-center mb-[48px] max-sm:mb-[32px]'>
 					{/* title */}
 					<div className='title max-w-[440px]'>
 						What customers are saying about us
