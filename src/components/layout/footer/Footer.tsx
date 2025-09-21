@@ -1,6 +1,7 @@
 import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Nav } from '@/components/nav/Nav'
 import { SocialIcons } from '@/components/social/SocialIcons'
+import { Logo } from '@/components/ui/Logo'
 
 export const Footer = () => {
 	return (
@@ -10,12 +11,7 @@ export const Footer = () => {
 				<div className='flex justify-between pt-[48px] pb-[40px] relative after:absolute after:bottom-0 after:border-b-[1px] after:w-screen after:left-[50%] after:translate-x-[-50%] after:bg-white after:opacity-[0.08] max-md:flex-col max-md:items-center max-md:text-center max-md:pt-[40px] max-md:pb-[24px] max-sm:items-start max-sm:text-start'>
 					{/* block-1 */}
 					<div className='max-md:mb-[48px]'>
-						<a
-							className='inline-block font-bold text-[2rem] leading-[1.25] mb-[40px]'
-							href='#'
-						>
-							Get My Rides
-						</a>
+						<Logo className='mb-[40px]' />
 						<div className='max-w-[215px]'>
 							<p className='font-dmSans text-sm mb-[30px]'>
 								Car Rental Comparison and Booking Platform
@@ -34,7 +30,7 @@ export const Footer = () => {
 						</div>
 						<Nav
 							ulClassName='flex flex-col gap-y-[16px]'
-							liClassName='text-sm opacity-[0.67]'
+							liClassName='inline-block text-sm opacity-[0.67]'
 						/>
 					</div>
 					{/* line-2 */}
