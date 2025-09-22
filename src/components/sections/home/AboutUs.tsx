@@ -29,6 +29,11 @@ export const AboutUs = () => {
 						rows: 2,
 						fill: 'row',
 					}}
+					freeMode={{
+						enabled: true,
+						momentum: true,
+						momentumRatio: 1, // инерция
+					}}
 					spaceBetween={8}
 					slidesOffsetAfter={-350}
 					breakpoints={{

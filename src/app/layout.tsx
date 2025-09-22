@@ -1,5 +1,6 @@
 import { dmSans, lato } from '@/assets/fonts/Fonts'
 import { Footer } from '@/components/layout/footer/Footer'
+import { Header } from '@/components/layout/header/Header'
 import '@/styles/style.css'
 import type { Metadata } from 'next'
 dmSans
@@ -19,6 +20,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body>
 				<div className='wrapper'>
+					<Header />
 					<main>{children}</main>
 					<Footer />
 				</div>

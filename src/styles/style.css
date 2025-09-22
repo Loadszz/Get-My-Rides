@@ -134,13 +134,6 @@
 }
 
 @layer components {
-	/* Traditionally these would be classes like card, btn, badge — that kind of thing. */
-	/* .card {
-    background-color: var(--color-white);
-    border-radius: var(--rounded-lg);
-    padding: var(--spacing-6);
-    box-shadow: var(--shadow-xl);
-  } */
 	.__container {
 		max-width: var(--container-custom);
 		margin: 0 auto;
@@ -149,9 +142,6 @@
 }
 
 @layer utilities {
-	/* .font-raleway {
-		color: blue;
-	} */
 	.title {
 		@apply font-bold text-5xl text-[#1a1a1a] max-md:text-[2rem];
 	}
@@ -161,7 +151,7 @@
 	.resize-button {
 		@apply max-lg:w-[100px] max-lg:pl-[20px] max-lg:pr-[50px] max-md:w-[159px] max-md:pl-[43px] max-md:pr-[77px] max-sm:w-[130px] max-sm:pl-[28px] max-sm:pr-[62px];
 	}
-	/* .resize-input {
-		@apply max-lg:w-[300px] max-lg:pr-[125px] max-md:w-[415px] max-sm:w-[343px] max-sm:pr-[145px] max-sm:w-[343px] max-sm:pr-[145px];
-	} */
+	.lock {
+		@apply overflow-hidden;
+	}
 }

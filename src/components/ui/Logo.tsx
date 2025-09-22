@@ -1,7 +1,7 @@
 export const Logo = ({ className = '' }) => {
 	return (
 		<a
-			className={`${className} inline-block font-bold text-[2rem] leading-[1.25]`}
+			className={`${className} inline-block font-bold text-[2rem] leading-[1.25] whitespace-nowrap`}
 			href='#'
 		>
 			Get My Rides

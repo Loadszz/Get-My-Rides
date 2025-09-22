@@ -1,13 +1,18 @@
 import { navLinks } from '@/data/navLinks'
 import Link from 'next/link'
 
-export const Nav = ({ ulClassName = '', liClassName = '' }) => {
+export const Nav = ({
+	navClassName = '',
+	ulClassName = '',
+	liClassName = '',
+	linkClassName = '',
+}) => {
 	return (
-		<nav>
+		<nav className={navClassName}>
 			<ul className={ulClassName}>
 				{navLinks.map((link, index) => (
 					<li className={liClassName} key={index}>
-						<Link className='inline-block' href={link.href}>
+						<Link className={`${linkClassName} inline-block`} href={link.href}>
 							{link.label}
 						</Link>
 					</li>
