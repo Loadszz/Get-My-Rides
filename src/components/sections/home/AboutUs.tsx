@@ -29,7 +29,6 @@ export const AboutUs = () => {
 						rows: 2,
 						fill: 'row',
 					}}
-					speed={300} // время анимации (по умолчанию 300мс)
 					spaceBetween={8}
 					slidesOffsetAfter={-350}
 					breakpoints={{
