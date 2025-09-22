@@ -31,7 +31,7 @@ export const AboutUs = () => {
 					}}
 					spaceBetween={8}
 					slidesOffsetAfter={-350}
-					speed={300}
+					speed={100}
 					breakpoints={{
 						767: {
 							spaceBetween: 16,
