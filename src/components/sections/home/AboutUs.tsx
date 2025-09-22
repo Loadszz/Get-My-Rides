@@ -32,7 +32,7 @@ export const AboutUs = () => {
 					freeMode={{
 						enabled: true,
 						momentum: true,
-						momentumRatio: 1, // инерция
+						momentumRatio: 8, // инерция
 					}}
 					spaceBetween={8}
 					slidesOffsetAfter={-350}
