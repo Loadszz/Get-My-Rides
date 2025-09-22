@@ -29,12 +29,7 @@ export const AboutUs = () => {
 						rows: 2,
 						fill: 'row',
 					}}
-					speed={600} // время анимации (по умолчанию 300мс)
-					freeMode={{
-						enabled: true,
-						momentum: true,
-						momentumRatio: 0.3, // инерция
-					}}
+					speed={300} // время анимации (по умолчанию 300мс)
 					spaceBetween={8}
 					slidesOffsetAfter={-350}
 					breakpoints={{
