@@ -27,7 +27,7 @@ export const AvailableCars = () => {
 						spaceBetween={8}
 						slidesOffsetBefore={2}
 						slidesOffsetAfter={2}
-						speed={100} // время анимации (по умолчанию 300мс)
+						speed={300}
 						breakpoints={{
 							640: {
 								slidesPerView: 2,
