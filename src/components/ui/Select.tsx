@@ -1,5 +1,5 @@
 import IconLocation from '@/assets/icons/location.svg'
-import { ILocationProps } from '@/data/location.types'
+import { ILocationProps } from '@/data/locations.types'
 import { useEffect, useRef, useState } from 'react'
 
 export interface ISelectProps {
