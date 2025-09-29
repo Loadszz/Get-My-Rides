@@ -1,6 +1,5 @@
 import { navLinks } from '@/data/navLinks'
 import Link from 'next/link'
-
 export const Nav = ({
 	navClassName = '',
 	ulClassName = '',

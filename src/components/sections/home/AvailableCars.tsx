@@ -1,7 +1,7 @@
 'use client'
 import ArrowRight from '@/assets/icons/arrow-right.svg'
-import StarIcon from '@/assets/icons/star.svg'
 import { Button } from '@/components/ui/Button'
+import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
 import { products } from '@/data/products'
 import Image from 'next/image'
@@ -53,12 +53,13 @@ export const AvailableCars = () => {
 								key={index}
 								className='shadow-md rounded-[16px] max-sm:flex-[0_0_285px]'
 							>
-								{/* image */}
+								{/* product-image */}
 								<Image
 									src={product.image}
 									width={330}
 									height={224}
 									alt={product.name}
+									priority
 									className='w-full object-cover'
 								/>
 								{/* product */}
@@ -73,16 +74,7 @@ export const AvailableCars = () => {
 									{/* product-grade */}
 									<div className='flex mb-[22px]'>
 										<div className='flex gap-x-[6px] mr-[8px]'>
-											{[1, 2, 3, 4, 5].map(i => (
-												<StarIcon
-													key={i}
-													className={`${
-														i <= product.rating
-															? 'text-[#f3c10e]'
-															: 'text-gray-500'
-													} w-[12px] flex gap-x-[6px]`}
-												/>
-											))}
+											<Star rating={product.rating} className='w-[12px]' />
 										</div>
 										<div className='font-dmSans font-bold text-xs text-[#1a1a1a]'>
 											{product.grade}/10
@@ -114,8 +106,8 @@ export const AvailableCars = () => {
 										</div>
 										<Button
 											href='#'
-											variant='card'
-											className='flex rounded-xl py-[8px] pl-[24px] w-[157px]'
+											variant='transparent'
+											className='flex rounded-xl py-[8px] pl-[24px] w-[157px] rounded-[6px]'
 										>
 											<span className='mr-[10px]'>Book Now</span>
 											<ArrowRight className='w-[24px] text-[#0a58ca]' />

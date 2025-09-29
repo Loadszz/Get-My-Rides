@@ -1,6 +1,6 @@
 'use client'
 import Quotes from '@/assets/icons/quotes.svg'
-import StarIcon from '@/assets/icons/star.svg'
+import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
 import { aboutUsCards } from '@/data/aboutUsItem'
 import Image from 'next/image'
@@ -82,14 +82,7 @@ export const AboutUs = () => {
 							</div>
 							{/* star */}
 							<div className='flex gap-x-[8px]'>
-								{[1, 2, 3, 4, 5].map(i => (
-									<StarIcon
-										key={i}
-										className={`${
-											i <= card.rating ? 'text-[#f3c10e]' : 'text-gray-500'
-										} w-[13px]`}
-									/>
-								))}
+								<Star rating={card.rating} className='w-[13px]' />
 							</div>
 							{/* icon */}
 							<Quotes className='absolute top-[24px] right-[24px] w-[36px] max-md:top-[28px] max-md:right-[16px]' />
@@ -97,7 +90,7 @@ export const AboutUs = () => {
 					))}
 				</Swiper>
 			</div>
-			<SwiperButtons className={'md:hidden justify-center'} />
+			<SwiperButtons name='about-us' className={'md:hidden justify-center'} />
 		</section>
 	)
 }

@@ -1,10 +1,10 @@
 import { dmSans, lato } from '@/assets/fonts/Fonts'
+import '@ant-design/v5-patch-for-react-19'
 import { Footer } from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
 import '@/styles/style.css'
+import { AntdRegistry } from '@ant-design/nextjs-registry'
 import type { Metadata } from 'next'
-dmSans
-lato
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -17,11 +17,13 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en'>
+		<html lang='en' className={`${lato.className} ${dmSans.className}`}>
 			<body>
 				<div className='wrapper'>
 					<Header />
-					<main>{children}</main>
+					<AntdRegistry>
+						<main>{children}</main>
+					</AntdRegistry>
 					<Footer />
 				</div>
 			</body>

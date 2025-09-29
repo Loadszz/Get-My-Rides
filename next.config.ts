@@ -1,33 +1,36 @@
 import type { NextConfig } from 'next'
-
+const path = require('path')
 const nextConfig: NextConfig = {
-	turbopack: {
-		rules: {
-			'*.svg': {
-				loaders: [
-					{
-						loader: '@svgr/webpack',
-						options: {
-							svgoConfig: {
-								plugins: [
-									{
-										name: 'preset-default',
-										params: {
-											overrides: {
-												// customize default plugin options
-												removeViewBox: false,
-											},
+	webpack(config) {
+		// config.resolve.alias = {
+		// 	...config.resolve.alias,
+		// 	'@/*': path.resolve(__dirname, 'src'), // пример для @ → src
+		// }
+		config.module.rules.push({
+			test: /\.svg$/,
+			use: [
+				{
+					loader: '@svgr/webpack',
+					options: {
+						svgoConfig: {
+							plugins: [
+								{
+									name: 'preset-default',
+									params: {
+										overrides: {
+											// Keep viewBox attribute
+											removeViewBox: false,
 										},
 									},
-									'removeDimensions',
-								],
-							},
+								},
+								'removeDimensions',
+							],
 						},
 					},
-				],
-				as: '*.js',
-			},
-		},
+				},
+			],
+		})
+		return config
 	},
 }
 

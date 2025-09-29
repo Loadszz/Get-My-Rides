@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@theme {
+@theme inline {
 	/* Fonts */
 	--font-lato: lato;
 	--font-dmSans: dmSans;
@@ -22,8 +22,6 @@
 	--breakpoint-lg: 64rem; /* (1024px) */
 	--breakpoint-xl: 67.5rem; /* (1080px) */
 	--breakpoint-2xl: 87.3rem; /* (1398px) */
-	/* Spacing */
-	--spacing: 5.25rem;
 	/* Container */
 	--container-3xs: 16rem;
 	--container-2xs: 18rem;
@@ -40,11 +38,6 @@
 	--container-7xl: 80rem;
 	--container-custom: 1398px;
 }
-
-/* Default CSS */
-/* :root {
-	color: red;
-} */
 
 @layer base {
 	* {
@@ -68,6 +61,7 @@
 	html,
 	body {
 		height: 100%;
+		overflow-x: hidden;
 		/* min-width: $minWidth + px; */
 	}
 	body {
@@ -123,7 +117,6 @@
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
-		overflow: hidden;
 		> main {
 			flex: 1 1 auto;
 		}
@@ -142,8 +135,14 @@
 }
 
 @layer utilities {
+	.h1 {
+		@apply font-lato font-bold text-[5rem] leading-[5rem] max-md:text-[2rem] max-md:leading-[2.5rem];
+	}
 	.title {
 		@apply font-bold text-5xl text-[#1a1a1a] max-md:text-[2rem];
+	}
+	.title-booking {
+		@apply font-bold text-[2rem] leading-[2.5rem] text-[#1a1a1a] max-md:text-xl;
 	}
 	.resize-input {
 		@apply max-lg:w-[300px] max-lg:pr-[125px] max-md:w-[415px] max-md:pr-[188px] max-sm:w-[343px] max-sm:pr-[145px];
@@ -153,5 +152,8 @@
 	}
 	.lock {
 		@apply overflow-hidden;
+	}
+	.antd-style {
+		@apply [&_input]:!font-dmSans [&_input]:!text-base [&_input]:!text-[#303030] [&_input]:placeholder:!font-dmSans [&_input]:placeholder:!text-base [&_input]:placeholder:!text-[#303030] [&_input]:!cursor-pointer;
 	}
 }
