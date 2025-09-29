@@ -6,7 +6,7 @@ type ButtonProps = {
 	className?: string
 	onClick?: () => void
 	type?: 'button' | 'submit' | 'reset'
-	formName: string
+	formName?: string
 	href?: string
 	variant?: 'primary' | 'secondary' | 'transparent' | 'sign'
 }

@@ -9,8 +9,6 @@ import { DatePicker } from 'antd'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-const { RangePicker } = DatePicker
-
 const onOk = (value: DatePickerProps['value']) => {
 	console.log('onOk: ', value)
 }
