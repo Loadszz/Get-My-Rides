@@ -156,4 +156,17 @@
 	.antd-style {
 		@apply [&_input]:!font-dmSans [&_input]:!text-base [&_input]:!text-[#303030] [&_input]:placeholder:!font-dmSans [&_input]:placeholder:!text-base [&_input]:placeholder:!text-[#303030] [&_input]:!cursor-pointer;
 	}
+	.my-class .swiper-pagination-bullet {
+		@apply !bg-black !opacity-[0.40];
+	}
+
+	.my-class .swiper-pagination-bullet-active {
+		@apply !bg-white !opacity-100 !scale-150;
+	}
+	.react-tel-input .form-control {
+		@apply !font-dmSans !text-base !text-[#757575] !left-[30%] !border !border-[#3a83ed] !rounded-xl !ring-[3px] !ring-[#0A58CA1C] !py-[16px] !pl-[16px] !outline-0 !h-full !w-[70%];
+	}
+	.flag-dropdown {
+		@apply !font-dmSans !text-base !text-[#757575] !border !border-[#3a83ed] !rounded-xl !ring-[3px] !ring-[#0A58CA1C] !py-[16px] !pl-[16px] !outline-0 !h-full !w-[25%];
+	}
 }

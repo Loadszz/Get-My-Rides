@@ -1,6 +1,6 @@
 import { SearchForm } from '@/components/search/SearchForm'
 import { Star } from '@/components/ui/Star'
-import { heroData } from '@/data/heroData'
+import { heroData } from '@/data/hero.types'
 export const Hero = () => {
 	return (
 		<section className='bg-[#0a58ca] pt-[52px] pb-[48px] max-md:pb-[24px] max-md:pt-[12px]'>

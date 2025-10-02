@@ -1,10 +1,13 @@
 import { dmSans, lato } from '@/assets/fonts/Fonts'
-import '@ant-design/v5-patch-for-react-19'
 import { Footer } from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
 import '@/styles/style.css'
 import { AntdRegistry } from '@ant-design/nextjs-registry'
+import '@ant-design/v5-patch-for-react-19'
 import type { Metadata } from 'next'
+import 'swiper/css'
+import 'swiper/css/grid'
+import 'swiper/css/pagination'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',

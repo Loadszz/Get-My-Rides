@@ -6,15 +6,13 @@ import { Hero } from '@/components/sections/home/Hero'
 import { OurPlatform } from '@/components/sections/home/OurPlatform'
 import { RentalDestinations } from '@/components/sections/home/RentalDestinations'
 import { SpecialOffers } from '@/components/sections/home/SpecialOffers'
-import 'swiper/css'
-import 'swiper/css/grid'
-import 'swiper/css/pagination'
+import { products } from '@/data/products.type'
 
 export default function Home() {
 	return (
 		<>
 			<Hero />
-			<AvailableCars />
+			<AvailableCars products={products} />
 			<RentalDestinations />
 			<SpecialOffers />
 			<AboutUs />

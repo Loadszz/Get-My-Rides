@@ -1,25 +1,29 @@
+import IconTooltip from '@/assets/icons/tooltip.svg'
 import { policiesProps } from '@/data/booking/policies.types'
 
 const Policies = () => {
 	return (
-		<section className='border-b border-[#e5e5e5] py-[32px]'>
+		<section className='border-b border-[#e5e5e5] py-[32px] max-md:py-[24px]'>
 			{/* title */}
-			<div className='title-booking mb-[24px]'>Policies</div>
+			<div className='title-booking mb-[24px] max-md:mb-[16px]'>Policies</div>
 			{/* body */}
-			<div className='flex flex-wrap gap-x-[40px] gap-y-[24px]'>
-				{/* column */}
+			<div className='grid grid-cols-2 2xl:grid-cols-[299px_214px_254px] gap-x-[40px] gap-y-[24px] max-md:grid-cols-1'>
+				{/* column-first */}
 				{policiesProps.map(item => (
-					<div
-						key={item.id}
-						className='first:flex-[0_1_299px] [&:nth-child(4)]:flex-[0_1_299px] [&:nth-child(2)]:flex-[0_1_214px] [&:nth-child(5)]:flex-[0_1_214px] [&:nth-child(3)]:flex-[0_1_254px] [&:nth-child(6)]:flex-[0_1_254px]'
-					>
+					<div key={item.id}>
 						{/* column-header */}
-						<div className='flex items-center gap-x-[16px] mb-[16px]'>
+						<div className='flex items-center mb-[16px]'>
 							{/* icon */}
-							<item.icon className='w-[24px]' />
+							<item.icon className='w-[24px] mr-[16px]' />
 							{/* title */}
-							<div className='font-dmSans font-semibold text-base text-[#1a1a1a]'>
+							<div className='font-dmSans font-semibold text-base text-[#1a1a1a] mr-[8px]'>
 								{item.title}
+							</div>
+							<div className='relative group cursor-pointer'>
+								<IconTooltip className='w-[16px]' />
+								<div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-40 bg-gray-800 text-white text-sm text-center rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
+									Вот всплывающая подсказка!
+								</div>
 							</div>
 						</div>
 						{/* column-body */}
@@ -45,7 +49,6 @@ const Policies = () => {
 										</li>
 									))
 								}
-
 								return null
 							})}
 						</ul>

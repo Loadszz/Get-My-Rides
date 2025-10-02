@@ -1,7 +1,7 @@
 'use client'
 import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Button } from '@/components/ui/Button'
-import { products } from '@/data/products'
+import { products } from '@/data/products.type'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
@@ -66,7 +66,12 @@ export default function SearchResults() {
 								<div className='flex gap-x-[8px]'>
 									{product.characteristics.map((ch, index) => (
 										<div key={index} className='flex gap-x-[8px]'>
-											<ch.icon className='w-[24px]' />
+											<Image
+												src={ch.icon}
+												width={24}
+												height={24}
+												alt={ch.icon}
+											/>
 											<div className='font-dmSans text-base text-[#1a1a1a]'>
 												{ch.value}
 											</div>

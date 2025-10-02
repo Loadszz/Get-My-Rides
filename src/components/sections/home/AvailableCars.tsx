@@ -3,12 +3,16 @@ import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Button } from '@/components/ui/Button'
 import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
-import { products } from '@/data/products'
+import { Product } from '@/data/products.type'
+import { goToBooking } from '@/utils/navigate-product'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const AvailableCars = () => {
+export const AvailableCars = ({ products }: { products: Product[] }) => {
+	const router = useRouter()
+
 	return (
 		<section className='pt-[64px] pb-[146px] max-md:pt-[44px] max-md:pb-[54px]'>
 			<div className='__container'>
@@ -88,7 +92,12 @@ export const AvailableCars = () => {
 										<div className='flex gap-x-[16px]'>
 											{product.characteristics.slice(0, 3).map((ch, index) => (
 												<div key={index} className='flex gap-x-[8px]'>
-													<ch.icon className='w-[24px]' />
+													<Image
+														src={ch.icon}
+														width={24}
+														height={24}
+														alt={ch.icon}
+													/>
 													<div className='font-dmSans text-base text-[#1a1a1a]'>
 														{ch.value}
 													</div>
@@ -105,7 +114,7 @@ export const AvailableCars = () => {
 											<div className='text-sm text-[#757575]'>per day</div>
 										</div>
 										<Button
-											href='#'
+											onClick={() => goToBooking(router, product)}
 											variant='transparent'
 											className='flex rounded-xl py-[8px] pl-[24px] w-[157px] rounded-[6px]'
 										>
