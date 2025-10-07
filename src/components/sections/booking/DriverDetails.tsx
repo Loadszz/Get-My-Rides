@@ -2,19 +2,19 @@
 import ArrowRight from '@/assets/icons/arrow-right.svg'
 import IconCheck from '@/assets/icons/check.svg'
 import { Button } from '@/components/ui/Button'
-import { driverDetailsProp } from '@/data/booking/driverDetails.type'
+import { driverDetailsProp, FormData } from '@/data/booking/driverDetails.type'
 import { useState } from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 const DriverDetails = () => {
-	const [form, setForm] = useState({
+	const [form, setForm] = useState<FormData>({
 		firstName: '',
 		lastName: '',
 		email: '',
 		phone: '',
 	})
 
-	const handleChange = (field: string, value: string) => {
+	const handleChange = (field: keyof FormData, value: string) => {
 		setForm(prev => ({ ...prev, [field]: value }))
 	}
 	const [phone, setPhone] = useState('')
@@ -49,7 +49,7 @@ const DriverDetails = () => {
 							id={item.name}
 							type={item.type}
 							placeholder={item.placeholder}
-							value={form[item.name] as keyof typeof form}
+							value={form[item.name]}
 							onChange={e => handleChange(item.name, e.target.value)}
 							className='font-dmSans text-base text-[#757575] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] py-[16px] pl-[16px] outline-0 placeholder:font-dmSans placeholder:text-base placeholder:text-[#757575]'
 							required

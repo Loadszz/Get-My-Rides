@@ -1,7 +1,14 @@
+export type FormData = {
+	firstName: string
+	lastName: string
+	email: string
+	phone: string
+}
+
 export interface IDriverDetailsProps {
 	id: number
 	label: string
-	name: string
+	name: keyof FormData
 	type: string
 	placeholder: string
 }
