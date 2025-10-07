@@ -6,13 +6,13 @@ import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 
-type SearchPageProps = {
-	searchParams: {
-		location?: string
-		date?: string
-		time?: string
-	}
-}
+// type SearchPageProps = {
+// 	searchParams: {
+// 		location?: string
+// 		date?: string
+// 		time?: string
+// 	}
+// }
 export default function SearchResults() {
 	const searchParams = useSearchParams()
 	const [visibleCount, setVisibleCount] = useState(8)

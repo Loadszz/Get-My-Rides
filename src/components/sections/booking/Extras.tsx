@@ -36,7 +36,7 @@ const Extras = () => {
 					{/* text */}
 					<div className='font-dmSans text-base text-[#1a1a1a] max-md:text-sm'>
 						Some requests are subject to availability and cannot be guaranteed
-						until you arrive. We'll request your extras with Varna rentals and
+						until you arrive. We`ll request your extras with Varna rentals and
 						you will be able to pay for them during pick-up.
 					</div>
 				</div>

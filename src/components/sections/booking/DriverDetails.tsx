@@ -29,7 +29,7 @@ const DriverDetails = () => {
 				</div>
 				{/* description */}
 				<div className='font-dmSans text-base text-[#1a1a1a] max-md:text-sm'>
-					Main driver's details as they appear on the driving license
+					Main driver`s details as they appear on the driving license
 				</div>
 			</div>
 			{/* form */}

@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 export const Logo = ({ className = '' }) => {
 	const router = useRouter()
@@ -12,12 +13,12 @@ export const Logo = ({ className = '' }) => {
 	}
 
 	return (
-		<a
+		<Link
 			className={`${className} inline-block font-bold text-[2rem] leading-[1.25] whitespace-nowrap`}
 			onClick={handleClick}
 			href='/'
 		>
 			Get My Rides
-		</a>
+		</Link>
 	)
 }
