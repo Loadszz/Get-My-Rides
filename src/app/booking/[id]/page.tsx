@@ -10,8 +10,10 @@ import RentalLocation from '@/components/sections/booking/RentalLocation'
 import { Button } from '@/components/ui/Button'
 import { products } from '@/data/products.type'
 import { redirect } from 'next/navigation'
-
-const page = async ({ params }: any) => {
+type PageProps = {
+	params: { id: string }
+}
+const page = async ({ params }: PageProps) => {
 	const { id } = params
 	const product = products.find(p => p.id === Number(id))
 
