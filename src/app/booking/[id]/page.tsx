@@ -131,7 +131,7 @@ const page = async ({ params }: BookingPageProps) => {
 							<Button
 								type='submit'
 								variant='secondary'
-								className='flex justify-center rounded-xl py-[16px] w-full rounded-[6px]'
+								className='flex justify-center py-[16px] w-full rounded-[6px]'
 							>
 								<span className='mr-[10px]'>Book Now</span>
 								<ArrowRight className='w-[24px]' />

@@ -44,16 +44,16 @@ export default function SearchResults() {
 				</div>
 				<div className='text-black'>recommended</div>
 			</div>
-			<div className='flex flex-wrap gap-[16px] mb-[48px]'>
+			<div className='grid grid-cols-2 gap-[16px] mb-[48px] max-md:grid-cols-1'>
 				{/* product */}
 				{filtered.length > 0 ? (
 					filtered.slice(0, visibleCount).map((product, index) => (
 						<div
 							key={index}
-							className='flex-[0_0_49%] border border-[#e4e4e4] rounded-2xl p-[24px]'
+							className='flex-[1_1_446px] border border-[#e4e4e4] rounded-2xl p-[24px] max-md:p-[16px]'
 						>
 							{/* product-header */}
-							<div className='flex items-center gap-[8px] mb-[16px]'>
+							<div className='flex items-center gap-[8px] mb-[16px] max-xl:flex-col max-xl:items-stretch max-lg:flex-row max-lg:items-center'>
 								{/* product-name */}
 								<div className='font-bold text-2xl text-[#1a1a1a]'>
 									{product.name}
@@ -85,12 +85,15 @@ export default function SearchResults() {
 								width={398}
 								height={170}
 								alt={product.name}
-								className='w-full h-[170px] object-cover mb-[16px] rounded-xl'
+								priority
+								className='w-full h-auto object-cover mb-[16px] rounded-xl'
 							/>
 							{/* product-pre-footer */}
 							<div className='flex justify-between items-center mb-[16px]'>
 								{/* product-rentals */}
-								<div>Varna rentals</div>
+								<div className='inline-block py-[4px] px-[8px] font-dmSans font-medium text-sm text-[#91d253] bg-[#efffe0] rounded-lg'>
+									Varna rentals
+								</div>
 								{/* product-price */}
 								<div className='flex items-center text-sm text-[#757575]'>
 									Price for 5 days:
@@ -100,7 +103,7 @@ export default function SearchResults() {
 								</div>
 							</div>
 							{/* product-footer */}
-							<div className='flex justify-between items-center'>
+							<div className='flex justify-between items-center gap-[16px] max-xl:flex-col max-xl:items-stretch max-lg:flex-row max-lg:items-center'>
 								{/* product-location */}
 								<div>
 									<div className='font-dmSans font-medium text-base text-[#0a58ca]'>
@@ -131,7 +134,7 @@ export default function SearchResults() {
 					<Button
 						onClick={handleLoadMore}
 						variant='transparent'
-						className='flex py-[16px] pl-[26px] w-[166px] rounded-2xl'
+						className='flex py-[16px] pl-[26px] w-[166px] rounded-2xl max-sm:w-full max-sm:justify-center'
 					>
 						<span className='mr-[10px]'>View More</span>
 						<ArrowRight className='w-[24px] text-[#0a58ca]' />

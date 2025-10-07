@@ -1,6 +1,7 @@
 import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Nav } from '@/components/nav/Nav'
 import { SocialIcons } from '@/components/social/SocialIcons'
+import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
 
 export const Footer = () => {
@@ -46,13 +47,14 @@ export const Footer = () => {
 								placeholder='Email'
 								className='w-[415px] h-[64px] pl-[24px] pr-[188px] bg-[#2b2b2b] rounded-[14px] outline-none resize-input'
 							/>
-							<button
+							<Button
 								type='button'
-								className='absolute top-[50%] translate-y-[-50%] right-[4px] font-dmSans font-medium text-base bg-[#0a58ca] rounded-xl py-[16px] pl-[43px] pr-[77px] w-[159px] resize-button'
+								variant='secondary'
+								className='absolute top-[50%] translate-y-[-50%] right-[4px] flex justify-center py-[16px] w-[159px] rounded-xl max-lg:w-[100px] max-md:w-[159px] max-sm:w-[130px]'
 							>
-								<ArrowRight className='absolute right-[43px] w-[24px] max-lg:right-[10px] max-md:right-[43px] max-sm:right-[28px]' />
-								Send
-							</button>
+								<span className='mr-[10px]'>Send</span>
+								<ArrowRight className='w-[24px]' />
+							</Button>
 						</div>
 						<div>
 							<div className='font-dmSans font-bold text-xl mb-[24px] max-md:mb-[20px]'>

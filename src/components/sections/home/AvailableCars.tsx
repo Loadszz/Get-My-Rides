@@ -14,7 +14,7 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 	const router = useRouter()
 
 	return (
-		<section className='pt-[64px] pb-[146px] max-md:pt-[44px] max-md:pb-[54px]'>
+		<section className='pt-[64px] max-md:pt-[44px]'>
 			<div className='__container'>
 				<div className='flex justify-between items-center mb-[48px] max-sm:mb-[32px]'>
 					{/* title */}
@@ -115,11 +115,12 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 										</div>
 										<Button
 											onClick={() => goToBooking(router, product)}
+											type='button'
 											variant='transparent'
 											className='flex rounded-xl py-[8px] pl-[24px] w-[157px] rounded-[6px]'
 										>
 											<span className='mr-[10px]'>Book Now</span>
-											<ArrowRight className='w-[24px] text-[#0a58ca]' />
+											<ArrowRight className='w-[24px]' />
 										</Button>
 									</div>
 								</div>

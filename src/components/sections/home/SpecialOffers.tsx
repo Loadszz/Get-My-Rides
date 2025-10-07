@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export const SpecialOffers = () => {
 	return (
-		<section>
+		<section className='py-[156px] max-md:pt-[80px] max-md:pb-[48px]'>
 			<div className='__container'>
 				{/* title */}
 				<div className='title max-w-[784px] mb-[48px] max-md:mb-[32px]'>

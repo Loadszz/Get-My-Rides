@@ -3,7 +3,7 @@ import { Star } from '@/components/ui/Star'
 import { heroData } from '@/data/hero.types'
 export const Hero = () => {
 	return (
-		<section className='bg-[#0a58ca] pt-[52px] pb-[48px] max-md:pb-[24px] max-md:pt-[12px]'>
+		<section className='bg-[#0a58ca] pt-[52px] pb-[114px] max-md:pt-[12px] max-md:pb-[24px]'>
 			<div className='__container'>
 				{/* body */}
 				<div className='flex flex-col'>

@@ -147,9 +147,6 @@
 	.resize-input {
 		@apply max-lg:w-[300px] max-lg:pr-[125px] max-md:w-[415px] max-md:pr-[188px] max-sm:w-[343px] max-sm:pr-[145px];
 	}
-	.resize-button {
-		@apply max-lg:w-[100px] max-lg:pl-[20px] max-lg:pr-[50px] max-md:w-[159px] max-md:pl-[43px] max-md:pr-[77px] max-sm:w-[130px] max-sm:pl-[28px] max-sm:pr-[62px];
-	}
 	.lock {
 		@apply overflow-hidden;
 	}

@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const RentalDestinations = () => {
 	return (
-		<section className='pb-[156px] max-md:pb-[80px]'>
+		<section className='pt-[156px] max-md:pt-[64px]'>
 			<div className='__container'>
 				{/* title */}
 				<div className='title mb-[48px] max-md:mb-[32px]'>

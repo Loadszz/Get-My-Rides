@@ -31,7 +31,7 @@ export const Select = ({ options, value, onChange }: ISelectProps) => {
 	return (
 		<div
 			ref={containerRef}
-			className='relative border border-[#3a83ed] rounded-xl shadow-[0_0_3px_rgba(10,88,202,0.6)]'
+			className='relative border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'
 		>
 			<button
 				type='button'

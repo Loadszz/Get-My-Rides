@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export const OurPlatform = () => {
 	return (
-		<section className='pt-[156px] pb-[103px] max-md:pt-[40px] max-md:pb-[60px]'>
+		<section className='pt-[156px] pb-[104px] max-md:pt-[48px] max-md:pb-[56px]'>
 			<div className='__container'>
 				{/* title */}
 				<div className='title max-w-[676px] mb-[56px] max-md:mb-[32px]'>
