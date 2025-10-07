@@ -11,11 +11,10 @@ import { Button } from '@/components/ui/Button'
 import { products } from '@/data/products.type'
 import { redirect } from 'next/navigation'
 interface BookingPageProps {
-	params: { id: string } | Promise<{ id: string }>
+	params: { id: string }
 }
 const page = async ({ params }: BookingPageProps) => {
-	const resolvedParams = await params
-	const id = resolvedParams.id
+	const { id } = params
 	const product = products.find(p => p.id === Number(id))
 
 	if (!product) {
