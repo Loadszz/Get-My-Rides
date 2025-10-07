@@ -84,7 +84,7 @@ const page = async ({ params }: BookingPageProps) => {
 									Price for 8 days
 								</div>
 								<div className='font-dmSans font-medium text-xs text-[#00ce3e] py-[8px] px-[12px] bg-[#e2ffe8] border border-[#e4e4e4] rounded-2xl'>
-									Today's Best Price
+									Today`s Best Price
 								</div>
 							</div>
 							{/* item-first */}
