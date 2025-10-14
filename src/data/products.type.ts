@@ -12,7 +12,7 @@ export type BookedPeriods = {
 	to: string
 }
 export type Product = {
-	id: number | string
+	id: number
 	image: string
 	imageSlider: string[]
 	name: string
