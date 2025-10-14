@@ -10,14 +10,14 @@ import Policies from '@/components/sections/booking/Policies'
 import Price from '@/components/sections/booking/Price'
 import RentalLocation from '@/components/sections/booking/RentalLocation'
 import { Button } from '@/components/ui/Button'
-import { servicesProps } from '@/data/booking/extras.type'
+import { IServicesProps, servicesProps } from '@/data/booking/extras.type'
 import { Product } from '@/data/products.type'
 import { useRef, useState } from 'react'
 
 const BookingPageClient = ({ product }: { product: Product }) => {
 	const formRef = useRef<HTMLFormElement>(null)
 
-	const [selectedExtras, setSelectedExtras] = useState(
+	const [selectedExtras, setSelectedExtras] = useState<IServicesProps[]>(
 		servicesProps.map(item => ({ ...item, quantity: 0 }))
 	)
 	const [openBlocks, setOpenBlocks] = useState<Record<string, boolean>>({

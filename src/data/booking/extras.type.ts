@@ -1,15 +1,16 @@
 import IconTooltip from '@/assets/icons/tooltip.svg'
-export interface IServicesProps {
+export interface IServiceBase {
 	id: number
 	title: string
 	icon: React.ElementType
 	textIcon: string
 	description: string
 	price: number
+}
+export interface IServicesProps extends IServiceBase {
 	quantity: number
 }
-
-export const servicesProps: IServicesProps[] = [
+export const servicesProps: IServiceBase[] = [
 	{
 		id: 1,
 		title: 'Additional driver',
