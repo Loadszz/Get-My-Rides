@@ -6,7 +6,7 @@ export interface IServicesProps {
 	textIcon: string
 	description: string
 	price: number
-	quantity?: number
+	quantity: number
 }
 
 export const servicesProps: IServicesProps[] = [
