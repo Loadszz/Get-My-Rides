@@ -6,14 +6,14 @@ import { Hero } from '@/components/sections/home/Hero'
 import { OurPlatform } from '@/components/sections/home/OurPlatform'
 import { RentalDestinations } from '@/components/sections/home/RentalDestinations'
 import { SpecialOffers } from '@/components/sections/home/SpecialOffers'
-// import { getProducts } from '@/lib/getProducts'
+import { getProducts } from '@/lib/getProducts'
 
 export default async function Home() {
-	// const products = await getProducts()
+	const products = await getProducts()
 	return (
 		<>
 			<Hero />
-			<AvailableCars />
+			<AvailableCars products={products} />
 			<RentalDestinations />
 			<SpecialOffers />
 			<AboutUs />
