@@ -88,7 +88,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 							{/* button */}
 							<div className='flex justify-end max-md:hidden'>
 								<Button
-									onClick={handleSubmit}
+									// onClick={handleSubmit}
 									type='submit'
 									variant='secondary'
 									className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px]'
