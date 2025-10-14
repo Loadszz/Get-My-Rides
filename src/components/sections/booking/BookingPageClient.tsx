@@ -88,7 +88,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 							{/* button */}
 							<div className='flex justify-end max-md:hidden'>
 								<Button
-									// onClick={handleSubmit}
+									formName='bookingForm'
 									type='submit'
 									variant='secondary'
 									className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px]'
@@ -101,19 +101,11 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 					</div>
 					{/* column-right */}
 					<div className='sticky top-0 flex-[0_1_388px] h-full py-[50px] max-lg:py-[24px] max-md:flex-[0_1_auto]'>
-						<form ref={formRef} onSubmit={handleSubmit}>
+						<form id='bookingForm' ref={formRef} onSubmit={handleSubmit}>
 							<Information
 								isOpen={openBlocks.information}
 								toggle={() => toggleBlock('information')}
 							/>
-							<Button
-								type='submit'
-								variant='secondary'
-								className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px] max-md:w-full'
-							>
-								<span className='mr-[10px]'>Book Now</span>
-								<ArrowRight className='w-[24px]' />
-							</Button>
 						</form>
 						<Price
 							product={product}
@@ -141,6 +133,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 					{/* button */}
 					<div className='flex justify-end'>
 						<Button
+							formName='bookingForm'
 							type='submit'
 							variant='secondary'
 							className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px] max-md:w-full'

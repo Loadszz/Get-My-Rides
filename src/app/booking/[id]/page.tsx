@@ -7,7 +7,7 @@ type PageParams = {
 }
 
 const page = async ({ params }: { params: Promise<PageParams> }) => {
-	const { id } = await params // развернули Promise
+	const { id } = await params
 	let product
 	try {
 		product = await getProduct(id)
