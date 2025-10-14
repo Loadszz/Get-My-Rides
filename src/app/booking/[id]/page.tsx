@@ -2,15 +2,16 @@ import BookingPageClient from '@/components/sections/booking/BookingPageClient'
 import { getProducts } from '@/lib/getProducts'
 import { redirect } from 'next/navigation'
 
-type PageParams = {
-	id: string
+interface PageProps {
+	params: {
+		id: string
+	}
 }
 
-const page = async ({ params }: { params: PageParams }) => {
+const page = async ({ params }: PageProps) => {
 	const products = await getProducts()
-	const { id } = params
+	const product = products.find(p => p.id === Number(params.id))
 
-	const product = products.find(p => p.id === Number(id))
 	if (!product) {
 		redirect('/booking')
 	}
