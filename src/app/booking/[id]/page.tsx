@@ -8,7 +8,7 @@ interface PageProps {
 	}
 }
 
-const page = async ({ params }: PageProps) => {
+const BookingPage = async ({ params }: { params: { id: string } }) => {
 	const products = await getProducts()
 	const product = products.find(p => p.id === Number(params.id))
 
@@ -19,4 +19,4 @@ const page = async ({ params }: PageProps) => {
 	return <BookingPageClient product={product} />
 }
 
-export default page
+export default BookingPage
