@@ -1,19 +1,19 @@
 'use client'
 import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
 import extrasImg from '@/assets/images/sections/booking/extras.jpg'
-import { servicesProps } from '@/data/booking/extras.type'
+import { IServicesProps } from '@/data/booking/extras.type'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 interface ExtrasProps {
-	selectedExtras?: typeof servicesProps
-	setSelectedExtras?: (value: typeof servicesProps) => void
+	selectedExtras: IServicesProps[]
+	setSelectedExtras: React.Dispatch<React.SetStateAction<IServicesProps[]>>
 	isOpen: boolean
 	toggle: () => void
 }
 
 const Extras = ({
-	selectedExtras = servicesProps,
+	selectedExtras,
 	setSelectedExtras,
 	isOpen,
 	toggle,
