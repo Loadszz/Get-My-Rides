@@ -14,7 +14,8 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
 		redirect('/booking')
 	}
 
-	return <BookingPageClient product={product} />
+	// return <BookingPageClient product={product} />
+	return <BookingPageClient />
 }
 
 export default page
