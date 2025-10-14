@@ -20,7 +20,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 	const [selectedExtras, setSelectedExtras] = useState(
 		servicesProps.map(item => ({ ...item, quantity: 0 }))
 	)
-	const [openBlocks, setOpenBlocks] = useState({
+	const [openBlocks, setOpenBlocks] = useState<Record<string, boolean>>({
 		rentalLocation: true,
 		policies: true,
 		extras: true,
