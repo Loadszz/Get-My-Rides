@@ -57,7 +57,7 @@ export default function SearchResults({
 			const filterValues = filters[key]
 			if (!filterValues || filterValues.length === 0) continue
 
-			const productValue = (product as Product & Record<string, any>)[key]
+			const productValue = (product as Product & Record<string, unknown>)[key]
 
 			// 🎯 Обрабатываем фильтр по цене
 			if (key === 'price') {
@@ -98,7 +98,7 @@ export default function SearchResults({
 		return true
 	})
 	// Сортировка
-	let filteredAndSortedProducts = [...filteredProducts]
+	const filteredAndSortedProducts = [...filteredProducts]
 	if (sortOrder === 'price-asc') {
 		filteredAndSortedProducts.sort((a, b) => a.price - b.price)
 	} else if (sortOrder === 'price-desc') {
