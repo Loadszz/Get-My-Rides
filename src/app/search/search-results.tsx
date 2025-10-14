@@ -34,7 +34,7 @@ export default function SearchResults({
 			setLoading(true)
 			try {
 				const query = new URLSearchParams({
-					city,
+					city: city ?? '',
 					...(from ? { from } : {}),
 					...(to ? { to } : {}),
 				}).toString()
