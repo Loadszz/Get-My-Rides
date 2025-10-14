@@ -12,7 +12,7 @@ export const Footer = () => {
 				<div className='flex justify-between pt-[48px] pb-[40px] relative after:absolute after:bottom-0 after:border-b-[1px] after:w-screen after:left-[50%] after:translate-x-[-50%] after:bg-white after:opacity-[0.08] max-md:flex-col max-md:items-center max-md:text-center max-md:pt-[40px] max-md:pb-[24px] max-sm:items-start max-sm:text-start'>
 					{/* block-1 */}
 					<div className='max-md:mb-[48px]'>
-						<Logo className='mb-[40px]' />
+						<Logo className='inline-block mb-[40px]' />
 						<div className='max-w-[215px]'>
 							<p className='font-dmSans text-sm mb-[30px]'>
 								Car Rental Comparison and Booking Platform

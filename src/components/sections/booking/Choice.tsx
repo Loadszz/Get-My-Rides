@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 const Choice = ({ product }: { product: Product }) => {
 	return (
-		<section className='pt-[24px] max-md:border-b max-md:border-[#e5e5e5] max-md:pt-[16px] max-md:pb-[24px]'>
+		<section className='max-md:border-b max-md:border-[#e5e5e5] max-md:pb-[24px]'>
 			{/* body */}
 			<div>
 				{/* title */}
@@ -22,8 +22,8 @@ const Choice = ({ product }: { product: Product }) => {
 					key={product.id}
 					className='flex justify-between gap-x-[20px] max-lg:justify-start max-md:flex-col-reverse'
 				>
+					{/* product-features-mobile */}
 					<div className='md:hidden'>
-						{/* product-features-mobile */}
 						<div className='mb-[24px]'>
 							<div className='flex gap-x-[8px]'>
 								{product.characteristics.map((ch, index) => (
@@ -61,7 +61,7 @@ const Choice = ({ product }: { product: Product }) => {
 						</div>
 					</div>
 					{/* product-slider */}
-					<div className='flex-[0_1_461px] h-[303px] max-md:flex-[0_1_216px] max-md:h-full max-md:mb-[16px]'>
+					<div className='flex-[0_1_461px] max-md:flex-[0_1_216px] max-md:mb-[16px]'>
 						<Swiper
 							slidesPerView={1}
 							pagination={{
@@ -72,7 +72,7 @@ const Choice = ({ product }: { product: Product }) => {
 						>
 							product.imageSlider
 							{product.imageSlider.map((imgPath, index) => (
-								<SwiperSlide key={index} className='!w-full'>
+								<SwiperSlide key={index} className='!w-full aspect-[461/286]'>
 									<Image
 										src={imgPath}
 										width={461}
@@ -88,8 +88,8 @@ const Choice = ({ product }: { product: Product }) => {
 					{/* product-item */}
 					<div className='flex-[0_0_330px] max-md:flex-[0_0_auto]'>
 						{/* product-header */}
-						<div className='max-md:flex max-md:justify-between max-md:items-center'>
-							<div className='flex items-center gap-[8px] mb-[16px]'>
+						<div className='max-md:flex max-md:justify-between max-md:items-center max-md:mb-[16px]'>
+							<div className='flex items-center flex-wrap gap-[8px] mb-[16px] max-md:mb-0'>
 								{/* product-name */}
 								<div className='font-bold text-[2rem] leading-[2.5rem] text-[#1a1a1a] max-md:text-xl'>
 									{product.name}
@@ -100,14 +100,18 @@ const Choice = ({ product }: { product: Product }) => {
 								</div>
 							</div>
 							{/* title-mobile */}
-							<div className='font-dmSans font-medium text-xl text-[#0a58ca] mb-[16px] md:hidden max-md:text-sm'>
+							<div className='font-dmSans font-medium text-xl text-[#0a58ca] md:mb-[16px] md:hidden max-md:text-sm'>
 								Great choice!
 							</div>
 						</div>
 						{/* product-rentals */}
-						<div className='inline-block py-[4px] px-[8px] font-dmSans font-medium text-sm text-[#91d253] bg-[#efffe0] rounded-lg mb-[16px]'>
-							Varna rentals
-						</div>
+						<Image
+							src={product.rentals}
+							width={114}
+							height={45}
+							alt='logo'
+							className='mb-[10px]'
+						/>
 						{/* product-grade */}
 						<div className='flex mb-[24px]'>
 							<div className='flex gap-x-[6px] mr-[8px]'>

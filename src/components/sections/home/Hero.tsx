@@ -4,7 +4,7 @@ import { heroData } from '@/data/hero.types'
 export const Hero = () => {
 	return (
 		<section className='bg-[#0a58ca] pt-[52px] pb-[114px] max-md:pt-[12px] max-md:pb-[24px]'>
-			<div className='__container'>
+			<div className='__container relative z-10'>
 				{/* body */}
 				<div className='flex flex-col'>
 					{/* star */}

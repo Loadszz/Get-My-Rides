@@ -7,7 +7,7 @@ const Burger = ({ isScrolled, isOpen, handleBurger }: Props) => {
 	return (
 		<button
 			type='button'
-			className={`hidden rounded-[32px] w-[24px] h-[24px] max-lg:block z-10 transition-all duration-700 relative ${
+			className={`hidden rounded-[32px] w-[24px] h-[24px] max-lg:block z-30 transition-all duration-700 relative ${
 				isOpen ? 'border-none' : ''
 			}`}
 			onClick={handleBurger}

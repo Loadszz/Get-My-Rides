@@ -27,7 +27,7 @@ export const filters: TFilterGroup[] = [
 		id: 1,
 		icon: IconLocation,
 		title: 'Location',
-		key: 'location',
+		key: 'place',
 		options: [
 			{ id: '1', label: 'Varna Center', value: 'Varna Center' },
 			{ id: '2', label: 'Varna Airport', value: 'Varna Airport' },
@@ -38,7 +38,7 @@ export const filters: TFilterGroup[] = [
 		id: 2,
 		icon: IconFile1,
 		title: 'Price per day',
-		key: 'pricePerDay',
+		key: 'price',
 		options: [
 			{ id: '4', label: '0–30 EUR', value: '0-30' },
 			{ id: '5', label: '30–50 EUR', value: '30-50' },
@@ -50,7 +50,7 @@ export const filters: TFilterGroup[] = [
 		id: 3,
 		icon: IconCar,
 		title: 'Car Type',
-		key: 'carType',
+		key: 'type',
 		options: [
 			{ id: '8', label: 'Economy', value: 'Economy' },
 			{ id: '9', label: 'Compact', value: 'Compact' },

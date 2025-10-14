@@ -1,13 +1,33 @@
+import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
 import IconTooltip from '@/assets/icons/tooltip.svg'
 import { policiesProps } from '@/data/booking/policies.types'
 
-const Policies = () => {
+type Props = {
+	isOpen: boolean
+	toggle: () => void
+}
+
+const Policies = ({ isOpen, toggle }: Props) => {
 	return (
 		<section className='border-b border-[#e5e5e5] py-[32px] max-md:py-[24px]'>
-			{/* title */}
-			<div className='title-booking mb-[24px] max-md:mb-[16px]'>Policies</div>
+			{/* header */}
+			<div className='flex justify-between items-center mb-[24px] max-md:mb-[16px]'>
+				{/* title */}
+				<div className='title-booking'>Policies</div>
+				{/* arrow */}
+				<IconArrow
+					onClick={toggle}
+					className={`md:hidden w-[24px] cursor-pointer transition-transform duration-300 ${
+						isOpen ? 'rotate-180' : 'rotate-0'
+					}`}
+				/>
+			</div>
 			{/* body */}
-			<div className='grid grid-cols-2 2xl:grid-cols-[299px_214px_254px] gap-x-[40px] gap-y-[24px] max-md:grid-cols-1'>
+			<div
+				className={`${
+					isOpen ? 'grid' : 'hidden'
+				} grid-cols-2 2xl:grid-cols-[299px_214px_254px] gap-x-[40px] gap-y-[24px] max-md:grid-cols-1`}
+			>
 				{/* column-first */}
 				{policiesProps.map(item => (
 					<div key={item.id}>

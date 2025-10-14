@@ -7,20 +7,27 @@ export type Characteristic = {
 	value: string | number
 	icon: string
 }
-
+export type BookedPeriods = {
+	from: string
+	to: string
+}
 export type Product = {
 	id: number | string
 	image: string
 	imageSlider: string[]
 	name: string
 	type: string
+	place: string
+	passengers: string
+	transmission: string
 	similar: string
-	// rentals: string
+	rentals: string
 	rating: number
 	grade: number
 	characteristics: Characteristic[]
 	price: number
 	location: Location[]
+	bookedPeriods: BookedPeriods[]
 }
 
 export const products: Product[] = [
@@ -34,8 +41,11 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
-		// rentals: 'Varna rentals',
+		place: 'Varna Center',
+		passengers: '2',
+		transmission: 'Manual',
+		similar: 'or similar',
+		rentals: '/images/logo-product.png',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -44,11 +54,14 @@ export const products: Product[] = [
 			{ value: 4, icon: '/icons/doors.svg' },
 			{ value: 'Manual', icon: '/icons/gearbox-mechanic.svg' },
 		],
-		price: 65,
+		price: 20,
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
 			{ city: 'Burgas', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -61,8 +74,9 @@ export const products: Product[] = [
 		],
 		name: 'Mercedes E-Class',
 		type: 'Business Class',
-		similar: 'or similar Mini',
-		// rentals: 'Varna rentals',
+		place: 'Varna Airport',
+		similar: 'or similar',
+		rentals: '/images/logo-product.png',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -71,10 +85,13 @@ export const products: Product[] = [
 			{ value: 4, icon: '/icons/doors.svg' },
 			{ value: 'Manual', icon: '/icons/gearbox-mechanic.svg' },
 		],
-		price: 65,
+		price: 130,
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -87,7 +104,8 @@ export const products: Product[] = [
 		],
 		name: 'Harrier Wagon',
 		type: 'Economy',
-		similar: 'or similar Mini',
+		place: 'Varna Hotel',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -100,6 +118,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -112,7 +133,8 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
+		place: 'Varna Hotel',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -125,6 +147,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -137,7 +162,8 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
+		place: 'Varna Hotel',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -150,6 +176,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -162,7 +191,8 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
+		place: 'Varna Hotel',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -175,6 +205,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -187,7 +220,8 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
+		place: 'Varna Airport',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -200,6 +234,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -212,7 +249,8 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
+		place: 'Varna Center',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -225,6 +263,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 	{
@@ -237,7 +278,8 @@ export const products: Product[] = [
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
-		similar: 'or similar Mini',
+		place: 'Varna Hotel',
+		similar: 'or similar',
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
@@ -250,6 +292,9 @@ export const products: Product[] = [
 		location: [
 			{ city: 'Varna', country: 'Bulgaria' },
 			{ city: 'Sofia', country: 'Bulgaria' },
+		],
+		bookedPeriods: [
+			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
 	},
 ]

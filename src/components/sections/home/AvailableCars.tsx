@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
 import { Product } from '@/data/products.type'
-import { goToBooking } from '@/utils/navigate-product'
+// import { goToBooking } from '@/utils/navigate-product'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Navigation } from 'swiper/modules'
@@ -114,7 +114,7 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 											<div className='text-sm text-[#757575]'>per day</div>
 										</div>
 										<Button
-											onClick={() => goToBooking(router, product)}
+											// onClick={() => goToBooking(router, product, { from, to, city })}
 											type='button'
 											variant='transparent'
 											className='flex rounded-xl py-[8px] pl-[24px] w-[157px] rounded-[6px]'

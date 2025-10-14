@@ -6,6 +6,7 @@ export interface IServicesProps {
 	textIcon: string
 	description: string
 	price: number
+	quantity?: number
 }
 
 export const servicesProps: IServicesProps[] = [
@@ -19,7 +20,7 @@ export const servicesProps: IServicesProps[] = [
 	},
 	{
 		id: 2,
-		title: 'Additional driver',
+		title: 'GPS*',
 		icon: IconTooltip,
 		textIcon: 'Something',
 		description: 'If you want additional people to drive',
@@ -27,18 +28,18 @@ export const servicesProps: IServicesProps[] = [
 	},
 	{
 		id: 3,
-		title: 'Additional driver',
+		title: 'Child Seat*',
 		icon: IconTooltip,
 		textIcon: 'Something',
-		description: 'If you want additional people to drive',
+		description: 'For small children: 9-18 kg/ 20-40 lbs (about 1-3 years old)',
 		price: 10,
 	},
 	{
 		id: 4,
-		title: 'Additional driver',
+		title: 'Full Insurance Coverage',
 		icon: IconTooltip,
 		textIcon: 'Something',
-		description: 'If you want additional people to drive',
+		description: 'Covers damage and reduces deposit amount to €200',
 		price: 10,
 	},
 ]
