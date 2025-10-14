@@ -57,7 +57,7 @@ export default function SearchResults({
 			const filterValues = filters[key]
 			if (!filterValues || filterValues.length === 0) continue
 
-			const productValue = (product as any)[key]
+			const productValue = (product as Product & Record<string, any>)[key]
 
 			// 🎯 Обрабатываем фильтр по цене
 			if (key === 'price') {
@@ -85,7 +85,11 @@ export default function SearchResults({
 			}
 
 			if (Array.isArray(productValue)) {
-				if (!productValue.some((v: any) => filterValues.includes(v.value || v)))
+				if (
+					!productValue.some((v: { value?: string }) =>
+						filterValues.includes(String(v.value ?? v))
+					)
+				)
 					return false
 			} else {
 				if (!filterValues.includes(String(productValue))) return false
