@@ -3,15 +3,15 @@ import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Button } from '@/components/ui/Button'
 import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
-import { Product } from '@/data/products.type'
+import { products } from '@/data/products.type'
 // import { goToBooking } from '@/utils/navigate-product'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const AvailableCars = ({ products }: { products: Product[] }) => {
-	const router = useRouter()
+export const AvailableCars = () => {
+	// const router = useRouter()
 
 	return (
 		<section className='pt-[64px] max-md:pt-[44px]'>
