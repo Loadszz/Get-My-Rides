@@ -85,7 +85,7 @@ const Choice = ({ product }: { product: Product }) => {
 							))}
 						</Swiper>
 						{product.cheapest === true && (
-							<div className='font-dmSans font-medium text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
+							<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
 								Cheapest
 							</div>
 						)}

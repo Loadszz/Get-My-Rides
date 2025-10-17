@@ -54,11 +54,12 @@ export const Header = () => {
 				<div className='absolute left-0 top-0 w-full h-[100vh] bg-[#0a58ca] z-20'></div>
 			)}
 			{/* background SVGs */}
-			<div
-				className={`${isOpen ? 'z-20' : 'z-10'} ${
-					pathname === '/search' ? 'hidden max-lg:flex' : 'flex'
-				} absolute inset-0 z-10 pointer-events-none`}
-			>
+			<div className='overflow-hidden'>
+				<div
+					className={`${isOpen ? 'z-20' : 'z-10'} ${
+						pathname === '/search' ? 'hidden max-lg:flex' : 'flex'
+					} absolute inset-0 z-10 pointer-events-none`}
+				></div>
 				<IconBuildings className='absolute top-0 right-0 w-[958px] h-[539px]' />
 				<IconRoads className='absolute top-[-140px] right-0 w-[1241px] h-[697px]' />
 				<IconPins className='absolute top-[220px] right-0 w-[690px] h-[171px]' />

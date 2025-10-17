@@ -28,10 +28,12 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 				<div className='max-md:pb-[22px]'>
 					<Swiper
 						slidesPerView='auto'
-						spaceBetween={8}
+						spaceBetween={16}
 						slidesOffsetBefore={2}
 						slidesOffsetAfter={2}
 						speed={100}
+						touchStartPreventDefault={false}
+						touchMoveStopPropagation={false}
 						breakpoints={{
 							640: {
 								slidesPerView: 2,
