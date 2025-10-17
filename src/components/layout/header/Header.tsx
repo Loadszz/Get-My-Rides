@@ -3,7 +3,7 @@ import ArrowRight from '@/assets/icons/arrow-right.svg'
 import IconBuildings from '@/assets/icons/buildings.svg'
 import IconEn from '@/assets/icons/en-language.svg'
 import IconPins from '@/assets/icons/pins.svg'
-import IconRoads from '@/assets/icons/roads.svg'
+import IconRoads from '@/assets/icons/roads-fixed.svg'
 import { Nav } from '@/components/nav/Nav'
 // import { SearchForm } from '@/components/search/SearchForm'
 import Burger from '@/components/ui/Burger'
@@ -54,14 +54,13 @@ export const Header = () => {
 				<div className='absolute left-0 top-0 w-full h-[100vh] bg-[#0a58ca] z-20'></div>
 			)}
 			{/* background SVGs */}
-			<div className='overflow-hidden'>
-				<div
-					className={`${isOpen ? 'z-20' : 'z-10'} ${
-						pathname === '/search' ? 'hidden max-lg:flex' : 'flex'
-					} absolute inset-0 z-10 pointer-events-none`}
-				></div>
+			<div
+				className={`${isOpen ? 'z-20' : 'z-10'} ${
+					pathname === '/search' ? 'hidden max-lg:flex' : 'flex'
+				} absolute inset-0 z-10 pointer-events-none`}
+			>
 				<IconBuildings className='absolute top-0 right-0 w-[958px] h-[539px]' />
-				<IconRoads className='absolute top-[-140px] right-0 w-[1241px] h-[697px]' />
+				<IconRoads className='absolute top-0 right-0 w-[1241px] h-[550px]' />
 				<IconPins className='absolute top-[220px] right-0 w-[690px] h-[171px]' />
 			</div>
 			<div className='__container'>

@@ -31,7 +31,7 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 						spaceBetween={16}
 						slidesOffsetBefore={2}
 						slidesOffsetAfter={2}
-						speed={300}
+						speed={500}
 						touchStartPreventDefault={false}
 						touchMoveStopPropagation={false}
 						breakpoints={{
