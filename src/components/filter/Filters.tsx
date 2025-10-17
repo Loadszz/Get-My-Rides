@@ -1,15 +1,17 @@
 'use client'
 import IconCheck from '@/assets/icons/check-filter.svg'
 import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import { Button } from '@/components/ui/Button'
 import { filters } from '@/data/filter/filters.type'
 import { useState } from 'react'
 
 export type FilterProps = {
 	isOpen: boolean
 	onChange?: (filtersState: Record<string, string[]>) => void
+	handleFilter: () => void
 }
 
-const Filters = ({ isOpen, onChange }: FilterProps) => {
+const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 	const [openIds, setOpenIds] = useState<number[]>([filters[0].id])
 	const [activeFilters, setActiveFilters] = useState<Record<string, string[]>>(
 		{}
@@ -36,6 +38,7 @@ const Filters = ({ isOpen, onChange }: FilterProps) => {
 	const handleClearAll = () => {
 		setActiveFilters({})
 		onChange?.({})
+		handleFilter()
 	}
 
 	return (
@@ -44,11 +47,6 @@ const Filters = ({ isOpen, onChange }: FilterProps) => {
 				isOpen ? 'flex flex-col' : 'max-lg:hidden'
 			} p-[24px] border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)]  max-lg:m-0 z-10`}
 		>
-			{/* <section
-			className={`${
-				isOpen ? 'block' : 'max-lg:hidden'
-			} p-[24px] border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)] max-lg:fixed max-lg:inset-0 max-lg:top-[325px] max-lg:w-full max-lg:m-0 max-lg:overflow-y-scroll max-lg:bg-white z-10`}
-		> */}
 			<div className='flex justify-between items-center mb-[32px]'>
 				<div className='font-bold text-2xl text-[#1a1a1a]'>Filters</div>
 				<div
@@ -64,7 +62,7 @@ const Filters = ({ isOpen, onChange }: FilterProps) => {
 					return (
 						<div
 							key={filter.id}
-							className='border-b border-[#e5e5e5] pb-[24px]'
+							className='border-b border-[#e5e5e5] pb-[24px] lg:last:border-none lg:last:pb-0 max-lg:last:mb-[20px]'
 						>
 							<div className='flex justify-between items-center mb-[16px]'>
 								<div className='flex items-center gap-x-[8px]'>
@@ -112,6 +110,14 @@ const Filters = ({ isOpen, onChange }: FilterProps) => {
 					)
 				})}
 			</div>
+			<Button
+				type='button'
+				variant='secondary'
+				className='py-[16px] rounded-xl lg:hidden'
+				onClick={handleFilter}
+			>
+				Apply
+			</Button>
 		</div>
 	)
 }

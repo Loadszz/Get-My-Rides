@@ -59,88 +59,84 @@ const Extras = ({
 					}`}
 				/>
 			</div>
-			{/* description + image */}
-			<div className='mb-[32px] max-md:mb-[20px]'>
-				<div className='font-dmSans text-base text-[#1a1a1a] mb-[16px] max-md:text-sm'>
-					Child seats, additional drivers, connectivity devices.
-				</div>
-				<Image
-					src={extrasImg}
-					width={461}
-					height={232}
-					alt='extras'
-					className='mb-[24px] max-md:mb-[16px]'
-				/>
-				<div className='font-dmSans text-base text-[#1a1a1a] max-md:text-sm'>
-					Some requests are subject to availability and cannot be guaranteed
-					until you arrive. We`ll request your extras with Varna rentals and you
-					will be able to pay for them during pick-up.
-				</div>
-			</div>
-
-			{/* services */}
-			<div
-				className={`${
-					isOpen ? 'flex' : 'hidden'
-				} flex-wrap justify-between gap-y-[37px] mb-[18px] max-md:flex-col max-md:gap-y-[16px]`}
-			>
-				{extras.map(item => (
-					<div
-						key={item.id}
-						className='flex-[0_1_46%] py-[16px] pl-[16px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'
-					>
-						{/* title + tooltip */}
-						<div className='flex gap-x-[9px] mb-[8px]'>
-							<div className='font-dmSans font-bold text-base text-[#1a1a1a]'>
-								{item.title}
-							</div>
-							<div className='relative group cursor-pointer'>
-								<item.icon className='w-[16px]' />
-								<div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-40 bg-gray-800 text-white text-sm text-center rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
-									{item.textIcon}
-								</div>
-							</div>
-						</div>
-
-						{/* description */}
-						<div className='text-sm text-[#757575] mb-[16px]'>
-							{item.description}
-						</div>
-
-						{/* quantity + price */}
-						<div className='flex items-center gap-x-[8px]'>
-							<div
-								className={`${
-									item.quantity > 0 ? 'bg-[#d0e3ff]' : 'bg-transparent'
-								} flex justify-center gap-x-[8px] py-[4px] px-[8px] border border-[#0a58ca] rounded-2xl`}
-							>
-								<span
-									onClick={() => handleClick(item.id, 'minus')}
-									className='text-base text-[#1a1a1a] cursor-pointer select-none'
-								>
-									-
-								</span>
-								<div className='font-dmSans text-base text-[#1a1a1a] w-[24px] text-center'>
-									{item.quantity}
-								</div>
-								<span
-									onClick={() => handleClick(item.id, 'plus')}
-									className='text-base text-[#1a1a1a] cursor-pointer select-none'
-								>
-									+
-								</span>
-							</div>
-							<div className='text-xs text-[#757575]'>
-								€{item.price} per day
-							</div>
-						</div>
+			<div className={`${isOpen ? 'block' : 'hidden'} `}>
+				{/* description + image */}
+				<div className='mb-[32px] max-md:mb-[20px]'>
+					<div className='font-dmSans text-base text-[#1a1a1a] mb-[16px] max-md:text-sm'>
+						Child seats, additional drivers, connectivity devices.
 					</div>
-				))}
-			</div>
+					<Image
+						src={extrasImg}
+						width={461}
+						height={232}
+						alt='extras'
+						className='mb-[24px] max-md:mb-[16px]'
+					/>
+					<div className='font-dmSans text-base text-[#1a1a1a] max-md:text-sm'>
+						Some requests are subject to availability and cannot be guaranteed
+						until you arrive. We`ll request your extras with Varna rentals and
+						you will be able to pay for them during pick-up.
+					</div>
+				</div>
+				{/* services */}
+				<div className='flex flex-wrap justify-between gap-y-[37px] mb-[18px] max-md:flex-col max-md:gap-y-[16px]'>
+					{extras.map(item => (
+						<div
+							key={item.id}
+							className='flex-[0_1_46%] py-[16px] pl-[16px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'
+						>
+							{/* title + tooltip */}
+							<div className='flex gap-x-[9px] mb-[8px]'>
+								<div className='font-dmSans font-bold text-base text-[#1a1a1a]'>
+									{item.title}
+								</div>
+								<div className='relative group cursor-pointer'>
+									<item.icon className='w-[16px]' />
+									<div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-40 bg-gray-800 text-white text-sm text-center rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
+										{item.textIcon}
+									</div>
+								</div>
+							</div>
 
-			{/* info */}
-			<div className='text-sm text-[#1a1a1a]'>
-				*Will be provided at pick-up if available
+							{/* description */}
+							<div className='text-sm text-[#757575] mb-[16px]'>
+								{item.description}
+							</div>
+
+							{/* quantity + price */}
+							<div className='flex items-center gap-x-[8px]'>
+								<div
+									className={`${
+										item.quantity > 0 ? 'bg-[#d0e3ff]' : 'bg-transparent'
+									} flex justify-center gap-x-[8px] py-[4px] px-[8px] border border-[#0a58ca] rounded-2xl`}
+								>
+									<span
+										onClick={() => handleClick(item.id, 'minus')}
+										className='text-base text-[#1a1a1a] cursor-pointer select-none'
+									>
+										-
+									</span>
+									<div className='font-dmSans text-base text-[#1a1a1a] w-[24px] text-center'>
+										{item.quantity}
+									</div>
+									<span
+										onClick={() => handleClick(item.id, 'plus')}
+										className='text-base text-[#1a1a1a] cursor-pointer select-none'
+									>
+										+
+									</span>
+								</div>
+								<div className='text-xs text-[#757575]'>
+									€{item.price} per day
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+				{/* info */}
+				<div className='text-sm text-[#1a1a1a]'>
+					*Will be provided at pick-up if available
+				</div>
 			</div>
 		</section>
 	)

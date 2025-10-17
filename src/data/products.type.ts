@@ -28,6 +28,7 @@ export type Product = {
 	price: number
 	location: Location[]
 	bookedPeriods: BookedPeriods[]
+	cheapest: boolean
 }
 
 export const products: Product[] = [
@@ -63,6 +64,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 2,
@@ -95,6 +97,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 3,
@@ -127,6 +130,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 4,
@@ -159,6 +163,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 5,
@@ -191,6 +196,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 6,
@@ -223,6 +229,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 7,
@@ -255,6 +262,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 8,
@@ -287,6 +295,7 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 	{
 		id: 9,
@@ -319,5 +328,6 @@ export const products: Product[] = [
 		bookedPeriods: [
 			{ from: '2025-10-10T10:00:00Z', to: '2025-10-12T18:00:00Z' },
 		],
+		cheapest: true,
 	},
 ]

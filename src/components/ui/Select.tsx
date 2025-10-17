@@ -31,7 +31,7 @@ export const Select = ({ options, value, onChange }: ISelectProps) => {
 	return (
 		<div
 			ref={containerRef}
-			className='relative border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'
+			className='relative border hover:border-[#3a83ed] rounded-xl transition-[border,box-shadow,background] duration-300'
 		>
 			<button
 				type='button'

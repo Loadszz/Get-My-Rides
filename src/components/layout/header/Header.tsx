@@ -89,7 +89,8 @@ export const Header = () => {
 						<Nav
 							navClassName='w-full max-lg:mb-[56px]'
 							ulClassName='flex justify-center divide-x-1 gap-[23px] max-xl:gap-[12px] max-lg:flex-col max-lg:gap-[48px] max-lg:divide-none'
-							liClassName='relative font-dmSans text-base font-medium border-white/25 xl:not-last:pr-[23px] lg:not-last:pr-[12px] max-lg:before:absolute max-lg:before:w-[1px] max-lg:before:border-white/25 max-lg:not-last:before:border-b-[16px] max-lg:before:bottom-[-32px] max-lg:before:left-[9px] max-lg:before:rotate-90'
+							liClassName='relative border-white/25 xl:not-last:pr-[23px] lg:not-last:pr-[12px] max-lg:before:absolute max-lg:before:w-[1px] max-lg:before:border-white/25 max-lg:not-last:before:border-b-[16px] max-lg:before:bottom-[-32px] max-lg:before:left-[9px] max-lg:before:rotate-90'
+							linkClassName='font-dmSans text-base font-medium transform-all duration-300 hover:[text-shadow:0_0_10px_#00bfff,0_0_20px_#00bfff]'
 						/>
 						<div className='flex gap-[24px] max-lg:flex-col max-lg:items-center max-lg:gap-[16px] max-lg:w-full'>
 							{/* lang */}
@@ -109,9 +110,6 @@ export const Header = () => {
 						</div>
 					</div>
 				</div>
-				{/* {pathname === '/search' && (
-					<SearchForm className='relative top-0 w-full border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)] !m-0 max-lg:top-0' />
-				)} */}
 			</div>
 		</header>
 	)

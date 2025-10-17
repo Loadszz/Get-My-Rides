@@ -1,6 +1,5 @@
 'use client'
 import ArrowRight from '@/assets/icons/arrow-right.svg'
-import Map from '@/components/map/Map'
 import Choice from '@/components/sections/booking/Choice'
 import Details from '@/components/sections/booking/Details'
 import Extras from '@/components/sections/booking/Extras'
@@ -45,7 +44,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 	}
 
 	return (
-		<div className='wrapper'>
+		<section>
 			<div className='__container'>
 				{/* body */}
 				<div className='flex justify-between gap-x-[40px] max-lg:flex-col'>
@@ -56,7 +55,6 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 							isOpen={openBlocks.rentalLocation}
 							toggle={() => toggleBlock('rentalLocation')}
 						/>
-						<Map />
 						<Policies
 							isOpen={openBlocks.policies}
 							toggle={() => toggleBlock('policies')}
@@ -68,8 +66,8 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 							toggle={() => toggleBlock('extras')}
 						/>
 						<Details
-							isOpen={openBlocks.rentalLocation}
-							toggle={() => toggleBlock('rentalLocation')}
+							isOpen={openBlocks.details}
+							toggle={() => toggleBlock('details')}
 						/>
 						{/* button-form */}
 						<div className='max-lg:hidden'>
@@ -144,7 +142,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }
 

@@ -36,18 +36,18 @@ const Details = ({ isOpen, toggle }: Props) => {
 	const [phone, setPhone] = useState('')
 	const [choice, setChoice] = useState<string>('no')
 	return (
-		<section className='pt-[40px] pb-[24px] max-lg:pb-0 max-md:pt-[24px]'>
+		<section
+			className={`${
+				isOpen ? 'pb-0' : 'border-b border-[#e5e5e5] pb-[24px]'
+			} pt-[40px] max-md:pt-[24px]`}
+		>
 			{/* form */}
 			<form
 				action='#'
-				className='flex flex-wrap justify-between mb-[28px] max-md:mb-[24px] max-md:flex-col'
+				className='flex flex-wrap justify-between max-md:flex-col'
 			>
 				{/* header */}
-				<div
-					className={`${
-						isOpen ? 'max-md:mb-[16px]' : 'max-md:mb-0'
-					} flex justify-between items-center mb-[24px]`}
-				>
+				<div className='flex justify-between items-center mb-[24px] max-md:mb-[16px]'>
 					{/* title */}
 					<div className='title-booking'>Driver Details</div>
 					{/* arrow */}
@@ -59,7 +59,7 @@ const Details = ({ isOpen, toggle }: Props) => {
 					/>
 				</div>
 				{/* body */}
-				<div className={`${isOpen ? 'block' : 'hidden'}`}>
+				<div className={`${isOpen ? 'block' : 'hidden'} space-y-[24px]`}>
 					{/* description */}
 					<div className='font-dmSans text-base text-[#1a1a1a] mb-[24px] max-md:mb-[16px] max-md:text-sm'>
 						Main driver`s details as they appear on the driving license
@@ -150,7 +150,7 @@ const Details = ({ isOpen, toggle }: Props) => {
 					</div>
 					{choice === 'yes' && (
 						<>
-							<div className='mb-[24px] mt-[40px] max-md:mt-[24px] max-md:mb-[16px]'>
+							<div className='mb-[24px] max-md:mb-[16px]'>
 								{/* title */}
 								<div className='title-booking mb-[24px] max-md:mb-[16px]'>
 									Company Details
@@ -188,23 +188,23 @@ const Details = ({ isOpen, toggle }: Props) => {
 							</div>
 						</>
 					)}
+					{/* info */}
+					<div className='p-[24px] bg-[#e2ffe8] max-md:p-[16px] max-md:mx-[-16px]'>
+						<div className='flex items-center gap-x-[12px]'>
+							<div className='flex justify-center w-[20px] h-[20px] bg-[#00cf3e] rounded-2xl'>
+								<IconCheck className='w-[8px]' />
+							</div>
+							<div className='font-dmSans font-bold text-base text-[#1a1a1a]'>
+								What if my plans change?
+							</div>
+						</div>
+						<div className='text-sm text-[#1a1a1a] pl-[34px]'>
+							You can cancel your booking free of charge and get a full refund
+							if you cancel up to 48 hours before pick-up.
+						</div>
+					</div>
 				</div>
 			</form>
-			{/* info */}
-			<div className='p-[24px] bg-[#e2ffe8] max-md:p-[16px] max-md:mx-[-16px]'>
-				<div className='flex items-center gap-x-[12px]'>
-					<div className='flex justify-center w-[20px] h-[20px] bg-[#00cf3e] rounded-2xl'>
-						<IconCheck className='w-[8px]' />
-					</div>
-					<div className='font-dmSans font-bold text-base text-[#1a1a1a]'>
-						What if my plans change?
-					</div>
-				</div>
-				<div className='text-sm text-[#1a1a1a] pl-[34px]'>
-					You can cancel your booking free of charge and get a full refund if
-					you cancel up to 48 hours before pick-up.
-				</div>
-			</div>
 		</section>
 	)
 }

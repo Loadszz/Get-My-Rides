@@ -158,20 +158,28 @@ export default function SearchResults({
 									</div>
 								</div>
 								{/* product-image */}
-								<Image
-									src={product.image}
-									width={398}
-									height={170}
-									alt={product.name}
-									priority
-									className='w-full h-auto object-cover mb-[16px] rounded-xl'
-								/>
+								<div className='relative'>
+									<Image
+										src={product.image}
+										width={398}
+										height={170}
+										alt={product.name}
+										priority
+										className='w-full h-auto object-cover mb-[16px] rounded-xl'
+									/>
+									<div className='font-dmSans font-medium text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
+										Cheapest
+									</div>
+								</div>
 								{/* product-pre-footer */}
 								<div className='flex justify-between items-center mb-[16px]'>
 									{/* product-rentals */}
-									<div className='inline-block py-[4px] px-[8px] font-dmSans font-medium text-sm text-[#91d253] bg-[#efffe0] rounded-lg'>
-										Varna rentals
-									</div>
+									<Image
+										src={product.rentals}
+										width={114}
+										height={45}
+										alt='logo'
+									/>
 									{/* product-price */}
 									<div className='flex items-center text-sm text-[#757575]'>
 										Price for 5 days:

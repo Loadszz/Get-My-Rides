@@ -153,6 +153,9 @@
 	.antd-style {
 		@apply [&_input]:!font-dmSans [&_input]:!text-base [&_input]:!text-[#303030] [&_input]:placeholder:!font-dmSans [&_input]:placeholder:!text-base [&_input]:placeholder:!text-[#303030] [&_input]:!cursor-pointer;
 	}
+	.my-custom-datepicker .ant-picker-suffix {
+		@apply !opacity-100;
+	}
 	.my-class .swiper-pagination-bullet {
 		@apply !bg-black !opacity-[0.40];
 	}

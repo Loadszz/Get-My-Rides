@@ -30,7 +30,11 @@ const SearchPageClient = () => {
 						{/* map */}
 						<div className='max-lg:hidden w-full h-[208px] bg-gray-600 rounded-2xl'></div>
 						{/* filter */}
-						<Filters isOpen={isOpen} onChange={setFiltersState} />
+						<Filters
+							isOpen={isOpen}
+							onChange={setFiltersState}
+							handleFilter={handleFilter}
+						/>
 						{/* mobile */}
 						<div className='lg:hidden flex justify-between gap-x-[8px] mb-[24px] max-lg:order-1'>
 							<div

@@ -1,5 +1,5 @@
 const Map = () => {
-	return <section className='bg-gray-500 h-[400px]'></section>
+	return <div className='bg-gray-500 h-[400px]'></div>
 }
 
 export default Map

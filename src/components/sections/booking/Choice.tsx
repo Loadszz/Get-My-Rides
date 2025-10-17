@@ -1,5 +1,5 @@
 'use client'
-import IconGas from '@/assets/icons/booking/gas.svg'
+import IconGas from '@/assets/icons/booking/gas-station-blue.svg'
 import IconCheck from '@/assets/icons/check.svg'
 import IconDashboard from '@/assets/icons/dashboard.svg'
 import { Star } from '@/components/ui/Star'
@@ -61,7 +61,7 @@ const Choice = ({ product }: { product: Product }) => {
 						</div>
 					</div>
 					{/* product-slider */}
-					<div className='flex-[0_1_461px] max-md:flex-[0_1_216px] max-md:mb-[16px]'>
+					<div className='flex-[0_1_461px] relative max-md:flex-[0_1_216px] max-md:mb-[16px]'>
 						<Swiper
 							slidesPerView={1}
 							pagination={{
@@ -84,6 +84,11 @@ const Choice = ({ product }: { product: Product }) => {
 								</SwiperSlide>
 							))}
 						</Swiper>
+						{product.cheapest === true && (
+							<div className='font-dmSans font-medium text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
+								Cheapest
+							</div>
+						)}
 					</div>
 					{/* product-item */}
 					<div className='flex-[0_0_330px] max-md:flex-[0_0_auto]'>

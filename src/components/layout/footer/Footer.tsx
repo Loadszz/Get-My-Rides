@@ -31,7 +31,7 @@ export const Footer = () => {
 						</div>
 						<Nav
 							ulClassName='flex flex-col gap-y-[16px]'
-							liClassName='inline-block text-sm opacity-[0.67]'
+							linkClassName='text-sm opacity-[0.67] transform-all duration-300 hover:opacity-100'
 						/>
 					</div>
 					{/* line-2 */}
