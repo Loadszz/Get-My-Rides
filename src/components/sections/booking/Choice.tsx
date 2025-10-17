@@ -61,7 +61,7 @@ const Choice = ({ product }: { product: Product }) => {
 						</div>
 					</div>
 					{/* product-slider */}
-					<div className='flex-[0_1_461px] relative max-md:flex-[0_1_216px] max-md:mb-[16px]'>
+					<div className='flex-[0_1_461px] aspect-[3/1] relative max-md:flex-[0_0_auto] max-md:aspect-[2/1] max-md:mb-[16px]'>
 						<Swiper
 							slidesPerView={1}
 							pagination={{
@@ -72,7 +72,7 @@ const Choice = ({ product }: { product: Product }) => {
 						>
 							product.imageSlider
 							{product.imageSlider.map((imgPath, index) => (
-								<SwiperSlide key={index} className='!w-full'>
+								<SwiperSlide key={index} className='!w-full !h-full'>
 									<Image
 										src={imgPath}
 										width={461}
