@@ -72,7 +72,7 @@ const Choice = ({ product }: { product: Product }) => {
 						>
 							product.imageSlider
 							{product.imageSlider.map((imgPath, index) => (
-								<SwiperSlide key={index} className='!w-full aspect-[461/286]'>
+								<SwiperSlide key={index} className='!w-full'>
 									<Image
 										src={imgPath}
 										width={461}
