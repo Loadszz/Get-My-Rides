@@ -14,6 +14,7 @@ export type BookedPeriods = {
 export type Product = {
 	id: number
 	image: string
+	imageSearch: string
 	imageSlider: string[]
 	name: string
 	type: string
@@ -35,10 +36,10 @@ export const products: Product[] = [
 	{
 		id: 1,
 		image: '/images/product-1.jpg',
+		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
-			'/images/product-1.jpg',
-			'/images/product-2.jpg',
-			'/images/product-3.jpg',
+			'/images/product/booking/product-booking-1.jpg',
+			'/images/product/booking/product-booking-1.jpg',
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
@@ -69,6 +70,7 @@ export const products: Product[] = [
 	{
 		id: 2,
 		image: '/images/product-2.jpg',
+		imageSearch: '/images/product/search/product-search-2.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -102,6 +104,7 @@ export const products: Product[] = [
 	{
 		id: 3,
 		image: '/images/product-3.jpg',
+		imageSearch: '/images/product/search/product-search-3.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -135,6 +138,7 @@ export const products: Product[] = [
 	{
 		id: 4,
 		image: '/images/product-4.jpg',
+		imageSearch: '/images/product/search/product-search-4.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -168,6 +172,7 @@ export const products: Product[] = [
 	{
 		id: 5,
 		image: '/images/product-4.jpg',
+		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -201,6 +206,7 @@ export const products: Product[] = [
 	{
 		id: 6,
 		image: '/images/product-4.jpg',
+		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -234,6 +240,7 @@ export const products: Product[] = [
 	{
 		id: 7,
 		image: '/images/product-4.jpg',
+		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -267,6 +274,7 @@ export const products: Product[] = [
 	{
 		id: 8,
 		image: '/images/product-4.jpg',
+		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',
@@ -300,6 +308,7 @@ export const products: Product[] = [
 	{
 		id: 9,
 		image: '/images/product-4.jpg',
+		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
 			'/images/product-2.jpg',

@@ -160,12 +160,12 @@ export default function SearchResults({
 								{/* product-image */}
 								<div className='relative'>
 									<Image
-										src={product.image}
+										src={product.imageSearch}
 										width={398}
 										height={170}
 										alt={product.name}
 										priority
-										className='w-full h-[170px] max-md:h-[300px] max-sm:h-[216px] object-cover mb-[16px] rounded-xl'
+										className='w-full h-full max-sm:h-[152px] object-cover mb-[16px] rounded-xl'
 									/>
 									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
 										Cheapest
