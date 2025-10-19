@@ -61,10 +61,10 @@ const Choice = ({ product }: { product: Product }) => {
 						</div>
 					</div>
 					{/* product-slider */}
-					<div className='flex-[0_1_461px] aspect-[3/1] relative max-md:flex-[0_0_auto] max-md:aspect-auto max-md:h-full max-md:mb-[16px] max-sm:left-[-15px]'>
+					<div className='flex-[0_1_461px] aspect-[3/1] relative max-md:flex-[0_0_auto] max-md:aspect-auto max-md:h-full max-md:mb-[16px]'>
 						<Swiper
 							slidesPerView={'auto'}
-							// loop={true}
+							loop={true}
 							spaceBetween='8px'
 							pagination={{
 								clickable: true,
