@@ -63,17 +63,20 @@ const Choice = ({ product }: { product: Product }) => {
 					{/* product-slider */}
 					<div className='flex-[0_1_461px] aspect-[3/1] relative max-md:flex-[0_0_auto] max-md:aspect-auto max-md:h-full max-md:mb-[16px]'>
 						<Swiper
-							slidesPerView={1}
-							spaceBetween='10px'
+							slidesPerView={'auto'}
+							spaceBetween='25px'
 							pagination={{
 								clickable: true,
 							}}
 							modules={[Pagination]}
-							className='my-class w-full h-full'
+							className='my-class w-full h-full max-md:!overflow-visible max-md:w-[343px]'
 						>
 							product.imageSlider
 							{product.imageSlider.map((imgPath, index) => (
-								<SwiperSlide key={index} className='!w-full !h-full'>
+								<SwiperSlide
+									key={index}
+									className='!w-full !h-full max-md:-ml-[15px]'
+								>
 									<Image
 										src={imgPath}
 										width={461}
