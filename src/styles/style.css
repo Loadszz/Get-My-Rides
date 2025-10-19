@@ -160,13 +160,13 @@
 		@apply relative z-1;
 	} */
 	.my-class .swiper-pagination {
-		@apply !absolute !left-[50%] !translate-x-[-50%] !bottom-[16px] z-2;
+		@apply !absolute !left-[50%] !translate-x-[-50%] !bottom-[16px] z-2 max-md:!bottom-[32px];
 	}
 	.my-class .swiper-pagination-bullet {
 		@apply !bg-white !opacity-[0.36] !w-[6px] !h-[6px];
 	}
 	.my-class .swiper-pagination-bullet-active {
-		@apply !bg-white !opacity-100 !scale-150 !w-[8px] !h-[8px];
+		@apply !bg-white !opacity-100 !scale-150 !w-[5.333px] !h-[5.333px];
 	}
 	.react-tel-input .form-control {
 		@apply !font-dmSans !text-base !text-[#757575] !left-[30%] !border !border-[#3a83ed] !rounded-xl !ring-[3px] !ring-[#0A58CA1C] !py-[16px] !pl-[16px] !outline-0 !h-full !w-[70%];

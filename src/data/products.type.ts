@@ -40,6 +40,9 @@ export const products: Product[] = [
 		imageSlider: [
 			'/images/product/booking/product-booking-1.jpg',
 			'/images/product/booking/product-booking-1.jpg',
+			'/images/product/booking/product-booking-1.jpg',
+			'/images/product/booking/product-booking-1.jpg',
+			'/images/product/booking/product-booking-1.jpg',
 		],
 		name: 'Volvo XC60',
 		type: 'Business Class',
