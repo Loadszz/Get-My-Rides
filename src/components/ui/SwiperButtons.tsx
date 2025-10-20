@@ -14,7 +14,7 @@ const SwiperButtons = ({
 	nextClass = `${name}-next-btn`,
 }: SwiperButtonsProps) => {
 	return (
-		<div className={`${className} flex gap-x-[12px] z-10`}>
+		<div className={`${className} flex gap-x-[12px] z-1`}>
 			<button
 				className={`${prevClass} [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a] bg-blue-600 p-[8px] border border-[#0a58ca] rounded-full`}
 			>

@@ -29,10 +29,7 @@ export const Select = ({ options, value, onChange }: ISelectProps) => {
 	}, [])
 
 	return (
-		<div
-			ref={containerRef}
-			className='relative border hover:border-[#3a83ed] rounded-xl transition-[border,box-shadow,background] duration-300'
-		>
+		<div ref={containerRef} className='relative'>
 			<button
 				type='button'
 				onClick={() => setOpen(!open)}

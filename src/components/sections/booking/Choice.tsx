@@ -1,6 +1,6 @@
 'use client'
+import IconCheck from '@/assets/icons/booking/check.svg'
 import IconGas from '@/assets/icons/booking/gas-station-blue.svg'
-import IconCheck from '@/assets/icons/check.svg'
 import IconDashboard from '@/assets/icons/dashboard.svg'
 import { Star } from '@/components/ui/Star'
 import { Product } from '@/data/products.type'
@@ -39,9 +39,7 @@ const Choice = ({ product }: { product: Product }) => {
 						{/* product-information-mobile */}
 						<div className='space-y-[16px]'>
 							<div className='flex items-center gap-x-[14px]'>
-								<div className='flex justify-center w-[24px] h-[24px] bg-[#0a58ca] rounded-2xl'>
-									<IconCheck className='w-[10px]' />
-								</div>
+								<IconCheck className='w-[24px]' />
 								<div className='font-dmSans text-base text-[#1a1a1a]'>
 									Free cancellation up to 48 hours
 								</div>
@@ -64,7 +62,6 @@ const Choice = ({ product }: { product: Product }) => {
 					<div className='flex-[0_1_461px] aspect-[3/1] relative max-md:flex-[0_0_auto] max-md:aspect-auto max-md:h-full max-md:mb-[16px]'>
 						<Swiper
 							slidesPerView={1}
-							// loop={true}
 							spaceBetween='6px'
 							pagination={{
 								clickable: true,
@@ -142,9 +139,7 @@ const Choice = ({ product }: { product: Product }) => {
 							{/* product-information */}
 							<div className='space-y-[16px]'>
 								<div className='flex items-center gap-x-[14px]'>
-									<div className='flex justify-center w-[24px] h-[24px] bg-[#0a58ca] rounded-2xl'>
-										<IconCheck className='w-[10px]' />
-									</div>
+									<IconCheck className='w-[24px]' />
 									<div className='font-dmSans text-base text-[#1a1a1a]'>
 										Free cancellation up to 48 hours
 									</div>

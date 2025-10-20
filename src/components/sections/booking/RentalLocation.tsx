@@ -1,5 +1,5 @@
 'use client'
-import IconCar from '@/assets/icons/car.svg'
+import IconCar from '@/assets/icons/booking/car.svg'
 import IconClock from '@/assets/icons/clock.svg'
 import IconDate from '@/assets/icons/date.svg'
 import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'

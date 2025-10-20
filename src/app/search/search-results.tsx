@@ -167,7 +167,7 @@ export default function SearchResults({
 										priority
 										className='w-full h-full max-sm:h-[152px] object-cover mb-[16px] rounded-xl'
 									/>
-									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
+									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-1'>
 										Cheapest
 									</div>
 								</div>

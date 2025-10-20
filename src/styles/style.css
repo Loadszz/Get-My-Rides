@@ -150,9 +150,6 @@
 	.lock {
 		@apply overflow-hidden;
 	}
-	.antd-style {
-		@apply [&_input]:!font-dmSans [&_input]:!text-base [&_input]:!text-[#303030] [&_input]:placeholder:!font-dmSans [&_input]:placeholder:!text-base [&_input]:placeholder:!text-[#303030] [&_input]:!cursor-pointer;
-	}
 	.my-custom-datepicker .ant-picker-suffix {
 		@apply !opacity-100;
 	}
@@ -175,5 +172,8 @@
 	.react-datepicker__portal .react-datepicker__day-name,
 	.react-datepicker__portal .react-datepicker__time-name {
 		@apply max-sm:!w-8 max-sm:!leading-8; /* 4rem */
+	}
+	.react-datepicker-time__header {
+		@apply !font-dmSans !font-bold !text-xl !text-[#0a58ca];
 	}
 }

@@ -45,7 +45,7 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 		<div
 			className={`${
 				isOpen ? 'flex flex-col' : 'max-lg:hidden'
-			} p-[24px] border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)]  max-lg:m-0 z-10`}
+			} p-[24px] border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)]  max-lg:m-0 z-1`}
 		>
 			<div className='flex justify-between items-center mb-[32px]'>
 				<div className='font-bold text-2xl text-[#1a1a1a]'>Filters</div>
@@ -101,7 +101,7 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 											className='sr-only peer'
 										/>
 										<div className='w-8 h-8 border-2 border-gray-400 rounded-md flex items-center justify-center peer-checked:border-blue-600 transition-colors cursor-pointer'></div>
-										<IconCheck className='absolute left-[7px] top-[8px] z-10 w-[18px] cursor-pointer hidden peer-checked:block' />
+										<IconCheck className='absolute left-[7px] top-[8px] z-1 w-[18px] cursor-pointer hidden peer-checked:block' />
 										{option.label}
 									</label>
 								))}

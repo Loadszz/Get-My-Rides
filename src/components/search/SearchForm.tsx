@@ -1,4 +1,6 @@
 'use client'
+import IconArrowLeft from '@/assets/icons/arrow-slider-left.svg'
+import IconArrowRight from '@/assets/icons/arrow-slider-right.svg'
 import IconDate from '@/assets/icons/date.svg'
 import IconSearch from '@/assets/icons/search.svg'
 import { Button } from '@/components/ui/Button'
@@ -96,7 +98,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 					<label className='inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base'>
 						Pick-up location
 					</label>
-					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'>
+					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
 						<Select
 							options={locationProps}
 							value={locationFrom}
@@ -130,6 +132,35 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
 							withPortal
 							showIcon
+							fixedHeight
+							renderCustomHeader={({
+								date,
+								decreaseMonth,
+								increaseMonth,
+								prevMonthButtonDisabled,
+								nextMonthButtonDisabled,
+							}) => (
+								<div className='relative flex items-center justify-center'>
+									<button
+										onClick={decreaseMonth}
+										disabled={prevMonthButtonDisabled}
+										className='absolute left-[10px] w-[30px] text-[#0a58ca] disabled:text-gray-500'
+									>
+										<IconArrowLeft />
+									</button>
+									<span className='font-dmSans font-bold text-xl text-[#0a58ca]'>
+										{date.toLocaleString('en', { month: 'long' })}{' '}
+										{date.getFullYear()}
+									</span>
+									<button
+										onClick={increaseMonth}
+										disabled={nextMonthButtonDisabled}
+										className='absolute right-[10px] w-[30px] text-[#0a58ca] disabled:text-gray-500'
+									>
+										<IconArrowRight />
+									</button>
+								</div>
+							)}
 							icon={
 								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
 							}
@@ -141,7 +172,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 					<label className='inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base'>
 						Drop-off location
 					</label>
-					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'>
+					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
 						<Select
 							options={locationProps}
 							value={locationTo}
@@ -175,6 +206,35 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
 							withPortal
 							showIcon
+							fixedHeight
+							renderCustomHeader={({
+								date,
+								decreaseMonth,
+								increaseMonth,
+								prevMonthButtonDisabled,
+								nextMonthButtonDisabled,
+							}) => (
+								<div className='relative flex items-center justify-center'>
+									<button
+										onClick={decreaseMonth}
+										disabled={prevMonthButtonDisabled}
+										className='absolute left-[10px] w-[30px] text-[#0a58ca] disabled:text-gray-500'
+									>
+										<IconArrowLeft />
+									</button>
+									<span className='font-dmSans font-bold text-xl text-[#0a58ca]'>
+										{date.toLocaleString('en', { month: 'long' })}{' '}
+										{date.getFullYear()}
+									</span>
+									<button
+										onClick={increaseMonth}
+										disabled={nextMonthButtonDisabled}
+										className='absolute right-[10px] w-[30px] text-[#0a58ca] disabled:text-gray-500'
+									>
+										<IconArrowRight />
+									</button>
+								</div>
+							)}
 							icon={
 								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
 							}

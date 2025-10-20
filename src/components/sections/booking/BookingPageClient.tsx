@@ -98,7 +98,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 						</div>
 					</div>
 					{/* column-right */}
-					<div className='sticky top-0 flex-[0_1_388px] h-full py-[50px] max-lg:py-[24px] max-md:flex-[0_1_auto]'>
+					<div className='sticky top-[-50px] flex-[0_1_388px] h-full py-[50px] max-lg:py-[24px] max-md:flex-[0_1_auto]'>
 						<form id='bookingForm' ref={formRef} onSubmit={handleSubmit}>
 							<Information
 								isOpen={openBlocks.information}
