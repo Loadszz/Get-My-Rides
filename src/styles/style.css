@@ -156,11 +156,8 @@
 	.my-custom-datepicker .ant-picker-suffix {
 		@apply !opacity-100;
 	}
-	/* .my-class .swiper-pagination {
-		@apply relative z-1;
-	} */
 	.my-class .swiper-pagination {
-		@apply !absolute !left-[50%] !translate-x-[-50%] !bottom-[16px] z-2 max-md:!bottom-[32px];
+		@apply !absolute !left-[50%] !translate-x-[-50%] !bottom-[16px] z-2;
 	}
 	.my-class .swiper-pagination-bullet {
 		@apply !bg-white !opacity-[0.36] !w-[6px] !h-[6px];
