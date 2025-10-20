@@ -113,12 +113,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
 							withPortal
 							className='font-dmSans text-base text-[#303030] !p-0 !pl-[48px] outline-0 cursor-pointer'
-							customInput={
-								<input
-									readOnly
-									className='font-dmSans text-base text-[#303030] py-[16px] pl-[48px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C]'
-								/>
-							}
+							onFocus={e => e.target.blur()}
 							showIcon
 							icon={
 								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
