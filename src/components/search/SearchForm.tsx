@@ -73,7 +73,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 	const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
 		({ value, onClick }, ref) => (
 			<button
-				className='font-dmSans text-base text-[#303030] w-full py-[16px] outline-0 cursor-pointer'
+				className='font-dmSans text-base text-[#303030] text-left w-full py-[16px] pl-[48px] outline-0 cursor-pointer'
 				type='button'
 				onClick={onClick}
 				ref={ref}
