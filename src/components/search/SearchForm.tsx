@@ -96,7 +96,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 					</label>
 					<div className='py-[16px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
 						<DatePicker
-							readOnly
+							disabledKeyboardNavigation
 							selected={fromDate}
 							onChange={date => setFromDate(date)}
 							showTimeSelect
@@ -142,7 +142,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 					</label>
 					<div className='py-[16px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
 						<DatePicker
-							readOnly
+							disabledKeyboardNavigation
 							selected={toDate}
 							onChange={date => setToDate(date)}
 							showTimeSelect
