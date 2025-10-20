@@ -96,7 +96,12 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 					</label>
 					<div className='py-[16px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
 						<DatePicker
-							onFocus={e => e.currentTarget.blur()}
+							readOnly
+							onInputClick={() => {
+								const input = document.activeElement as HTMLInputElement
+								if (input) input.blur()
+							}}
+							onFocus={e => (e.target as HTMLInputElement).blur()} // можно добавить для надёжности
 							selected={fromDate}
 							onChange={date => setFromDate(date)}
 							showTimeSelect
@@ -142,7 +147,12 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 					</label>
 					<div className='py-[16px] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
 						<DatePicker
-							onFocus={e => e.currentTarget.blur()}
+							readOnly
+							onInputClick={() => {
+								const input = document.activeElement as HTMLInputElement
+								if (input) input.blur()
+							}}
+							onFocus={e => (e.target as HTMLInputElement).blur()} // можно добавить для надёжности
 							selected={toDate}
 							onChange={date => setToDate(date)}
 							showTimeSelect
