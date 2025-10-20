@@ -171,4 +171,9 @@
 	.flag-dropdown {
 		@apply !font-dmSans !text-base !text-[#757575] !border !border-[#3a83ed] !rounded-xl !ring-[3px] !ring-[#0A58CA1C] !py-[16px] !pl-[16px] !outline-0 !h-full !w-[25%];
 	}
+	.react-datepicker__portal .react-datepicker__day,
+	.react-datepicker__portal .react-datepicker__day-name,
+	.react-datepicker__portal .react-datepicker__time-name {
+		@apply max-sm:!w-8 max-sm:!leading-8; /* 4rem */
+	}
 }

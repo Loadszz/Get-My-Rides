@@ -112,7 +112,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							}
 							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
 							withPortal
-							className='font-dmSans text-base text-[#303030] !p-0 !pl-[48px] outline-0 cursor-pointer bottom-2'
+							className='font-dmSans text-base text-[#303030] !p-0 !pl-[48px] outline-0 cursor-pointer'
 							showIcon
 							icon={
 								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
@@ -157,7 +157,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							}
 							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
 							withPortal
-							className='font-dmSans text-base text-[#303030] !p-0 !pl-[48px] outline-0 cursor-pointer bottom-2'
+							className='font-dmSans text-base text-[#303030] !p-0 !pl-[48px] outline-0 cursor-pointer'
 							showIcon
 							icon={
 								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
