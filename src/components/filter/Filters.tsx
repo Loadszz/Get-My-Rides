@@ -34,11 +34,9 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 			return newState
 		})
 	}
-
 	const handleClearAll = () => {
 		setActiveFilters({})
 		onChange?.({})
-		handleFilter()
 	}
 
 	return (
@@ -64,7 +62,10 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 							key={filter.id}
 							className='border-b border-[#e5e5e5] pb-[24px] lg:last:border-none lg:last:pb-0 max-lg:last:mb-[20px]'
 						>
-							<div className='flex justify-between items-center mb-[16px]'>
+							<div
+								className='flex justify-between items-center mb-[16px] cursor-pointer'
+								onClick={() => toggleOpen(filter.id)}
+							>
 								<div className='flex items-center gap-x-[8px]'>
 									<filter.icon className='w-[24px]' />
 									<div className='font-dmSans font-medium text-xl text-[#303030]'>
@@ -73,8 +74,8 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 								</div>
 								<IconArrow
 									className={`${
-										filterOpen ? 'rotate-[90deg]' : ''
-									} w-[24px] h-[24px] cursor-pointer transition-all duration-300`}
+										filterOpen ? 'rotate-[180deg]' : ''
+									} w-[24px] h-[24px] transition-all duration-300`}
 									onClick={() => toggleOpen(filter.id)}
 								/>
 							</div>
