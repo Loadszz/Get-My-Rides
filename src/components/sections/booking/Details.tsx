@@ -10,6 +10,8 @@ import {
 import { useState } from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+
+import { useFormContext } from 'react-hook-form'
 type Props = {
 	isOpen: boolean
 	toggle: () => void
@@ -29,23 +31,27 @@ const Details = ({ isOpen, toggle }: Props) => {
 		country: '',
 		vatNumber: '',
 	})
+	const {
+		register,
+		control,
+		watch,
+		formState: { errors },
+	} = useFormContext<BookingFormData>()
+	const choice = watch('choice')
 
 	const handleChange = (field: keyof BookingFormData, value: string) => {
 		setForm(prev => ({ ...prev, [field]: value }))
 	}
 	const [phone, setPhone] = useState('')
-	const [choice, setChoice] = useState<string>('no')
+	// const [choice, setChoice] = useState<string>('no')
 	return (
 		<section
 			className={`${
 				isOpen ? 'pb-0' : 'border-b border-[#e5e5e5] pb-[24px]'
-			} pt-[40px] max-md:pt-[24px]`}
+			} pt-[40px] pb-[24px] max-lg:pb-0 max-md:pt-[24px]`}
 		>
-			{/* form */}
-			<form
-				action='#'
-				className='flex flex-wrap justify-between max-md:flex-col'
-			>
+			{/* body */}
+			<div className='flex flex-wrap justify-between max-md:flex-col'>
 				{/* header */}
 				<div className='flex justify-between items-center mb-[24px] max-md:mb-[16px]'>
 					{/* title */}
@@ -59,7 +65,7 @@ const Details = ({ isOpen, toggle }: Props) => {
 					/>
 				</div>
 				{/* body */}
-				<div className={`${isOpen ? 'block' : 'hidden'} space-y-[24px]`}>
+				<div className={`${isOpen ? 'block' : 'hidden'} w-full space-y-[24px]`}>
 					{/* description */}
 					<div className='font-dmSans text-base text-[#1a1a1a] mb-[24px] max-md:mb-[16px] max-md:text-sm'>
 						Main driver`s details as they appear on the driving license
@@ -79,6 +85,7 @@ const Details = ({ isOpen, toggle }: Props) => {
 								</label>
 								<input
 									id={item.name}
+									name={item.name}
 									type={item.type}
 									placeholder={item.placeholder}
 									value={form[item.name]}
@@ -106,7 +113,12 @@ const Details = ({ isOpen, toggle }: Props) => {
 								onChange={setPhone}
 								disableDropdown={false}
 								countryCodeEditable={false}
-								placeholder='+380 99 123 45 67'
+								isValid={value => {
+									if (value.replace(/\D/g, '').length < 10) {
+										return 'Please enter a valid phone number'
+									}
+									return true
+								}}
 							/>
 						</div>
 						{/* radio */}
@@ -174,6 +186,7 @@ const Details = ({ isOpen, toggle }: Props) => {
 										</label>
 										<input
 											id={item.name}
+											name={item.name}
 											type={item.type}
 											placeholder={item.placeholder}
 											value={form[item.name]}
@@ -204,7 +217,7 @@ const Details = ({ isOpen, toggle }: Props) => {
 						</div>
 					</div>
 				</div>
-			</form>
+			</div>
 		</section>
 	)
 }

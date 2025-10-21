@@ -14,11 +14,6 @@ const SearchPageClient = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const handleFilter = () => {
 		setIsOpen(!isOpen)
-		// if (!isOpen) {
-		// 	document.body.classList.add('lock')
-		// } else {
-		// 	document.body.classList.remove('lock')
-		// }
 	}
 	return (
 		<section className='pb-[88px]'>

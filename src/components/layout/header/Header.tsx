@@ -59,8 +59,8 @@ export const Header = () => {
 					pathname === '/search' ? 'hidden max-lg:flex' : 'flex'
 				} absolute inset-0 z-10 pointer-events-none`}
 			>
-				<IconBuildings className='absolute top-0 right-0 w-[958px] h-[539px]' />
-				<IconRoads className='absolute top-0 right-[-200px] w-[1241px] h-[550px]' />
+				<IconBuildings className='absolute top-0 right-[-40px] w-[958px] h-[539px]' />
+				<IconRoads className='absolute top-0 right-[-80px] w-[1241px] h-[550px]' />
 				<IconPins className='absolute top-[220px] right-0 w-[690px] h-[171px]' />
 			</div>
 			<div className='__container'>

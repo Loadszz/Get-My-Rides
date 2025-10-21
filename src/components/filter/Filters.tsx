@@ -37,6 +37,9 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 	const handleClearAll = () => {
 		setActiveFilters({})
 		onChange?.({})
+		if (window.innerWidth < 1024) {
+			handleFilter()
+		}
 	}
 
 	return (
@@ -75,36 +78,36 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 								<IconArrow
 									className={`${
 										filterOpen ? 'rotate-[180deg]' : ''
-									} w-[24px] h-[24px] transition-all duration-300`}
-									onClick={() => toggleOpen(filter.id)}
+									} h-[24px] transition-all duration-300`}
 								/>
 							</div>
 							<div
 								className={`${filterOpen ? 'block' : 'hidden'} space-y-[12px]`}
 							>
 								{filter.options.map(option => (
-									<label
+									<div
 										key={option.id}
-										htmlFor={option.id}
-										className='font-dmSans text-base text-[#303030] relative flex items-center gap-x-[16px] gap-y-[12px]'
+										className='font-dmSans text-base text-[#303030] flex items-center gap-x-[16px]'
 									>
-										<input
-											type='checkbox'
-											name={option.id}
-											id={option.id}
-											checked={
-												activeFilters[filter.key]?.includes(option.value) ||
-												false
-											}
-											onChange={() =>
-												handleFilterChange(filter.key, option.value)
-											}
-											className='sr-only peer'
-										/>
-										<div className='w-8 h-8 border-2 border-gray-400 rounded-md flex items-center justify-center peer-checked:border-blue-600 transition-colors cursor-pointer'></div>
-										<IconCheck className='absolute left-[7px] top-[8px] z-1 w-[18px] cursor-pointer hidden peer-checked:block' />
-										{option.label}
-									</label>
+										<label htmlFor={option.id} className='relative'>
+											<input
+												type='checkbox'
+												name={option.id}
+												id={option.id}
+												checked={
+													activeFilters[filter.key]?.includes(option.value) ||
+													false
+												}
+												onChange={() =>
+													handleFilterChange(filter.key, option.value)
+												}
+												className='sr-only peer'
+											/>
+											<div className='w-8 h-8 border-2 border-gray-400 rounded-md flex items-center justify-center peer-checked:border-blue-600 transition-colors cursor-pointer'></div>
+											<IconCheck className='absolute left-[7px] top-[8px] z-1 w-[18px] hidden peer-checked:block pointer-events-none' />
+										</label>
+										<span>{option.label}</span>
+									</div>
 								))}
 							</div>
 						</div>

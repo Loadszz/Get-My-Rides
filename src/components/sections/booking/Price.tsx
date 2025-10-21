@@ -46,10 +46,7 @@ const Price = ({
 
 	return (
 		<section className='max-lg:border-b max-lg:border-[#e5e5e5] max-lg:pb-[15px] mb-[24px] max-md:pt-[24px]'>
-			<form
-				onSubmit={handleSubmit}
-				className='p-[24px] border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)] max-md:border-none max-md:shadow-none max-md:p-0'
-			>
+			<div className='p-[24px] border border-[#e4e4e4] rounded-2xl shadow-[0_4px_15px_0_rgba(8,15,52,0.08)] max-md:border-none max-md:shadow-none max-md:p-0'>
 				<input type='hidden' name='productId' value={product.id} />
 				<input type='hidden' name='productName' value={product.name} />
 				<input type='hidden' name='days' value='8' />
@@ -138,7 +135,7 @@ const Price = ({
 					<span className='mr-[10px]'>Book Now</span>
 					<ArrowRight className='w-[24px]' />
 				</Button> */}
-			</form>
+			</div>
 		</section>
 	)
 }

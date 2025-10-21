@@ -11,11 +11,10 @@ import RentalLocation from '@/components/sections/booking/RentalLocation'
 import { Button } from '@/components/ui/Button'
 import { IServicesProps, servicesProps } from '@/data/booking/extras.type'
 import { Product } from '@/data/products.type'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
 
 const BookingPageClient = ({ product }: { product: Product }) => {
-	const formRef = useRef<HTMLFormElement>(null)
-
 	const [selectedExtras, setSelectedExtras] = useState<IServicesProps[]>(
 		servicesProps.map(item => ({ ...item, quantity: 0 }))
 	)
@@ -30,16 +29,27 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 	const toggleBlock = (key: string) => {
 		setOpenBlocks(prev => ({ ...prev, [key]: !prev[key] }))
 	}
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault() // чтобы страница не перезагрузилась
+	// создаем RHF форму
+	const methods = useForm<BookingFormValues>({
+		defaultValues: {
+			firstName: '',
+			lastName: '',
+			email: '',
+			phone: '',
+			choice: 'no',
+			companyName: '',
+			address: '',
+			addressSecond: '',
+			postalCode: '',
+			city: '',
+			country: '',
+			vatNumber: '',
+		},
+		mode: 'onSubmit', // проверка при сабмите
+	})
 
-		if (!formRef.current) return
-		const formData = new FormData(formRef.current)
-		const data: Record<string, string> = {}
-		formData.forEach((value, key) => {
-			data[key] = value.toString()
-		})
-		console.log('📤 Данные формы:', data)
+	const onSubmit = (data: BookingFormValues) => {
+		console.log('📤 Booking form data:', data)
 		alert('Данные "отправлены", проверь консоль')
 	}
 
@@ -47,100 +57,104 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 		<section>
 			<div className='__container'>
 				{/* body */}
-				<div className='flex justify-between gap-x-[40px] max-lg:flex-col'>
-					{/* column-left */}
-					<div className='flex-[0_1_849px] pt-[24px] pb-[88px] max-lg:pb-0 max-md:pt-[16px]'>
-						<Choice product={product} />
-						<RentalLocation
-							isOpen={openBlocks.rentalLocation}
-							toggle={() => toggleBlock('rentalLocation')}
-						/>
-						<Policies
-							isOpen={openBlocks.policies}
-							toggle={() => toggleBlock('policies')}
-						/>
-						<Extras
-							selectedExtras={selectedExtras}
-							setSelectedExtras={setSelectedExtras}
-							isOpen={openBlocks.extras}
-							toggle={() => toggleBlock('extras')}
-						/>
-						<Details
-							isOpen={openBlocks.details}
-							toggle={() => toggleBlock('details')}
-						/>
-						{/* button-form */}
-						<div className='max-lg:hidden'>
-							{/* info */}
-							<div className='text-sm text-[#1a1a1a] max-w-[670px] max-md:hidden mb-[24px]'>
-								By clicking Book Now, you are confirming that you have read,
-								understood, and accepted our{' '}
-								<a className='text-[#0a58ca] underline' href='#'>
-									Service Terms
-								</a>{' '}
-								and{' '}
-								<a className='text-[#0a58ca] underline' href='#'>
-									Varna Rental Terms and Conditions.
-								</a>
-							</div>
-							{/* button */}
-							<div className='flex justify-end max-md:hidden'>
-								<Button
-									formName='bookingForm'
-									type='submit'
-									variant='secondary'
-									className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px]'
-								>
-									<span className='mr-[10px]'>Book Now</span>
-									<ArrowRight className='w-[24px]' />
-								</Button>
+				<FormProvider {...methods}>
+					<form
+						id='bookingForm'
+						onSubmit={methods.handleSubmit(onSubmit)}
+						className='flex justify-between gap-x-[40px] max-lg:flex-col'
+					>
+						{/* column-left */}
+						<div className='flex-[0_1_849px] pt-[24px] pb-[88px] max-lg:pb-0 max-md:pt-[16px]'>
+							<Choice product={product} />
+							<RentalLocation
+								isOpen={openBlocks.rentalLocation}
+								toggle={() => toggleBlock('rentalLocation')}
+							/>
+							<Policies
+								isOpen={openBlocks.policies}
+								toggle={() => toggleBlock('policies')}
+							/>
+							<Extras
+								selectedExtras={selectedExtras}
+								setSelectedExtras={setSelectedExtras}
+								isOpen={openBlocks.extras}
+								toggle={() => toggleBlock('extras')}
+							/>
+							<Details
+								isOpen={openBlocks.details}
+								toggle={() => toggleBlock('details')}
+							/>
+							{/* button-form */}
+							<div className='max-lg:hidden'>
+								{/* info */}
+								<div className='text-sm text-[#1a1a1a] max-w-[670px] max-md:hidden mb-[24px]'>
+									By clicking Book Now, you are confirming that you have read,
+									understood, and accepted our{' '}
+									<a className='text-[#0a58ca] underline' href='#'>
+										Service Terms
+									</a>{' '}
+									and{' '}
+									<a className='text-[#0a58ca] underline' href='#'>
+										Varna Rental Terms and Conditions.
+									</a>
+								</div>
+								{/* button */}
+								<div className='flex justify-end max-md:hidden'>
+									<Button
+										formName='bookingForm'
+										type='submit'
+										variant='secondary'
+										className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px]'
+									>
+										<span className='mr-[10px]'>Book Now</span>
+										<ArrowRight className='w-[24px]' />
+									</Button>
+								</div>
 							</div>
 						</div>
-					</div>
-					{/* column-right */}
-					<div className='sticky top-[-50px] flex-[0_1_388px] h-full py-[50px] max-lg:py-[24px] max-md:flex-[0_1_auto]'>
-						<form id='bookingForm' ref={formRef} onSubmit={handleSubmit}>
+						{/* column-right */}
+						<div className='sticky top-[-50px] flex-[0_1_388px] h-full py-[50px] max-lg:py-[24px] max-md:flex-[0_1_auto]'>
 							<Information
 								isOpen={openBlocks.information}
 								toggle={() => toggleBlock('information')}
 							/>
-						</form>
-						<Price
-							product={product}
-							selectedExtras={selectedExtras}
-							isOpen={openBlocks.price}
-							toggle={() => toggleBlock('price')}
-						/>
-						<Help />
+							<Price
+								product={product}
+								selectedExtras={selectedExtras}
+								isOpen={openBlocks.price}
+								toggle={() => toggleBlock('price')}
+							/>
+							<Help />
+						</div>
+					</form>
+					{/* button-form-mobile */}
+					<div className='lg:hidden pb-[48px]'>
+						{/* info */}
+						<div className='text-sm text-[#1a1a1a] max-w-[670px] mb-[24px] lg:hidden'>
+							By clicking Book Now, you are confirming that you have read,
+							understood, and accepted our{' '}
+							<a className='text-[#0a58ca] underline' href='#'>
+								Service Terms
+							</a>{' '}
+							and{' '}
+							<a className='text-[#0a58ca] underline' href='#'>
+								Varna Rental Terms and Conditions.
+							</a>
+						</div>
+						{/* button */}
+						<div className='flex justify-end'>
+							<Button
+								formName='bookingForm'
+								type='submit'
+								variant='secondary'
+								className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px] max-md:w-full'
+							>
+								<span className='mr-[10px]'>Book Now</span>
+								<ArrowRight className='w-[24px]' />
+							</Button>
+						</div>
 					</div>
-				</div>
-				{/* button-form-mobile */}
-				<div className='lg:hidden pb-[48px]'>
-					{/* info */}
-					<div className='text-sm text-[#1a1a1a] max-w-[670px] mb-[24px] lg:hidden'>
-						By clicking Book Now, you are confirming that you have read,
-						understood, and accepted our{' '}
-						<a className='text-[#0a58ca] underline' href='#'>
-							Service Terms
-						</a>{' '}
-						and{' '}
-						<a className='text-[#0a58ca] underline' href='#'>
-							Varna Rental Terms and Conditions.
-						</a>
-					</div>
-					{/* button */}
-					<div className='flex justify-end'>
-						<Button
-							formName='bookingForm'
-							type='submit'
-							variant='secondary'
-							className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px] max-md:w-full'
-						>
-							<span className='mr-[10px]'>Book Now</span>
-							<ArrowRight className='w-[24px]' />
-						</Button>
-					</div>
-				</div>
+				</FormProvider>
 			</div>
 		</section>
 	)
