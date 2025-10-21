@@ -1,10 +1,26 @@
+'use client'
 import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Nav } from '@/components/nav/Nav'
 import { SocialIcons } from '@/components/social/SocialIcons'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
-
+import { SubmitHandler, useForm } from 'react-hook-form'
+type SubscribeFormValues = {
+	email: string
+}
 export const Footer = () => {
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm<SubscribeFormValues>()
+
+	const onSubmit: SubmitHandler<SubscribeFormValues> = data => {
+		console.log('📧 Email submitted:', data)
+		alert(`Email submitted: ${data.email}`)
+		reset() // очищаем поле после отправки
+	}
 	return (
 		<footer className='bg-[#1a1a1a]'>
 			<div className='__container'>
@@ -41,21 +57,30 @@ export const Footer = () => {
 						<div className='font-dmSans font-bold text-xl mb-[24px]'>
 							Subscribe For Fresh News
 						</div>
-						<div className='relative mb-[32px] max-md:mb-[24px]'>
+						<form
+							onSubmit={handleSubmit(onSubmit)}
+							className='relative mb-[32px] max-md:mb-[24px]'
+						>
 							<input
-								type='text'
+								type='email'
 								placeholder='Email'
+								{...register('email', { required: 'Email is required' })}
 								className='w-[415px] h-[64px] pl-[24px] pr-[188px] bg-[#2b2b2b] rounded-[14px] outline-none resize-input'
 							/>
 							<Button
-								type='button'
+								type='submit'
 								variant='secondary'
 								className='absolute top-[50%] translate-y-[-50%] right-[4px] flex justify-center py-[16px] w-[159px] rounded-xl max-lg:w-[100px] max-md:w-[159px] max-sm:w-[130px]'
 							>
 								<span className='mr-[10px]'>Send</span>
 								<ArrowRight className='w-[24px]' />
 							</Button>
-						</div>
+							{errors.email && (
+								<p className='absolute text-red-500 text-sm mt-1'>
+									{errors.email.message}
+								</p>
+							)}
+						</form>
 						<div>
 							<div className='font-dmSans font-bold text-xl mb-[24px] max-md:mb-[20px]'>
 								Social media

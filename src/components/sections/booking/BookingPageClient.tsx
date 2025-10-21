@@ -9,11 +9,18 @@ import Policies from '@/components/sections/booking/Policies'
 import Price from '@/components/sections/booking/Price'
 import RentalLocation from '@/components/sections/booking/RentalLocation'
 import { Button } from '@/components/ui/Button'
+import { CompanyFormData, DriverFormData } from '@/data/booking/details.type'
 import { IServicesProps, servicesProps } from '@/data/booking/extras.type'
 import { Product } from '@/data/products.type'
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
+export type BookingFormValues = DriverFormData &
+	CompanyFormData & {
+		choice: 'yes' | 'no'
+		from: string
+		to: string
+	}
 const BookingPageClient = ({ product }: { product: Product }) => {
 	const [selectedExtras, setSelectedExtras] = useState<IServicesProps[]>(
 		servicesProps.map(item => ({ ...item, quantity: 0 }))
@@ -44,6 +51,8 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 			city: '',
 			country: '',
 			vatNumber: '',
+			from: '',
+			to: '',
 		},
 		mode: 'onSubmit', // проверка при сабмите
 	})

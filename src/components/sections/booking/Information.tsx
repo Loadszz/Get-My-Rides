@@ -1,8 +1,11 @@
 'use client'
 import IconDate from '@/assets/icons/date.svg'
 import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import { BookingFormValues } from '@/components/sections/booking/BookingPageClient'
 import { formatDateTime } from '@/utils/formatDateTime'
 import { useSearchParams } from 'next/navigation'
+import { useEffect } from 'react'
+import { useFormContext } from 'react-hook-form'
 
 type Props = {
 	isOpen: boolean
@@ -12,6 +15,11 @@ const Information = ({ isOpen, toggle }: Props) => {
 	const searchParams = useSearchParams()
 	const from = searchParams.get('from') || ''
 	const to = searchParams.get('to') || ''
+	const { register, setValue } = useFormContext<BookingFormValues>()
+	useEffect(() => {
+		setValue('from', from)
+		setValue('to', to)
+	}, [from, to, setValue])
 
 	return (
 		<section className='mb-[40px] max-md:pb-[24px] max-md:border-b max-md:border-[rgb(229,229,229)] max-md:m-0'>
@@ -39,7 +47,7 @@ const Information = ({ isOpen, toggle }: Props) => {
 						<div className='font-dmSans text-base text-[#1a1a1a]'>
 							{formatDateTime(from)}
 						</div>
-						<input type='hidden' name='from' value={from} />
+						<input type='hidden' value={from} {...register('from')} />
 						<div className='font-dmSans font-semibold text-sm text-[#1a1a1a] mb-[8px]'>
 							Varna Rentals Office
 						</div>
@@ -53,7 +61,7 @@ const Information = ({ isOpen, toggle }: Props) => {
 						<div className='font-dmSans text-base text-[#1a1a1a]'>
 							{formatDateTime(to)}
 						</div>
-						<input type='hidden' name='to' value={to} />
+						<input type='hidden' value={to} {...register('to')} />
 						<div className='font-dmSans font-semibold text-sm text-[#1a1a1a] mb-[8px]'>
 							Varna Rentals Office
 						</div>

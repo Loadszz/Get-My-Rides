@@ -1,49 +1,30 @@
 'use client'
 import IconCheck from '@/assets/icons/check.svg'
 import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import { BookingFormValues } from '@/components/sections/booking/BookingPageClient'
 import {
 	companyDetailsProps,
-	CompanyFormData,
 	driverDetailsProps,
-	DriverFormData,
 } from '@/data/booking/details.type'
-import { useState } from 'react'
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
+import { Controller, useFormContext } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
-import { useFormContext } from 'react-hook-form'
 type Props = {
 	isOpen: boolean
 	toggle: () => void
 }
-type BookingFormData = DriverFormData & CompanyFormData
+
 const Details = ({ isOpen, toggle }: Props) => {
-	const [form, setForm] = useState<BookingFormData>({
-		firstName: '',
-		lastName: '',
-		email: '',
-		phone: '',
-		companyName: '',
-		address: '',
-		addressSecond: '',
-		postalCode: '',
-		city: '',
-		country: '',
-		vatNumber: '',
-	})
 	const {
 		register,
 		control,
 		watch,
 		formState: { errors },
-	} = useFormContext<BookingFormData>()
+	} = useFormContext<BookingFormValues>()
 	const choice = watch('choice')
 
-	const handleChange = (field: keyof BookingFormData, value: string) => {
-		setForm(prev => ({ ...prev, [field]: value }))
-	}
-	const [phone, setPhone] = useState('')
-	// const [choice, setChoice] = useState<string>('no')
 	return (
 		<section
 			className={`${
@@ -84,15 +65,19 @@ const Details = ({ isOpen, toggle }: Props) => {
 									{item.label}
 								</label>
 								<input
+									className='font-dmSans text-base text-[#757575] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] py-[16px] pl-[16px] outline-0 placeholder:font-dmSans placeholder:text-base placeholder:text-[#757575]'
 									id={item.name}
-									name={item.name}
 									type={item.type}
 									placeholder={item.placeholder}
-									value={form[item.name]}
-									onChange={e => handleChange(item.name, e.target.value)}
-									className='font-dmSans text-base text-[#757575] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] py-[16px] pl-[16px] outline-0 placeholder:font-dmSans placeholder:text-base placeholder:text-[#757575]'
-									required={item.required}
+									{...register(item.name as keyof BookingFormValues, {
+										required: `${item.label} is required`,
+									})}
 								/>
+								{errors[item.name as keyof BookingFormValues] && (
+									<p className='text-red-500 text-sm mt-1'>
+										{errors[item.name as keyof BookingFormValues]?.message}
+									</p>
+								)}
 							</div>
 						))}
 						<div className='flex flex-col flex-[0_1_47%]'>
@@ -102,39 +87,52 @@ const Details = ({ isOpen, toggle }: Props) => {
 							>
 								Phone Number*
 							</label>
-							<PhoneInput
-								inputProps={{
-									id: 'phone',
-									name: 'phone',
-									required: true,
+							<Controller
+								name='phone'
+								control={control}
+								rules={{
+									required: 'Phone* is required',
+									validate: value => {
+										console.log(value)
+										const phoneNumber = parsePhoneNumberFromString('+' + value)
+										if (!phoneNumber) return 'Invalid phone number'
+										if (!phoneNumber.isValid())
+											return 'Invalid phone number for this country'
+										return true
+									},
 								}}
-								country={'us'}
-								value={phone}
-								onChange={setPhone}
-								disableDropdown={false}
-								countryCodeEditable={false}
-								isValid={value => {
-									if (value.replace(/\D/g, '').length < 10) {
-										return 'Please enter a valid phone number'
-									}
-									return true
-								}}
+								render={({ field }) => (
+									<PhoneInput
+										inputProps={{
+											id: 'phone',
+											name: 'phone',
+										}}
+										{...field}
+										country={'us'}
+										onChange={val => field.onChange(val)}
+										disableDropdown={false}
+										countryCodeEditable={false}
+									/>
+								)}
 							/>
+							{errors.phone && (
+								<p className='text-red-500 text-sm mt-1'>
+									{errors.phone.message}
+								</p>
+							)}
 						</div>
 						{/* radio */}
 						<div className='flex flex-col flex-[0_1_47%]'>
-							<label className='font-dmSans font-bold text-base text-[#1a1a1a] mb-[11px]'>
+							<div className='font-dmSans font-bold text-base text-[#1a1a1a] mb-[11px]'>
 								Business Booking?
-							</label>
+							</div>
 							<div className='flex gap-x-[16px]'>
 								<div className='flex items-center gap-x-[8px]'>
 									<input
 										type='radio'
-										name='choice'
 										id='yes'
 										value='yes'
-										checked={choice === 'yes'}
-										onChange={e => setChoice(e.target.value)}
+										{...register('choice')}
 										className="appearance-none w-[24px] h-[24px] cursor-pointer border border-gray-400 rounded-full checked:bg-white0 checked:border-blue-600 relative
                  checked:after:content-[''] checked:after:block checked:after:w-[12px] checked:after:h-[12px] checked:after:rounded-full checked:after:bg-blue-600 checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2"
 									/>
@@ -145,11 +143,9 @@ const Details = ({ isOpen, toggle }: Props) => {
 								<div className='flex items-center gap-x-[8px]'>
 									<input
 										type='radio'
-										name='choice'
 										id='no'
 										value='no'
-										checked={choice === 'no'}
-										onChange={e => setChoice(e.target.value)}
+										{...register('choice')}
 										className="appearance-none w-[24px] h-[24px] cursor-pointer border border-gray-400 rounded-full checked:bg-white0 checked:border-blue-600 relative
                  checked:after:content-[''] checked:after:block checked:after:w-[12px] checked:after:h-[12px] checked:after:rounded-full checked:after:bg-blue-600 checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2"
 									/>
@@ -186,16 +182,22 @@ const Details = ({ isOpen, toggle }: Props) => {
 										</label>
 										<input
 											id={item.name}
-											name={item.name}
 											type={item.type}
 											placeholder={item.placeholder}
-											value={form[item.name]}
-											onChange={e => handleChange(item.name, e.target.value)}
+											{...register(item.name as keyof BookingFormValues, {
+												required: item.required
+													? `${item.label} is required`
+													: false,
+											})}
 											className={`${
 												item.id === 1 ? 'w-[47%] max-md:w-full' : 'w-full'
 											} font-dmSans text-base text-[#757575] border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] py-[16px] pl-[16px] outline-0 placeholder:font-dmSans placeholder:text-base placeholder:text-[#757575]`}
-											required={item.required}
 										/>
+										{errors[item.name as keyof BookingFormValues] && (
+											<p className='text-red-500 text-sm mt-1'>
+												{errors[item.name as keyof BookingFormValues]?.message}
+											</p>
+										)}
 									</div>
 								))}
 							</div>
