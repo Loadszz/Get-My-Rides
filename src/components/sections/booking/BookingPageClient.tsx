@@ -36,7 +36,6 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 	const toggleBlock = (key: string) => {
 		setOpenBlocks(prev => ({ ...prev, [key]: !prev[key] }))
 	}
-	// создаем RHF форму
 	const methods = useForm<BookingFormValues>({
 		defaultValues: {
 			firstName: '',
