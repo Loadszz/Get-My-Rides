@@ -2,11 +2,11 @@
 
 import Minus from '@/assets/icons/minus.svg'
 import Plus from '@/assets/icons/plus.svg'
-import { OurPlatformText } from '@/data/ourPlatformText'
+import { IFAQSectionProps } from '@/data/common/faqSection.type'
 import { useState } from 'react'
 
 type AccordionProps = {
-	items: OurPlatformText[]
+	items: IFAQSectionProps[]
 	multiple?: boolean
 }
 
