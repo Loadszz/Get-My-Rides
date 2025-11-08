@@ -43,13 +43,15 @@ export const FAQSection = ({ faqProps, title, variants }: IProps) => {
 					</div>
 					{/* column-right */}
 					<div className='relative flex-[0_1_45.2%] max-lg:hidden'>
-						<Image
-							src={faqProps[0]?.image}
-							fill
-							unoptimized
-							alt='ourPlatform'
-							className='object-cover rounded-2xl'
-						/>
+						{faqProps[0]?.image && (
+							<Image
+								src={faqProps[0]?.image}
+								fill
+								unoptimized
+								alt='ourPlatform'
+								className='object-cover rounded-2xl'
+							/>
+						)}
 					</div>
 				</div>
 			</div>
