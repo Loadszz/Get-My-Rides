@@ -2,7 +2,7 @@
 import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
 import { IServicesProps } from '@/data/booking/extras.type'
 import { Product } from '@/data/products.type'
-import { FormEvent, useMemo } from 'react'
+import { useMemo } from 'react'
 
 type SelectedExtra = IServicesProps & { quantity: number }
 
@@ -19,16 +19,8 @@ const Price = ({
 	isOpen,
 	toggle,
 }: PriceProps) => {
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault()
-		const formData = new FormData(e.currentTarget)
-		const data = Object.fromEntries(formData.entries())
-		console.log('Booking data:', data)
-	}
-
-	// --- Расчёты ---
 	const basePrice = product.price
-	const insurancePrice = 80 // фиксировано
+	const insurancePrice = 80
 	const extrasTotal = selectedExtras.reduce(
 		(sum, extra) => sum + extra.price * extra.quantity,
 		0
@@ -38,7 +30,6 @@ const Price = ({
 	const payAtPickup = (total * 0.87).toFixed(2)
 	const payNow = (total * 0.13).toFixed(2)
 
-	// --- Отфильтруем extras, у которых выбрали 1+ ---
 	const activeExtras = useMemo(
 		() => selectedExtras.filter(extra => extra.quantity > 0),
 		[selectedExtras]
@@ -50,7 +41,6 @@ const Price = ({
 				<input type='hidden' name='productId' value={product.id} />
 				<input type='hidden' name='productName' value={product.name} />
 				<input type='hidden' name='days' value='8' />
-
 				{/* header */}
 				<div className='flex justify-between flex-wrap gap-[14px] mb-[24px]'>
 					<div className='text-2xl font-bold text-[#1a1a1a] max-md:text-xl'>
@@ -67,21 +57,15 @@ const Price = ({
 					/>
 				</div>
 				<div className={`${isOpen ? 'block' : 'hidden'}`}>
-					{/* Основные пункты */}
 					<div className='flex flex-col gap-y-[16px] border-b border-[#e5e5e5] pb-[15px]'>
-						{/* Car rental */}
 						<div className='flex justify-between items-center font-dmSans text-base text-[#1a1a1a]'>
 							<span>Car rental</span>
 							<span>€{basePrice}</span>
 						</div>
-
-						{/* Full insurance */}
 						<div className='flex justify-between items-center font-dmSans text-base text-[#1a1a1a]'>
 							<span>Full insurance</span>
 							<span>€{insurancePrice}</span>
 						</div>
-
-						{/* Дополнительные Extras */}
 						{activeExtras.length > 0 && (
 							<>
 								{activeExtras.map(extra => (
@@ -98,7 +82,6 @@ const Price = ({
 							</>
 						)}
 					</div>
-					{/* Итого */}
 					<div className='flex flex-col gap-y-[16px] mt-[15px]'>
 						<div className='flex justify-between items-center font-dmSans text-base text-[#1a1a1a]'>
 							<span>Total</span>
@@ -114,27 +97,6 @@ const Price = ({
 						</div>
 					</div>
 				</div>
-				{/* Terms
-				<div className='text-sm text-[#1a1a1a] max-w-[670px] mb-[24px]'>
-					By clicking Book Now, you are confirming that you have read,
-					understood, and accepted our{' '}
-					<a className='text-[#0a58ca] underline' href='#'>
-						Service Terms
-					</a>{' '}
-					and{' '}
-					<a className='text-[#0a58ca] underline' href='#'>
-						Varna Rental Terms and Conditions.
-					</a>
-				</div>
-
-				<Button
-					type='submit'
-					variant='secondary'
-					className='flex justify-center py-[16px] w-full rounded-[6px]'
-				>
-					<span className='mr-[10px]'>Book Now</span>
-					<ArrowRight className='w-[24px]' />
-				</Button> */}
 			</div>
 		</section>
 	)

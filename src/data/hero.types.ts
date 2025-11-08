@@ -1,9 +1,9 @@
 import IconCheck from '@/assets/icons/check.svg'
-export interface heroProps {
+export interface IHeroProps {
 	icon: React.ElementType
 	text: string
 }
-export const heroData: heroProps[] = [
+export const heroData: IHeroProps[] = [
 	{ icon: IconCheck, text: 'Best prices' },
 	{ icon: IconCheck, text: 'Easy to book' },
 	{ icon: IconCheck, text: 'Great service' },

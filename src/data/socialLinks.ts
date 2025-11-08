@@ -4,11 +4,11 @@ import LinkedinIcon from '@/assets/icons/in.svg'
 import TikTokIcon from '@/assets/icons/tt.svg'
 import YouTubeIcon from '@/assets/icons/yb.svg'
 
-export interface SocialLink {
+export interface ISocialLink {
 	href: string
 	Icon: React.FC<React.SVGProps<SVGSVGElement>>
 }
-export const socialLinks: SocialLink[] = [
+export const socialLinks: ISocialLink[] = [
 	{ href: '#', Icon: FacebookIcon },
 	{ href: '#', Icon: InstagramIcon },
 	{ href: '#', Icon: TikTokIcon },

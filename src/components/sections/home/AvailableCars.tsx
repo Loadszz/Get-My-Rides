@@ -4,15 +4,11 @@ import { Button } from '@/components/ui/Button'
 import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
 import { Product } from '@/data/products.type'
-// import { goToBooking } from '@/utils/navigate-product'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 export const AvailableCars = ({ products }: { products: Product[] }) => {
-	const router = useRouter()
-
 	return (
 		<section className='pt-[64px] max-md:pt-[44px]'>
 			<div className='__container'>
@@ -22,7 +18,12 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 						Explore the available car fleet
 					</div>
 					{/* swiper-buttons */}
-					<SwiperButtons name='cars' className='max-md:hidden' />
+					<SwiperButtons
+						name='cars'
+						className='max-md:hidden'
+						arrowClassName='p-[8px] border border-[#0a58ca] [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a]'
+						arrowIconClassName='w-[24px]'
+					/>
 				</div>
 				{/* body */}
 				<div className='max-md:pb-[22px]'>
@@ -115,7 +116,6 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 											<div className='text-sm text-[#757575]'>per day</div>
 										</div>
 										<Button
-											// onClick={() => goToBooking(router, product, { from, to, city })}
 											type='button'
 											variant='transparent'
 											className='flex rounded-xl py-[8px] pl-[24px] w-[157px] rounded-[6px]'
@@ -129,7 +129,12 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 						))}
 					</Swiper>
 				</div>
-				<SwiperButtons name='cars' className={'md:hidden justify-center'} />
+				<SwiperButtons
+					name='cars'
+					className={'md:hidden justify-center'}
+					arrowClassName='p-[8px] border border-[#0a58ca] [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a]'
+					arrowIconClassName='w-[24px]'
+				/>
 			</div>
 		</section>
 	)

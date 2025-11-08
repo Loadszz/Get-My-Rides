@@ -17,7 +17,12 @@ export const AboutUs = () => {
 						What customers are saying about us
 					</div>
 					{/* swiper-buttons */}
-					<SwiperButtons name='about-us' className='max-md:hidden' />
+					<SwiperButtons
+						name='about-us'
+						className='max-md:hidden'
+						arrowClassName='p-[8px] border border-[#0a58ca] [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a]'
+						arrowIconClassName='w-[24px]'
+					/>
 				</div>
 			</div>
 			{/* body */}
@@ -90,7 +95,12 @@ export const AboutUs = () => {
 					))}
 				</Swiper>
 			</div>
-			<SwiperButtons name='about-us' className={'md:hidden justify-center'} />
+			<SwiperButtons
+				name='about-us'
+				className={'md:hidden justify-center'}
+				arrowClassName='p-[8px] border border-[#0a58ca] [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a]'
+				arrowIconClassName='w-[24px]'
+			/>
 		</section>
 	)
 }

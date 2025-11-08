@@ -22,7 +22,6 @@ const Extras = ({
 		selectedExtras.map(item => ({ ...item, quantity: item.quantity ?? 0 }))
 	)
 
-	// 🔁 синхронизация при изменении extras
 	useEffect(() => {
 		if (setSelectedExtras) {
 			setSelectedExtras(extras)

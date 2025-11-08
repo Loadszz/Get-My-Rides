@@ -18,10 +18,5 @@ export const goToBooking = (
 		...(params?.city ? { city: params.city } : {}),
 	}).toString()
 
-	console.log(
-		'Navigating to:',
-		`/booking/${product.id}${query ? `?${query}` : ''}`
-	)
-
 	router.push(`/booking/${product.id}${query ? `?${query}` : ''}`)
 }

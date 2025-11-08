@@ -8,7 +8,7 @@ type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset'
 	formName?: string
 	href?: string
-	variant?: 'primary' | 'secondary' | 'transparent' | 'sign'
+	variant?: 'primary' | 'secondary' | 'transparent' | 'sign' | 'white'
 }
 
 export const Button = ({
@@ -28,6 +28,7 @@ export const Button = ({
 		transparent:
 			'font-dmSans font-medium text-base text-[#0a58ca] border border-[#0a58ca] transform-all duration-300 hover:text-[#ffffff] hover:bg-[#0a58ca]',
 		sign: 'font-dmSans font-medium text-base text-[#ffffff] bg-[#FFFFFF3D] border border-[#FFFFFF8F] rounded-[12px] transform-all duration-300 hover:text-[#002088] hover:bg-[#ffffff]',
+		white: 'font-dmSans font-medium text-base bg-white',
 	}
 
 	const finalClassName = `${variants[variant]} ${className}`

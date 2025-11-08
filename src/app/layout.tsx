@@ -1,6 +1,7 @@
 import { dmSans, lato } from '@/assets/fonts/Fonts'
 import { Footer } from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
+import { MenuProvider } from '@/context/MenuContext'
 import '@/styles/style.css'
 import type { Metadata } from 'next'
 import 'swiper/css'
@@ -20,11 +21,13 @@ export default function RootLayout({
 	return (
 		<html lang='en' className={`${lato.className} ${dmSans.className}`}>
 			<body>
-				<div className='wrapper'>
-					<Header />
-					<main>{children}</main>
-					<Footer />
-				</div>
+				<MenuProvider>
+					<div className='wrapper'>
+						<Header />
+						<main>{children}</main>
+						<Footer />
+					</div>
+				</MenuProvider>
 			</body>
 		</html>
 	)

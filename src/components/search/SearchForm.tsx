@@ -14,12 +14,17 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 type FormProps = {
 	className?: string
+	textClassName?: string
+	variant?: 'primary' | 'secondary'
 }
 type CustomButtonProps = {
 	value?: string
 	onClick?: () => void
 }
-export const SearchForm = ({ className = '' }: FormProps) => {
+export const SearchForm = ({
+	className = '',
+	variant = 'primary',
+}: FormProps) => {
 	const router = useRouter()
 
 	const [locationFrom, setlocationFrom] = useState('Varna, Bulgaria')
@@ -29,7 +34,6 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 	const [availableProducts, setAvailableProducts] = useState<Product[]>([])
 	const [loading, setLoading] = useState(false)
 
-	// дефолтные даты +7 и +12 дней
 	useEffect(() => {
 		const start = new Date()
 		start.setDate(start.getDate() + 7)
@@ -43,7 +47,7 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 	const handleSearch = async (e: React.FormEvent) => {
 		e.preventDefault()
 		if (!fromDate || !toDate) {
-			alert('Выберите дату и время')
+			alert('Select date and time')
 			return
 		}
 
@@ -63,11 +67,11 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 				setAvailableProducts(data.products)
 				router.push(`/search?${params.toString()}`)
 			} else {
-				alert('Ошибка при получении машин')
+				alert('Error receiving cars')
 			}
 		} catch (err) {
 			console.error(err)
-			alert('Ошибка сети')
+			alert('Network error')
 		} finally {
 			setLoading(false)
 		}
@@ -75,7 +79,9 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 	const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
 		({ value, onClick }, ref) => (
 			<button
-				className='font-dmSans text-base text-[#303030] text-left w-full py-[16px] pl-[48px] outline-0 cursor-pointer'
+				className={`${
+					variant === 'primary' ? 'text-[#303030]' : 'text-white'
+				} font-dmSans text-base text-left w-full py-[16px] pl-[48px] outline-0 cursor-pointer`}
 				type='button'
 				onClick={onClick}
 				ref={ref}
@@ -90,29 +96,50 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 		<form
 			id='my-form'
 			onSubmit={handleSearch}
-			className={`${className} flex items-center gap-x-[24px] p-[24px] bg-white rounded-2xl mb-[40px] max-lg:flex-col max-md:mb-[16px] max-sm:p-[16px]`}
+			className={`${className} flex justify-between items-center gap-x-[19px] p-[24px] rounded-2xl max-lg:flex-col max-sm:p-[16px]`}
 		>
-			<div className='flex items-center gap-[24px] w-full max-2xl:flex-wrap max-sm:gap-y-[12px]'>
+			<div className='flex items-center gap-[22px] w-full max-2xl:flex-wrap max-sm:gap-y-[12px]'>
 				{/* location-from */}
-				<div className='flex-[0_0_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
-					<label className='inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base'>
+				<div className='flex-[0_1_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
+					<label
+						className={`${
+							variant === 'primary' ? 'text-[#1a1a1a]' : 'text-white'
+						} inline-block font-dmSans font-bold text-xl mb-[10px] max-md:text-base`}
+					>
 						Pick-up location
 					</label>
-					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
+					<div
+						className={`${
+							variant === 'primary'
+								? 'ring-[#0A58CA1C]'
+								: 'ring-[#ffffff1c] bg-[rgba(255,255,255,0.16)]'
+						} border-[0.5px] border-[#3a83ed] ring-[3px] rounded-xl transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50`}
+					>
 						<Select
 							options={locationProps}
 							value={locationFrom}
 							onChange={setlocationFrom}
+							variant={variant}
 						/>
 					</div>
 				</div>
 
 				{/* date-from */}
-				<div className='flex-[0_0_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
-					<label className='inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base'>
+				<div className='flex-[0_1_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
+					<label
+						className={`${
+							variant === 'primary' ? 'text-[#1a1a1a]' : 'text-white'
+						} inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base`}
+					>
 						Date from
 					</label>
-					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
+					<div
+						className={`${
+							variant === 'primary'
+								? 'ring-[#0A58CA1C]'
+								: 'ring-[#ffffff1c] bg-[rgba(255,255,255,0.16)]'
+						} border-[0.5px] border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50`}
+					>
 						<DatePicker
 							customInput={<CustomButton />}
 							selected={fromDate}
@@ -126,10 +153,10 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							minTime={
 								fromDate &&
 								fromDate.toDateString() === new Date().toDateString()
-									? new Date() // текущая дата и время
-									: new Date(new Date().setHours(0, 0, 0, 0)) // 00:00 текущего дня
+									? new Date()
+									: new Date(new Date().setHours(0, 0, 0, 0))
 							}
-							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
+							maxTime={new Date(new Date().setHours(23, 45, 0, 0))}
 							withPortal
 							showIcon
 							fixedHeight
@@ -162,31 +189,56 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 								</div>
 							)}
 							icon={
-								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
+								<IconDate
+									className={`${
+										variant === 'primary' ? 'text-[#0a58ca]' : 'text-white'
+									} !w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]`}
+								/>
 							}
 						/>
 					</div>
 				</div>
 				{/* location-to */}
-				<div className='flex-[0_0_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
-					<label className='inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base'>
+				<div className='flex-[0_1_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
+					<label
+						className={`${
+							variant === 'primary' ? 'text-[#1a1a1a]' : 'text-white'
+						} inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base`}
+					>
 						Drop-off location
 					</label>
-					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
+					<div
+						className={`${
+							variant === 'primary'
+								? 'ring-[#0A58CA1C]'
+								: 'ring-[#ffffff1c] bg-[rgba(255,255,255,0.16)]'
+						} border-[0.5px] border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50`}
+					>
 						<Select
 							options={locationProps}
 							value={locationTo}
 							onChange={setlocationTo}
+							variant={variant}
 						/>
 					</div>
 				</div>
 
 				{/* date-to */}
-				<div className='flex-[0_0_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
-					<label className='inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base'>
+				<div className='flex-[0_1_242px] max-2xl:flex-[1_0_48%] max-md:flex-[1_0_100%]'>
+					<label
+						className={`${
+							variant === 'primary' ? 'text-[#1a1a1a]' : 'text-white'
+						} inline-block font-dmSans font-bold text-xl text-[#1a1a1a] mb-[10px] max-md:text-base`}
+					>
 						Date to
 					</label>
-					<div className='border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50'>
+					<div
+						className={`${
+							variant === 'primary'
+								? 'ring-[#0A58CA1C]'
+								: 'ring-[#ffffff1c] bg-[rgba(255,255,255,0.16)]'
+						} border border-[#3a83ed] rounded-xl ring-[3px] ring-[#0A58CA1C] cursor-pointer transition-shadow duration-300 hover:border-[#0a58ca] hover:shadow-md hover:shadow-[#0a58ca]/50`}
+					>
 						<DatePicker
 							customInput={<CustomButton />}
 							selected={toDate}
@@ -200,10 +252,10 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 							minTime={
 								fromDate &&
 								fromDate.toDateString() === new Date().toDateString()
-									? new Date() // текущая дата и время
-									: new Date(new Date().setHours(0, 0, 0, 0)) // 00:00 текущего дня
+									? new Date()
+									: new Date(new Date().setHours(0, 0, 0, 0))
 							}
-							maxTime={new Date(new Date().setHours(23, 45, 0, 0))} // 23:45
+							maxTime={new Date(new Date().setHours(23, 45, 0, 0))}
 							withPortal
 							showIcon
 							fixedHeight
@@ -236,7 +288,11 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 								</div>
 							)}
 							icon={
-								<IconDate className='!w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]' />
+								<IconDate
+									className={`${
+										variant === 'primary' ? 'text-[#0a58ca]' : 'text-white'
+									} !w-[24px] !h-[24px] !p-0 !top-[50%] !translate-y-[-50%] !left-[16px]`}
+								/>
 							}
 						/>
 					</div>
@@ -246,12 +302,22 @@ export const SearchForm = ({ className = '' }: FormProps) => {
 			<div className='flex pt-[38px] max-sm:w-full max-sm:pt-[16px]'>
 				<Button
 					type='submit'
-					variant='secondary'
+					variant={`${variant === 'primary' ? 'secondary' : 'white'}`}
 					formName='my-form'
 					className='flex justify-center items-center rounded-xl py-[16px] w-[264px] max-sm:w-full max-sm:justify-center'
 				>
-					<span className='mr-[10px]'>Search</span>
-					<IconSearch className='w-[24px]' />
+					<span
+						className={`${
+							variant === 'primary' ? 'text-white' : 'text-[#1a1a1a]'
+						} mr-[10px]`}
+					>
+						Search
+					</span>
+					<IconSearch
+						className={`${
+							variant === 'primary' ? 'text-white' : 'text-[#1a1a1a]'
+						} w-[24px]`}
+					/>
 				</Button>
 			</div>
 		</form>

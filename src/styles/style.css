@@ -62,7 +62,6 @@
 	body {
 		height: 100%;
 		overflow-x: hidden;
-		/* min-width: $minWidth + px; */
 	}
 	body {
 		color: var(--color-main);
@@ -70,7 +69,6 @@
 		font-family: var(--font-lato);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--text-base--line-height);
-		/* text-rendering: optimizeLegibility; */
 		-ms-text-size-adjust: 100%;
 		-moz-text-size-adjust: 100%;
 		-webkit-text-size-adjust: 100%;
@@ -80,7 +78,6 @@
 	input,
 	button,
 	textarea {
-		/* font-family: $fontFamily; */
 		font-size: inherit;
 	}
 	button {
@@ -135,8 +132,14 @@
 }
 
 @layer utilities {
-	.h1 {
+	.h1-home {
 		@apply font-lato font-bold text-[5rem] leading-[5rem] max-md:text-[2rem] max-md:leading-[2.5rem];
+	}
+	.h1 {
+		@apply font-lato font-bold text-[3.5rem] leading-[1.14] max-md:text-[2rem] max-md:leading-[1.25];
+	}
+	.h2 {
+		@apply font-lato font-bold text-[2.5rem] leading-[1.2] text-[#1a1a1a] max-md:text-[2rem] max-md:leading-[1.25];
 	}
 	.title {
 		@apply font-bold text-5xl text-[#1a1a1a] max-md:text-[2rem];
@@ -149,6 +152,28 @@
 	}
 	.lock {
 		@apply overflow-hidden;
+	}
+	.no-scrollbar {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.scrollbar {
+		@apply [scrollbar-width:thin] [scrollbar-color:#0a58ca_transparent];
+	}
+
+	.scrollbar::-webkit-scrollbar {
+		@apply h-[8px] w-[8px];
+	}
+
+	.scrollbar::-webkit-scrollbar-track {
+		@apply bg-transparent;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		@apply bg-[#0a58ca] rounded-lg;
 	}
 	.my-custom-datepicker .ant-picker-suffix {
 		@apply !opacity-100;

@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation'
 type PageParams = {
 	id: string
 }
-
 const page = async ({ params }: { params: Promise<PageParams> }) => {
 	const { id } = await params
 	let product

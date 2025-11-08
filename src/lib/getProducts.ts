@@ -12,7 +12,7 @@ export async function getProducts(): Promise<Product[]> {
 	})
 
 	if (!res.ok) {
-		throw new Error(`Не удалось загрузить товары: ${res.statusText}`)
+		throw new Error(`Failed to load items: ${res.statusText}`)
 	}
 
 	const data = await res.json()
@@ -25,7 +25,7 @@ export async function getProduct(id: string | number): Promise<Product> {
 	})
 
 	if (!res.ok) {
-		throw new Error(`Не удалось загрузить товар: ${res.statusText}`)
+		throw new Error(`Failed to load product: ${res.statusText}`)
 	}
 
 	const data = await res.json()

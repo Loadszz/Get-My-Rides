@@ -6,8 +6,9 @@ export interface ISelectProps {
 	options: ILocationProps[]
 	value: string
 	onChange: (value: string) => void
+	variant?: 'primary' | 'secondary'
 }
-export const Select = ({ options, value, onChange }: ISelectProps) => {
+export const Select = ({ options, value, onChange, variant }: ISelectProps) => {
 	const [open, setOpen] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
 
@@ -35,8 +36,16 @@ export const Select = ({ options, value, onChange }: ISelectProps) => {
 				onClick={() => setOpen(!open)}
 				className='flex items-center gap-x-[10px] py-[16px] pl-[14px] w-full focus:outline-none'
 			>
-				<IconLocation className='w-[24px] h-[24px]' />
-				<span className='font-dmSans text-base text-[#303030]'>
+				<IconLocation
+					className={`${
+						variant === 'primary' ? 'text-[#0A58CA]' : 'text-white'
+					} w-[24px] h-[24px]`}
+				/>
+				<span
+					className={`${
+						variant === 'primary' ? 'text-[#303030]' : 'text-white'
+					} font-dmSans text-base`}
+				>
 					{value || 'Varna, Bulgaria'}
 				</span>
 			</button>

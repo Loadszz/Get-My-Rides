@@ -1,8 +1,8 @@
 'use client'
-import SearchResults from '@/app/search/search-results'
 import IconFilter from '@/assets/icons/filter.svg'
 import IconMap from '@/assets/icons/map.svg'
 import Filters from '@/components/filter/Filters'
+import SearchResults from '@/components/sections/search/SearchResults'
 import { SortSelect } from '@/components/sections/search/SortSelect'
 import { Suspense, useState } from 'react'
 

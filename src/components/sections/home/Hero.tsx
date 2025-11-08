@@ -20,13 +20,13 @@ export const Hero = () => {
 						</div>
 					</div>
 					{/* h1 */}
-					<h1 className='h1 mb-[16px]'>Compare Rental Cars</h1>
+					<h1 className='h1-home mb-[16px]'>Compare Rental Cars</h1>
 					{/* description */}
 					<div className='font-dmSans font-medium text-base mb-[48px] max-md:order-1 max-md:mb-[24px]'>
 						Car rental comparison & Booking platform
 					</div>
 					{/* form */}
-					<SearchForm />
+					<SearchForm className='bg-white mb-[40px] max-md:mb-[16px]' />
 					{/* footer */}
 					<div className='flex items-center gap-[24px] max-md:order-2 max-md:flex-wrap max-md:items-baseline'>
 						{heroData.map((item, index) => (

@@ -3,6 +3,10 @@ import SwiperArrowLeft from '@/assets/icons/arrow-slider-left.svg'
 import SwiperArrowRight from '@/assets/icons/arrow-slider-right.svg'
 type SwiperButtonsProps = {
 	className?: string
+	arrowClassName?: string
+	arrowRightClassName?: string
+	arrowLeftClassName?: string
+	arrowIconClassName?: string
 	prevClass?: string
 	nextClass?: string
 	name?: string
@@ -10,20 +14,24 @@ type SwiperButtonsProps = {
 const SwiperButtons = ({
 	name,
 	className = '',
+	arrowClassName = '',
+	arrowRightClassName = '',
+	arrowLeftClassName = '',
+	arrowIconClassName = '',
 	prevClass = `${name}-prev-btn`,
 	nextClass = `${name}-next-btn`,
 }: SwiperButtonsProps) => {
 	return (
 		<div className={`${className} flex gap-x-[12px] z-1`}>
 			<button
-				className={`${prevClass} [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a] bg-blue-600 p-[8px] border border-[#0a58ca] rounded-full`}
+				className={`${prevClass} ${arrowClassName} ${arrowLeftClassName} bg-[#0a58ca] rounded-full`}
 			>
-				<SwiperArrowLeft className='w-[24px] cursor-pointer' />
+				<SwiperArrowLeft className={`${arrowIconClassName} cursor-pointer`} />
 			</button>
 			<button
-				className={`${nextClass} [&.swiper-button-disabled]:bg-inherit [&.swiper-button-disabled]:text-[#1a1a1a] bg-blue-600 p-[8px] border border-[#0a58ca] rounded-full`}
+				className={`${nextClass} ${arrowClassName} ${arrowRightClassName} bg-[#0a58ca] rounded-full`}
 			>
-				<SwiperArrowRight className='w-[24px] cursor-pointer' />
+				<SwiperArrowRight className={`${arrowIconClassName} cursor-pointer`} />
 			</button>
 		</div>
 	)

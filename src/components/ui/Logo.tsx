@@ -14,7 +14,7 @@ export const Logo = ({ className = '' }) => {
 
 	return (
 		<Link
-			className={`${className} font-bold text-[2rem] leading-[1.25] whitespace-nowrap`}
+			className={`${className} font-bold text-[2rem] leading-[1.25] whitespace-nowrap max-md:text-[1.75rem] max-md:leading-[1.43]`}
 			onClick={handleClick}
 			href='/'
 		>

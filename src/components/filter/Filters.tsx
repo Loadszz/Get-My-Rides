@@ -30,7 +30,7 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 				? prevValues.filter(v => v !== value)
 				: [...prevValues, value]
 			const newState = { ...prev, [key]: newValues }
-			setTimeout(() => onChange?.(newState)) // чтобы избежать setState во время render
+			setTimeout(() => onChange?.(newState))
 			return newState
 		})
 	}

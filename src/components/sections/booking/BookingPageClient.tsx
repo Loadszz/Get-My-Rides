@@ -53,12 +53,12 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 			from: '',
 			to: '',
 		},
-		mode: 'onSubmit', // проверка при сабмите
+		mode: 'onSubmit',
 	})
 
 	const onSubmit = (data: BookingFormValues) => {
 		console.log('📤 Booking form data:', data)
-		alert('Данные "отправлены", проверь консоль')
+		alert('Data sent, check console.')
 	}
 
 	return (

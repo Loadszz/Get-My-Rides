@@ -17,7 +17,6 @@ export const SortSelect = ({
 	const [open, setOpen] = useState(false)
 	const selectRef = useRef<HTMLDivElement>(null)
 
-	// Текущий текст для отображения
 	const label =
 		value === 'price-asc'
 			? 'Price: Low to High'
@@ -25,7 +24,6 @@ export const SortSelect = ({
 			? 'Price: High to Low'
 			: 'Sort by price'
 
-	// Закрытие при клике вне
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
@@ -39,7 +37,6 @@ export const SortSelect = ({
 		return () => document.removeEventListener('mousedown', handleClickOutside)
 	}, [])
 
-	// Обработчик выбора
 	const handleSelect = (val: 'price-asc' | 'price-desc') => {
 		onChange(val)
 		setOpen(false)

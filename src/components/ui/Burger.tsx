@@ -1,9 +1,8 @@
 export type Props = {
-	isScrolled: boolean
 	isOpen: boolean
 	handleBurger: () => void
 }
-const Burger = ({ isScrolled, isOpen, handleBurger }: Props) => {
+const Burger = ({ isOpen, handleBurger }: Props) => {
 	return (
 		<button
 			type='button'
@@ -13,21 +12,19 @@ const Burger = ({ isScrolled, isOpen, handleBurger }: Props) => {
 			onClick={handleBurger}
 		>
 			<span
-				className={`absolute w-[12px] h-[2px] top-[4px] translate-x-[-50%] left-[50%] transition-all duration-300 rounded-[32px] ${
+				className={`absolute w-[12px] h-[2px] top-[4px] translate-x-[-50%] left-[50%] transition-all duration-300 rounded-[32px] bg-white ${
 					isOpen ? 'rotate-[45deg] top-[50%]' : ''
-				} 
-				${isScrolled ? 'bg-black' : 'bg-white'}`}
+				} `}
 			></span>
 			<span
-				className={`absolute w-[18px] h-[2px] top-1/2 transform -translate-y-1/2 translate-x-[-50%] left-[50%] duration-300 rounded-[32px] ${
+				className={`absolute w-[18px] h-[2px] top-1/2 transform -translate-y-1/2 translate-x-[-50%] left-[50%] duration-300 rounded-[32px] bg-white ${
 					isOpen ? 'hidden' : ''
-				} ${isScrolled ? 'bg-black' : 'bg-white'}`}
+				}`}
 			></span>
 			<span
-				className={`absolute w-[12px] h-[2px] bottom-[4px] translate-x-[-50%] left-[50%] transition-all duration-300 rounded-[32px] ${
+				className={`absolute w-[12px] h-[2px] bottom-[4px] translate-x-[-50%] left-[50%] transition-all duration-300 rounded-[32px] bg-white ${
 					isOpen ? 'rotate-[-45deg] top-[50%]' : ''
-				} 
-				${isScrolled ? 'bg-black' : 'bg-white'}`}
+				} `}
 			></span>
 		</button>
 	)

@@ -3,7 +3,7 @@ import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { SortSelect } from '@/components/sections/search/SortSelect'
 import { Button } from '@/components/ui/Button'
 import { Product } from '@/data/products.type'
-import { goToBooking } from '@/utils/navigate-product'
+import { goToBooking } from '@/utils/navigateProduct'
 import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -13,7 +13,6 @@ type SearchResultsProps = {
 	sortOrder: 'price-asc' | 'price-desc'
 	setSortOrder: (value: 'price-asc' | 'price-desc') => void
 }
-
 export default function SearchResults({
 	filters,
 	sortOrder,
@@ -24,7 +23,6 @@ export default function SearchResults({
 	const [loading, setLoading] = useState(true)
 	const [visibleCount, setVisibleCount] = useState(8)
 	const router = useRouter()
-	// Получаем параметры из URL
 	const from = searchParams.get('from')
 	const to = searchParams.get('to')
 	const city = searchParams.get('city')
@@ -38,7 +36,6 @@ export default function SearchResults({
 					...(from ? { from } : {}),
 					...(to ? { to } : {}),
 				}).toString()
-
 				const res = await fetch(`/api/products?${query}`)
 				const data = await res.json()
 				setProducts(data.products || [])
@@ -48,7 +45,6 @@ export default function SearchResults({
 				setLoading(false)
 			}
 		}
-
 		fetchProducts()
 	}, [city, from, to])
 
@@ -59,11 +55,9 @@ export default function SearchResults({
 
 			const productValue = (product as Product & Record<string, unknown>)[key]
 
-			// 🎯 Обрабатываем фильтр по цене
 			if (key === 'price') {
 				const price = Number(productValue)
 				let match = false
-
 				for (const range of filterValues) {
 					if (range.includes('-')) {
 						const [min, max] = range.split('-').map(Number)
@@ -79,11 +73,9 @@ export default function SearchResults({
 						}
 					}
 				}
-
 				if (!match) return false
 				continue
 			}
-
 			if (Array.isArray(productValue)) {
 				if (
 					!productValue.some((v: { value?: string }) =>
@@ -97,16 +89,14 @@ export default function SearchResults({
 		}
 		return true
 	})
-	// Сортировка
+
 	const filteredAndSortedProducts = [...filteredProducts]
 	if (sortOrder === 'price-asc') {
 		filteredAndSortedProducts.sort((a, b) => a.price - b.price)
 	} else if (sortOrder === 'price-desc') {
 		filteredAndSortedProducts.sort((a, b) => b.price - a.price)
 	}
-
 	const handleLoadMore = () => setVisibleCount(prev => prev + 8)
-
 	if (loading)
 		return <div className='text-center py-10 text-gray-500'>Загрузка...</div>
 	return (
@@ -213,11 +203,12 @@ export default function SearchResults({
 							</div>
 						))
 				) : (
-					<div>Нет доступных машин</div>
+					<div className='font-dmSans font-black text-4xl text-[#1a1a1a]'>
+						No cars available
+					</div>
 				)}
 			</div>
 			{/* button */}
-			{/* Load More button */}
 			{filteredAndSortedProducts.length > 0 &&
 				visibleCount < filteredAndSortedProducts.length && (
 					<div className='flex justify-center'>

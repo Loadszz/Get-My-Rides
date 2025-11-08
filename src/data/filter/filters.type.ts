@@ -8,21 +8,21 @@ import IconManualTransmission from '@/assets/icons/filter/manual-transmission-fi
 import IconPaymentMethod from '@/assets/icons/filter/payment-method-filter.svg'
 import IconPeople from '@/assets/icons/filter/people-filter.svg'
 
-export type TFilterOption = {
+export type FilterOption = {
 	id: string
 	label: string
 	value: string
 }
 
-export type TFilterGroup = {
+export type FilterGroup = {
 	id: number
 	icon: React.ElementType
 	title: string
 	key: string
-	options: TFilterOption[]
+	options: FilterOption[]
 }
 
-export const filters: TFilterGroup[] = [
+export const filters: FilterGroup[] = [
 	{
 		id: 1,
 		icon: IconLocation,

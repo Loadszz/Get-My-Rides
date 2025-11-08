@@ -4,7 +4,6 @@ import avatar3 from '@/assets/images/sections/home/about-us-3.jpg'
 import avatar4 from '@/assets/images/sections/home/about-us-4.jpg'
 import avatar5 from '@/assets/images/sections/home/about-us-5.jpg'
 import avatar6 from '@/assets/images/sections/home/about-us-6.jpg'
-
 import { StaticImageData } from 'next/image'
 
 export type AboutUsCard = {
