@@ -12,7 +12,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 type SubscribeFormValues = {
 	email: string
 }
-export const Footer = () => {
+const Footer = () => {
 	const {
 		register,
 		handleSubmit,
@@ -134,3 +134,4 @@ export const Footer = () => {
 		</footer>
 	)
 }
+export default Footer

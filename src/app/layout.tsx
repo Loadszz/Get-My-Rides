@@ -1,5 +1,5 @@
 import { dmSans, lato } from '@/assets/fonts/Fonts'
-import { Footer } from '@/components/layout/footer/Footer'
+import Footer from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
 import { MenuProvider } from '@/context/MenuContext'
 import '@/styles/style.css'

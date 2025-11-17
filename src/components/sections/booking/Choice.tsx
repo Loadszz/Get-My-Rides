@@ -46,7 +46,7 @@ const Choice = ({ product }: { product: Product }) => {
 						{/* product-information-mobile */}
 						<div className='space-y-[16px]'>
 							<div className='flex items-center gap-x-[14px]'>
-								<IconCheck className='w-[24px] text-[#0a58ca] bg-[#0a58ca]' />
+								<IconCheck className='w-[24px]' />
 								<div className='font-dmSans text-base text-[#1a1a1a]'>
 									Free cancellation up to 48 hours
 								</div>
