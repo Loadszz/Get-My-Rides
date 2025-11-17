@@ -1,7 +1,5 @@
 import ThankYouPageClient from '@/components/sections/thank-you/ThankYouPageClient'
 
-const page = () => {
+export default async function page() {
 	return <ThankYouPageClient />
 }
-
-export default page
