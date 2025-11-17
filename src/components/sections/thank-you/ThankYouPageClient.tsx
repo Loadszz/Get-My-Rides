@@ -2,6 +2,7 @@
 import TipsAndGuides from '@/components/common/TipsAndGuides'
 import OrderStatus from '@/components/sections/thank-you/OrderStatus'
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
 const ThankYouPageClient = () => {
 	const params = useSearchParams()
@@ -33,7 +34,9 @@ const ThankYouPageClient = () => {
 					</div>
 				</div>
 			</section>
-			<OrderStatus items={data} />
+			<Suspense fallback={<div>Loading booking info...</div>}>
+				<OrderStatus items={data} />
+			</Suspense>
 			<TipsAndGuides variants='thank-you' />
 		</>
 	)
