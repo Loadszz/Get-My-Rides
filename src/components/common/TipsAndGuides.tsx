@@ -2,12 +2,26 @@ import { tipsAndGuidesProps } from '@/data/car-rental/tipsAndGuides.type'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const TipsAndGuides = () => {
+interface ITipsAndGuidesProps {
+	variants?: 'thank-you'
+}
+
+const TipsAndGuides = ({ variants }: ITipsAndGuidesProps) => {
 	return (
-		<section className='py-[88px] max-md:py-[40px]'>
+		<section
+			className={`${
+				variants === 'thank-you'
+					? 'py-[93px] max-md:pt-[40px] max-md:pb-[60px]'
+					: 'py-[88px] max-md:py-[40px]'
+			}`}
+		>
 			<div className='__container'>
 				{/* header */}
-				<div className='text-center max-w-[906px] mx-auto mb-[48px] max-md:text-left max-md:mb-[24px]'>
+				<div
+					className={`${
+						variants === 'thank-you' ? 'text-left' : 'text-center mx-auto'
+					} max-w-[906px] mb-[48px] max-md:text-left max-md:mb-[24px]`}
+				>
 					{/* title */}
 					<div className='h2 mb-[16px]'>Driving Tips & Travel Guides</div>
 					{/* description */}

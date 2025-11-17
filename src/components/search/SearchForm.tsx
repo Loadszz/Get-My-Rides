@@ -2,6 +2,7 @@
 import IconArrowLeft from '@/assets/icons/arrow-slider-left.svg'
 import IconArrowRight from '@/assets/icons/arrow-slider-right.svg'
 import IconDate from '@/assets/icons/date.svg'
+import IconLocation from '@/assets/icons/location.svg'
 import IconSearch from '@/assets/icons/search.svg'
 import { Button } from '@/components/ui/Button'
 import { Select } from '@/components/ui/Select'
@@ -15,6 +16,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 type FormProps = {
 	className?: string
 	textClassName?: string
+	buttonTitle?: string
 	variant?: 'primary' | 'secondary'
 }
 type CustomButtonProps = {
@@ -23,6 +25,7 @@ type CustomButtonProps = {
 }
 export const SearchForm = ({
 	className = '',
+	buttonTitle = 'Search',
 	variant = 'primary',
 }: FormProps) => {
 	const router = useRouter()
@@ -119,7 +122,15 @@ export const SearchForm = ({
 							options={locationProps}
 							value={locationFrom}
 							onChange={setlocationFrom}
+							getLabel={option => `${option.city}, ${option.country}`}
 							variant={variant}
+							icon={
+								<IconLocation
+									className={`${
+										variant === 'primary' ? 'text-[#0A58CA]' : 'text-white'
+									} w-[24px] h-[24px]`}
+								/>
+							}
 						/>
 					</div>
 				</div>
@@ -216,9 +227,17 @@ export const SearchForm = ({
 					>
 						<Select
 							options={locationProps}
-							value={locationTo}
-							onChange={setlocationTo}
+							value={locationFrom}
+							onChange={setlocationFrom}
+							getLabel={option => `${option.city}, ${option.country}`}
 							variant={variant}
+							icon={
+								<IconLocation
+									className={`${
+										variant === 'primary' ? 'text-[#0A58CA]' : 'text-white'
+									} w-[24px] h-[24px]`}
+								/>
+							}
 						/>
 					</div>
 				</div>
@@ -311,7 +330,7 @@ export const SearchForm = ({
 							variant === 'primary' ? 'text-white' : 'text-[#1a1a1a]'
 						} mr-[10px]`}
 					>
-						Search
+						{buttonTitle}
 					</span>
 					<IconSearch
 						className={`${

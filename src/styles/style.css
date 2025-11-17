@@ -139,16 +139,13 @@
 		@apply font-lato font-bold text-[3.5rem] leading-[1.14] max-md:text-[2rem] max-md:leading-[1.25];
 	}
 	.h2 {
-		@apply font-lato font-bold text-[2.5rem] leading-[1.2] text-[#1a1a1a] max-md:text-[2rem] max-md:leading-[1.25];
+		@apply font-bold text-[2.5rem] leading-[1.2] text-[#1a1a1a] max-md:text-[2rem] max-md:leading-[1.25];
 	}
 	.title {
-		@apply font-bold text-5xl text-[#1a1a1a] max-md:text-[2rem];
+		@apply font-bold text-5xl text-[#1a1a1a] max-md:text-[2rem] leading-[1.25];
 	}
 	.title-booking {
 		@apply font-bold text-[2rem] leading-[2.5rem] text-[#1a1a1a] max-md:text-xl;
-	}
-	.resize-input {
-		@apply max-lg:w-[300px] max-lg:pr-[125px] max-md:w-[415px] max-md:pr-[188px] max-sm:w-[343px] max-sm:pr-[145px];
 	}
 	.lock {
 		@apply overflow-hidden;

@@ -1,5 +1,5 @@
 'use client'
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
 import extrasImg from '@/assets/images/sections/booking/extras.jpg'
 import { IServicesProps } from '@/data/booking/extras.type'
 import Image from 'next/image'

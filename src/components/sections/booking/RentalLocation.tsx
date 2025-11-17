@@ -1,8 +1,8 @@
 'use client'
 import IconCar from '@/assets/icons/booking/car.svg'
-import IconClock from '@/assets/icons/clock.svg'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
+import IconClock from '@/assets/icons/common/clock.svg'
 import IconDate from '@/assets/icons/date.svg'
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
 import IconLocation from '@/assets/icons/location.svg'
 import Map from '@/components/map/Map'
 import { formatDateTime } from '@/utils/formatDateTime'
@@ -44,7 +44,7 @@ const RentalLocation = ({ isOpen, toggle }: Props) => {
 							{/* header */}
 							<div className='flex items-center gap-x-[16px] mb-[8px]'>
 								{/* icon */}
-								<IconLocation className='w-[24px]' />
+								<IconLocation className='w-[24px] text-[#0a58ca]' />
 								{/* title */}
 								<div className='font-dmSans text-base text-[#1a1a1a] max-w-[237px]'>
 									Hristo Smirnenski 29A
@@ -75,7 +75,7 @@ const RentalLocation = ({ isOpen, toggle }: Props) => {
 							{/* header */}
 							<div className='flex items-center gap-x-[16px] mb-[8px]'>
 								{/* icon */}
-								<IconDate className='w-[24px]' />
+								<IconDate className='w-[24px] text-[#0a58ca]' />
 								{/* title */}
 								<div className='font-dmSans text-base text-[#1a1a1a] max-w-[237px]'>
 									Pick-up: {formatDateTime(from)}
@@ -96,7 +96,7 @@ const RentalLocation = ({ isOpen, toggle }: Props) => {
 							{/* header */}
 							<div className='flex items-center gap-x-[16px] mb-[8px]'>
 								{/* icon */}
-								<IconClock className='w-[24px]' />
+								<IconClock className='w-[24px] text-[#0a58ca]' />
 								{/* title */}
 								<div className='font-dmSans text-base text-[#1a1a1a] max-w-[237px]'>
 									Hours of operation:
@@ -113,7 +113,7 @@ const RentalLocation = ({ isOpen, toggle }: Props) => {
 							{/* header */}
 							<div className='flex items-center gap-x-[16px] mb-[8px]'>
 								{/* icon */}
-								<IconDate className='w-[24px]' />
+								<IconDate className='w-[24px] text-[#0a58ca]' />
 								{/* title */}
 								<div className='font-dmSans text-base text-[#1a1a1a] max-w-[237px]'>
 									Drop-off: {formatDateTime(to)}

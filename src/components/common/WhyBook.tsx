@@ -3,12 +3,24 @@ import { Star } from '@/components/ui/Star'
 import { whyBookProps } from '@/data/whyBook.types'
 import Image from 'next/image'
 
-const WhyBook = () => {
+interface IWhyBookProps {
+	variants?: 'varna-cro'
+}
+
+const WhyBook = ({ variants }: IWhyBookProps) => {
 	return (
-		<section className='pt-[88px] max-md:pt-[72px]'>
+		<section
+			className={`${
+				variants === 'varna-cro' ? 'py-[156px] max-md:pb-[48px]' : 'pt-[88px]'
+			} max-md:pt-[72px]`}
+		>
 			<div className='__container'>
 				{/* header */}
-				<div className='text-center max-w-[906px] mx-auto mb-[48px] max-md:text-left max-md:mb-[24px]'>
+				<div
+					className={`${
+						variants === 'varna-cro' ? 'text-left' : 'text-center mx-auto'
+					} max-w-[906px] mb-[48px] max-md:text-left max-md:mb-[24px]`}
+				>
 					{/* title */}
 					<div className='h2 mb-[16px]'>Why Book with Get My Rides?</div>
 					{/* description */}

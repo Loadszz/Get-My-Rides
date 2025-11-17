@@ -9,12 +9,13 @@ import Burger from '@/components/ui/Burger'
 import { Button } from '@/components/ui/Button'
 import { Logo } from '@/components/ui/Logo'
 import { useMenu } from '@/context/MenuContext'
+import { headerLinks } from '@/data/navLinks'
 import { usePathname } from 'next/navigation'
 
 export const Header = () => {
 	const pathname = usePathname()
 	const isBookingPage = pathname.startsWith('/booking')
-	const primaryPages = ['/', '/search', '/booking']
+	const primaryPages = ['/', '/search', '/booking,', '/thank-you']
 	const isPrimary = primaryPages.includes(pathname)
 	const { isOpen, handleBurger } = useMenu()
 
@@ -54,6 +55,7 @@ export const Header = () => {
 							}`}
 						>
 							<Nav
+								links={headerLinks}
 								navClassName='w-full max-lg:mb-[56px]'
 								ulClassName='flex justify-center divide-x-1 gap-[23px] max-xl:gap-[12px] max-lg:flex-col max-lg:gap-[48px] max-lg:divide-none'
 								liClassName='relative border-white/25 xl:not-last:pr-[23px] lg:not-last:pr-[12px] max-lg:before:absolute max-lg:before:w-[1px] max-lg:before:border-white/25 max-lg:not-last:before:border-b-[16px] max-lg:before:bottom-[-32px] max-lg:before:left-[9px] max-lg:before:rotate-90'
@@ -69,7 +71,7 @@ export const Header = () => {
 								<Button
 									href='#'
 									variant='sign'
-									className='flex rounded-xl py-[16px] px-[24px] w-[132px] max-lg:w-full max-lg:justify-center'
+									className='flex justify-center rounded-xl py-[16px] w-[132px] max-lg:w-full'
 								>
 									<span className='mr-[7px]'>Sign In</span>
 									<ArrowRight className='w-[24px]' />
@@ -97,7 +99,9 @@ export const Header = () => {
 			{/* background SVGs */}
 			<div
 				className={`${isOpen ? 'z-20' : 'z-10'} ${
-					pathname === '/search' ? 'hidden max-lg:flex' : 'flex'
+					pathname === '/search' || pathname === '/thank-you'
+						? 'hidden '
+						: 'flex'
 				} absolute inset-0 z-10 pointer-events-none`}
 			>
 				<IconBuildings className='absolute top-0 right-[-40px] w-[958px] h-[539px]' />
@@ -125,6 +129,7 @@ export const Header = () => {
 						} ${pathname === '/search' ? 'hidden max-lg:flex' : 'flex'}`}
 					>
 						<Nav
+							links={headerLinks}
 							navClassName='w-full max-lg:mb-[56px]'
 							ulClassName='flex justify-center divide-x-1 gap-[23px] max-xl:gap-[12px] max-lg:flex-col max-lg:gap-[48px] max-lg:divide-none'
 							liClassName='relative border-white/25 xl:not-last:pr-[23px] lg:not-last:pr-[12px] max-lg:before:absolute max-lg:before:w-[1px] max-lg:before:border-white/25 max-lg:not-last:before:border-b-[16px] max-lg:before:bottom-[-32px] max-lg:before:left-[9px] max-lg:before:rotate-90'

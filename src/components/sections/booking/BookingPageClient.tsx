@@ -12,16 +12,21 @@ import { Button } from '@/components/ui/Button'
 import { CompanyFormData, DriverFormData } from '@/data/booking/details.type'
 import { IServicesProps, servicesProps } from '@/data/booking/extras.type'
 import { Product } from '@/data/products.type'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
 export type BookingFormValues = DriverFormData &
 	CompanyFormData & {
 		choice: 'yes' | 'no'
+		fromLocation: string
+		toLocation: string
 		from: string
 		to: string
+		total: number
 	}
 const BookingPageClient = ({ product }: { product: Product }) => {
+	const router = useRouter()
 	const [selectedExtras, setSelectedExtras] = useState<IServicesProps[]>(
 		servicesProps.map(item => ({ ...item, quantity: 0 }))
 	)
@@ -38,10 +43,8 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 	}
 	const methods = useForm<BookingFormValues>({
 		defaultValues: {
-			firstName: '',
-			lastName: '',
-			email: '',
-			phone: '',
+			fromLocation: '',
+			toLocation: '',
 			choice: 'no',
 			companyName: '',
 			address: '',
@@ -57,8 +60,15 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 	})
 
 	const onSubmit = (data: BookingFormValues) => {
+		const payload = {
+			...data,
+			extras: selectedExtras,
+		}
 		console.log('📤 Booking form data:', data)
 		alert('Data sent, check console.')
+		router.push(
+			`/thank-you?data=${encodeURIComponent(JSON.stringify(payload))}`
+		)
 	}
 
 	return (

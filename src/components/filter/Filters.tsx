@@ -1,6 +1,6 @@
 'use client'
 import IconCheck from '@/assets/icons/check-filter.svg'
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
 import { Button } from '@/components/ui/Button'
 import { filters } from '@/data/filter/filters.type'
 import { useState } from 'react'
@@ -78,7 +78,7 @@ const Filters = ({ isOpen, onChange, handleFilter }: FilterProps) => {
 								<IconArrow
 									className={`${
 										filterOpen ? 'rotate-[180deg]' : ''
-									} h-[24px] transition-all duration-300`}
+									} text-[#1a1a1a] w-[24px] transition-all duration-300`}
 								/>
 							</div>
 							<div

@@ -5,12 +5,13 @@ import picture3 from '@/assets/images/sections/car-rental/popular-locations-3.jp
 import picture4 from '@/assets/images/sections/car-rental/popular-locations-4.jpg'
 import picture5 from '@/assets/images/sections/car-rental/popular-locations-5.jpg'
 import { StaticImageData } from 'next/image'
+import { ReactNode } from 'react'
 export interface IPropsPopularLocations {
 	id: number
 	icon: React.ElementType
 	city: string
 	image: StaticImageData
-	text: string
+	text: ReactNode
 }
 
 export const popularLocationsProps: IPropsPopularLocations[] = [

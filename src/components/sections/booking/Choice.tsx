@@ -5,10 +5,17 @@ import IconDashboard from '@/assets/icons/dashboard.svg'
 import { Star } from '@/components/ui/Star'
 import { Product } from '@/data/products.type'
 import Image from 'next/image'
+import { useEffect } from 'react'
+import { useFormContext } from 'react-hook-form'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const Choice = ({ product }: { product: Product }) => {
+	const { register, setValue } = useFormContext<Product>()
+	useEffect(() => {
+		setValue('name', product.name)
+		setValue('similar', product.similar)
+	}, [product.name, product.similar, setValue])
 	return (
 		<section className='max-md:border-b max-md:border-[#e5e5e5] max-md:pb-[24px]'>
 			{/* body */}
@@ -39,7 +46,7 @@ const Choice = ({ product }: { product: Product }) => {
 						{/* product-information-mobile */}
 						<div className='space-y-[16px]'>
 							<div className='flex items-center gap-x-[14px]'>
-								<IconCheck className='w-[24px]' />
+								<IconCheck className='w-[24px] text-[#0a58ca] bg-[#0a58ca]' />
 								<div className='font-dmSans text-base text-[#1a1a1a]'>
 									Free cancellation up to 48 hours
 								</div>
@@ -97,10 +104,20 @@ const Choice = ({ product }: { product: Product }) => {
 								<div className='font-bold text-[2rem] leading-[2.5rem] text-[#1a1a1a] max-md:text-xl'>
 									{product.name}
 								</div>
+								<input
+									type='hidden'
+									value={product.name}
+									{...register('name')}
+								/>
 								{/* product-similar */}
 								<div className='font-dmSans text-base text-[#757575] max-md:text-sm'>
 									{product.similar}
 								</div>
+								<input
+									type='hidden'
+									value={product.similar}
+									{...register('similar')}
+								/>
 							</div>
 							{/* title-mobile */}
 							<div className='font-dmSans font-medium text-xl text-[#0a58ca] md:mb-[16px] md:hidden max-md:text-sm'>

@@ -1,9 +1,10 @@
 'use client'
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
+import { BookingFormValues } from '@/components/sections/booking/BookingPageClient'
 import { IServicesProps } from '@/data/booking/extras.type'
 import { Product } from '@/data/products.type'
-import { useMemo } from 'react'
-
+import { useEffect, useMemo } from 'react'
+import { useFormContext } from 'react-hook-form'
 type SelectedExtra = IServicesProps & { quantity: number }
 
 interface PriceProps {
@@ -34,6 +35,11 @@ const Price = ({
 		() => selectedExtras.filter(extra => extra.quantity > 0),
 		[selectedExtras]
 	)
+
+	const { register, setValue } = useFormContext<BookingFormValues>()
+	useEffect(() => {
+		setValue('total', total)
+	}, [total, setValue])
 
 	return (
 		<section className='max-lg:border-b max-lg:border-[#e5e5e5] max-lg:pb-[15px] mb-[24px] max-md:pt-[24px]'>
@@ -86,6 +92,7 @@ const Price = ({
 						<div className='flex justify-between items-center font-dmSans text-base text-[#1a1a1a]'>
 							<span>Total</span>
 							<span className='font-semibold'>€{total}</span>
+							<input type='hidden' value={total} {...register('total')} />
 						</div>
 						<div className='flex justify-between items-center font-dmSans text-base text-[#1a1a1a]'>
 							<span>Pay at pick-up</span>

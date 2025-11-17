@@ -4,57 +4,45 @@ import Image from 'next/image'
 
 interface IProps {
 	faqProps: IFAQSectionProps[]
-	title: string
-	variants: 'primary' | 'secondary'
+	type?: 'withoutImage' | 'reverse'
 }
 
-export const FAQSection = ({ faqProps, title, variants }: IProps) => {
+export const FAQSection = ({ faqProps, type }: IProps) => {
 	return (
-		<section
-			className={`${
-				variants == 'primary'
-					? 'pt-[156px] pb-[104px] max-md:pt-[48px] max-md:pb-[56px]'
-					: 'py-[88px] max-md:pt-[72px] max-md:pb-[48px]'
+		<div
+			className={`flex gap-[58px] divide-amber-100 max-lg:flex-col ${
+				type === 'reverse' ? 'flex-row-reverse' : ''
 			}`}
 		>
-			<div className='__container'>
-				{/* title */}
-				<div
-					className={`${
-						variants == 'primary'
-							? 'title max-w-[676px]'
-							: 'h2 max-w-[906px] mx-auto'
-					} mb-[56px] max-md:mb-[32px]`}
-				>
-					{title}
-				</div>
-				{/* body */}
-				<div
-					className={`flex justify-between ${
-						variants == 'secondary' ? 'flex-row-reverse' : ''
-					}`}
-				>
-					{/* column-left */}
-					<div className='flex-[0_0_50.6%] max-lg:flex-[0_0_100%]'>
-						<Accordion
-							items={faqProps.slice(1, faqProps.length)}
-							multiple={false}
-						/>
-					</div>
-					{/* column-right */}
-					<div className='relative flex-[0_1_45.2%] max-lg:hidden'>
-						{faqProps[0]?.image && (
-							<Image
-								src={faqProps[0]?.image}
-								fill
-								unoptimized
-								alt='ourPlatform'
-								className='object-cover rounded-2xl'
-							/>
-						)}
-					</div>
-				</div>
+			{/* column-left */}
+			<div className='flex-[0_1_692px] max-lg:flex-[0_0_100%]'>
+				<Accordion items={faqProps.slice(1, 6)} multiple={false} />
+				{type === 'withoutImage' && (
+					<Accordion
+						items={faqProps.slice(6, 11)}
+						multiple={false}
+						className='lg:hidden'
+					/>
+				)}
 			</div>
-		</section>
+			{/* column-right */}
+			{type === 'withoutImage' ? (
+				<div className='flex-[0_1_692px] max-lg:flex-[0_0_100%] max-lg:hidden'>
+					<Accordion items={faqProps.slice(6, 11)} multiple={false} />
+				</div>
+			) : (
+				<div className='relative flex-[0_1_618px] max-lg:hidden'>
+					{faqProps[0]?.image && (
+						<Image
+							src={faqProps[0]?.image}
+							fill
+							unoptimized
+							alt='ourPlatform'
+							className='object-cover rounded-2xl'
+						/>
+					)}
+				</div>
+			)}
+		</div>
 	)
 }

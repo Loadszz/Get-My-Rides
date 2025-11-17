@@ -1,5 +1,5 @@
 'use client'
-import IconArrowDown from '@/assets/icons/filter/arrow-down-filter.svg'
+import IconArrowDown from '@/assets/icons/common/arrow-down.svg'
 import IconSort from '@/assets/icons/sorting.svg'
 import { useEffect, useRef, useState } from 'react'
 
@@ -58,7 +58,7 @@ export const SortSelect = ({
 						open ? 'rotate-180' : 'rotate-0'
 					}`}
 				>
-					<IconArrowDown className='w-[24px]' />
+					<IconArrowDown className='w-[24px] text-[#1a1a1a]' />
 				</span>
 			</button>
 

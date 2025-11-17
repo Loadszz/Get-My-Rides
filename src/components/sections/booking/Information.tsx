@@ -1,6 +1,6 @@
 'use client'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
 import IconDate from '@/assets/icons/date.svg'
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
 import { BookingFormValues } from '@/components/sections/booking/BookingPageClient'
 import { formatDateTime } from '@/utils/formatDateTime'
 import { useSearchParams } from 'next/navigation'
@@ -19,6 +19,8 @@ const Information = ({ isOpen, toggle }: Props) => {
 	useEffect(() => {
 		setValue('from', from)
 		setValue('to', to)
+		setValue('fromLocation', 'Varna Rentals Office')
+		setValue('toLocation', 'Varna Rentals Office')
 	}, [from, to, setValue])
 
 	return (
@@ -51,6 +53,11 @@ const Information = ({ isOpen, toggle }: Props) => {
 						<div className='font-dmSans font-semibold text-sm text-[#1a1a1a] mb-[8px]'>
 							Varna Rentals Office
 						</div>
+						<input
+							type='hidden'
+							value='Varna Rentals Office'
+							{...register('fromLocation')}
+						/>
 						<a href='#' className='text-xs text-[#0a58ca] underline'>
 							View pick-up instructions
 						</a>

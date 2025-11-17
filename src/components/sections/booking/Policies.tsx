@@ -1,4 +1,4 @@
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
 import IconTooltip from '@/assets/icons/tooltip.svg'
 import { policiesProps } from '@/data/booking/policies.types'
 

@@ -1,6 +1,6 @@
 'use client'
 import IconCheck from '@/assets/icons/check.svg'
-import IconArrow from '@/assets/icons/filter/arrow-down-filter.svg'
+import IconArrow from '@/assets/icons/common/arrow-down.svg'
 import { BookingFormValues } from '@/components/sections/booking/BookingPageClient'
 import {
 	companyDetailsProps,

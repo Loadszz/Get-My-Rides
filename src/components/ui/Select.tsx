@@ -1,19 +1,29 @@
-import IconLocation from '@/assets/icons/location.svg'
-import { ILocationProps } from '@/data/locations.types'
-import { useEffect, useRef, useState } from 'react'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 
-export interface ISelectProps {
-	options: ILocationProps[]
+export interface ISelectProps<T> {
+	options: T[]
 	value: string
-	onChange: (value: string) => void
+	onChange: (value: string, option?: T) => void
+	getLabel: (option: T) => string
 	variant?: 'primary' | 'secondary'
+	className?: string
+	icon?: ReactElement
 }
-export const Select = ({ options, value, onChange, variant }: ISelectProps) => {
+export const Select = <T extends { id: number | string }>({
+	options,
+	value,
+	onChange,
+	getLabel,
+	variant,
+	className = '',
+	icon,
+}: ISelectProps<T>) => {
 	const [open, setOpen] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
 
-	const handleSelect = (option: ILocationProps) => {
-		onChange(`${option.city}, ${option.country}`)
+	const handleSelect = (option: T) => {
+		const label = getLabel(option)
+		onChange(label, option)
 		setOpen(false)
 	}
 	useEffect(() => {
@@ -34,13 +44,9 @@ export const Select = ({ options, value, onChange, variant }: ISelectProps) => {
 			<button
 				type='button'
 				onClick={() => setOpen(!open)}
-				className='flex items-center gap-x-[10px] py-[16px] pl-[14px] w-full focus:outline-none'
+				className={`${className} flex items-center gap-x-[10px] py-[16px] pl-[14px] w-full focus:outline-none`}
 			>
-				<IconLocation
-					className={`${
-						variant === 'primary' ? 'text-[#0A58CA]' : 'text-white'
-					} w-[24px] h-[24px]`}
-				/>
+				{icon}
 				<span
 					className={`${
 						variant === 'primary' ? 'text-[#303030]' : 'text-white'
@@ -58,7 +64,7 @@ export const Select = ({ options, value, onChange, variant }: ISelectProps) => {
 							onClick={() => handleSelect(option)}
 							className='font-dmSans text-base text-[#303030] pl-[14px] py-2 cursor-pointer hover:bg-blue-100'
 						>
-							{`${option.city}, ${option.country}`}
+							{getLabel(option)}
 						</li>
 					))}
 				</ul>

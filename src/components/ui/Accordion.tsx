@@ -8,9 +8,14 @@ import { useState } from 'react'
 type AccordionProps = {
 	items: IFAQSectionProps[]
 	multiple?: boolean
+	className?: string
 }
 
-export const Accordion = ({ items, multiple = false }: AccordionProps) => {
+export const Accordion = ({
+	items,
+	multiple = false,
+	className,
+}: AccordionProps) => {
 	const [accordionOpen, setAccordionOpen] = useState<number[] | number | null>(
 		multiple ? [] : null
 	)
@@ -39,17 +44,17 @@ export const Accordion = ({ items, multiple = false }: AccordionProps) => {
 		<>
 			{items.map((item, index) => (
 				<div
-					className='border-b-[1px] last:border-none border-[#e5e5e5] first:pt-0 last:pb-0 py-[28px] max-md:py-[16px]'
+					className={`${className} border-b-[1px] last:border-none border-[#e5e5e5] first:pt-0 last:pb-0 py-[28px] max-md:py-[16px]`}
 					key={index}
 				>
 					<button
-						className='flex justify-between items-center w-full'
+						className='flex justify-between items-start w-full'
 						onClick={() => toggle(index)}
 					>
-						<span className='font-dmSans font-bold text-xl text-[#1a1a1a] text-left max-md:max-w-[300px]'>
+						<span className='font-dmSans font-bold text-xl text-[#1a1a1a] text-left pr-[30px] max-md:max-w-[300px]'>
 							{item.title}
 						</span>
-						<span className='flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#e5e5e5] rounded-[12px]'>
+						<span className='flex justify-center items-center w-[32px] h-[32px] border-[1px] border-[#e5e5e5] rounded-[12px] shrink-0'>
 							{isOpen(index) ? (
 								<Minus className='w-[16px]' />
 							) : (
