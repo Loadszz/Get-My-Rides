@@ -2,7 +2,7 @@
 import TipsAndGuides from '@/components/common/TipsAndGuides'
 import OrderStatus from '@/components/sections/thank-you/OrderStatus'
 import { useSearchParams } from 'next/navigation'
-const page = () => {
+const ThankYouPage = () => {
 	const params = useSearchParams()
 	const raw = params.get('data')
 	const data = raw ? JSON.parse(decodeURIComponent(raw)) : {}
@@ -26,8 +26,8 @@ const page = () => {
 						</h1>
 						{/* description */}
 						<div className='font-dmSans text-base text-[#1a1a1a] max-w-[712px] max-md:hidden'>
-							We've sent your booking request to the rental provider. They
-							usually confirm within 1–3 hours. You'll receive an email once
+							We`ve sent your booking request to the rental provider. They
+							usually confirm within 1–3 hours. You`ll receive an email once
 							your booking is approved.
 						</div>
 					</div>
@@ -39,4 +39,4 @@ const page = () => {
 	)
 }
 
-export default page
+export default ThankYouPage

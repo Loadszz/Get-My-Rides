@@ -12,7 +12,7 @@ const page = () => {
 				title={<h1 className='h1'>Contact Us</h1>}
 				description={
 					<div className='font-dmSans text-base max-w-[360px] mx-auto max-md:mx-0'>
-						We're here to help you with any questions about using{' '}
+						We`re here to help you with any questions about using{' '}
 						<b>Get My Rides</b> or managing your bookings.
 					</div>
 				}

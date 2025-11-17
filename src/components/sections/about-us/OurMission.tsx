@@ -94,10 +94,10 @@ const OurMission = () => {
 							{/* content */}
 							<div className='font-dmSans text-base text-[#1a1a1a] space-y-[32px] max-lg:space-y-[24px]'>
 								<p>
-									Hi, I'm Konstantin Dolgushin, founder of <b>Get My Rides.</b>
+									Hi, I`m Konstantin Dolgushin, founder of <b>Get My Rides.</b>
 								</p>
 								<p>
-									I've spent more than a decade building online travel and
+									I`ve spent more than a decade building online travel and
 									marketplace platforms, learning how to make complex services
 									<b>simple and reliable</b> for people everywhere. Along the
 									way, I`ve also traveled extensively - driving across Europe`s

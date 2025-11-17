@@ -78,7 +78,7 @@ const OrderStatus = ({ items }: { items: IOrderStatusProps }) => {
 						<div className='space-y-[16px]'>
 							{/* title */}
 							<div className='font-bold text-[2rem] leading-[1.25]'>
-								What's Next?
+								What`s Next?
 							</div>
 							{/* list */}
 							<ul className='font-dmSans text-base space-y-[16px]'>
@@ -99,7 +99,7 @@ const OrderStatus = ({ items }: { items: IOrderStatusProps }) => {
 							<div className='font-dmSans text-base'>
 								You will receive a booking confirmation email shortly. Please
 								review the pick-up instructions carefully before you arrive. If
-								the provider can't confirm, we'll suggest alternative options
+								the provider can`t confirm, we`ll suggest alternative options
 								right away.
 							</div>
 							{/* text */}
