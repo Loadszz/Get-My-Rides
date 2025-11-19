@@ -22,7 +22,7 @@ export default async function Home() {
 					<div className='title max-w-[676px] mb-[56px] max-md:mb-[32px]'>
 						Everything you need to know about our platform
 					</div>
-					<FAQSection faqProps={faqHomeProps} />
+					<FAQSection faqProps={faqHomeProps} imageClass='h-[520px]' />
 				</div>
 			</section>
 		</>

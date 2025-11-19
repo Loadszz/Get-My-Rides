@@ -1,5 +1,6 @@
 import IconTickDouble from '@/assets/icons/common/tick-double.svg'
 import WhyTravellersBg from '@/assets/images/sections/about-us/why-travellers-choose-us.jpg'
+import BreadCrumbs from '@/components/breadcrumbs/BreadCrumbs'
 import Advantages from '@/components/common/Advantages'
 import CompanyDetails from '@/components/common/CompanyDetails'
 import { FAQSection } from '@/components/common/FAQSection'
@@ -11,6 +12,7 @@ import { faqAboutUsProps } from '@/data/about-us/faqAboutUs.type'
 import Image from 'next/image'
 
 const page = () => {
+	const crumbs = [{ label: 'Home', href: '/' }, { label: 'About Us' }]
 	return (
 		<>
 			<Hero
@@ -18,6 +20,7 @@ const page = () => {
 				title={<h1 className='h1'>About Get My Rides</h1>}
 				className='pt-[216px] pb-[168px] max-md:pt-[168px] max-md:pb-[176px]'
 			/>
+			<BreadCrumbs items={crumbs} />
 			<OurMission />
 			<section className='pb-[88px] max-md:pb-[40px]'>
 				<div className='__container'>

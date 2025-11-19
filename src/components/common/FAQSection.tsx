@@ -5,9 +5,10 @@ import Image from 'next/image'
 interface IProps {
 	faqProps: IFAQSectionProps[]
 	type?: 'withoutImage' | 'reverse'
+	imageClass?: string
 }
 
-export const FAQSection = ({ faqProps, type }: IProps) => {
+export const FAQSection = ({ faqProps, type, imageClass = '' }: IProps) => {
 	return (
 		<div
 			className={`flex gap-[58px] divide-amber-100 max-lg:flex-col ${
@@ -31,7 +32,9 @@ export const FAQSection = ({ faqProps, type }: IProps) => {
 					<Accordion items={faqProps.slice(6, 11)} multiple={false} />
 				</div>
 			) : (
-				<div className='relative flex-[0_1_618px] max-lg:hidden'>
+				<div
+					className={`${imageClass} relative flex-[0_1_618px] max-lg:hidden`}
+				>
 					{faqProps[0]?.image && (
 						<Image
 							src={faqProps[0]?.image}

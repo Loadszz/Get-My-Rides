@@ -15,8 +15,10 @@ import { usePathname } from 'next/navigation'
 export const Header = () => {
 	const pathname = usePathname()
 	const isBookingPage = pathname.startsWith('/booking')
-	const primaryPages = ['/', '/search', '/booking,', '/thank-you']
-	const isPrimary = primaryPages.includes(pathname)
+	const mainPages = ['/', '/search', '/booking,', '/thank-you']
+	const otherPages = ['/search', '/thank-you']
+	const isMainPage = mainPages.includes(pathname)
+	const isOtherPages = otherPages.includes(pathname)
 	const { isOpen, handleBurger } = useMenu()
 
 	if (isBookingPage) {
@@ -32,7 +34,80 @@ export const Header = () => {
 			</header>
 		)
 	}
-	if (!isPrimary) {
+	if (isOtherPages) {
+		return (
+			<header
+				className={`${
+					pathname === '/search'
+						? 'h-[88px] max-lg:h-full overflow-hidden'
+						: 'py-[16px]'
+				} ${
+					isOpen ? 'overflow-visible' : ''
+				} bg-[#0a58ca] relative max-lg:py-[24px]`}
+			>
+				{isOpen && (
+					<div className='absolute left-0 top-0 w-full h-[100vh] bg-[#0a58ca] z-20'></div>
+				)}
+				{/* background SVGs */}
+				<div
+					className={`${isOpen ? '!flex z-20' : 'z-10'} ${
+						pathname === '/search' ? 'hidden max-lg:flex' : 'hidden'
+					} absolute inset-0 z-10 pointer-events-none`}
+				>
+					<IconBuildings className='absolute top-0 right-[-40px] w-[958px] h-[539px]' />
+					<IconRoads className='absolute top-0 right-[-80px] w-[1241px] h-[550px]' />
+					<IconPins className='absolute top-[220px] right-[20px] w-[690px] h-[171px]' />
+					<div className='absolute top-0 right-[871px] w-[270px] h-[600px] bg-[linear-gradient(91deg,_#0a58ca_45%,_rgba(10,88,202,0)_119%)]'></div>
+				</div>
+				<div className='__container'>
+					{/* body */}
+					<div className='flex justify-between items-center'>
+						{/* logo */}
+						<Logo
+							className={`${
+								pathname === '/search'
+									? 'hidden max-lg:inline-block'
+									: 'inline-block'
+							} z-30`}
+						/>
+						{/* burger */}
+						<Burger isOpen={isOpen} handleBurger={handleBurger} />
+						{/* nav */}
+						<div
+							className={`justify-between items-center w-full max-lg:absolute max-lg:justify-start max-lg:flex-col max-lg:items-start max-lg:top-0 max-lg:pt-[128px] max-lg:px-[15px] z-20 ${
+								isOpen ? 'max-lg:left-0' : 'max-lg:left-[-100%]'
+							} ${pathname === '/search' ? 'hidden max-lg:flex' : 'flex'}`}
+						>
+							<Nav
+								links={headerLinks}
+								navClassName='w-full max-lg:mb-[56px]'
+								ulClassName='flex justify-center divide-x-1 gap-[23px] max-xl:gap-[12px] max-lg:flex-col max-lg:gap-[48px] max-lg:divide-none'
+								liClassName='relative border-white/25 xl:not-last:pr-[23px] lg:not-last:pr-[12px] max-lg:before:absolute max-lg:before:w-[1px] max-lg:before:border-white/25 max-lg:not-last:before:border-b-[16px] max-lg:before:bottom-[-32px] max-lg:before:left-[9px] max-lg:before:rotate-90'
+								linkClassName='font-dmSans text-base font-medium border-b border-transparent transform-all duration-500 hover:border-white'
+							/>
+							<div className='flex gap-[24px] max-lg:flex-col max-lg:items-center max-lg:gap-[16px] max-lg:w-full'>
+								{/* lang */}
+								<div className='flex items-center gap-x-[4px] max-lg:justify-center max-lg:py-[16px] max-lg:w-full max-lg:border max-lg:border-[#FFFFFF8F] max-lg:rounded-[12px]'>
+									<IconEn className='w-[24px]' />
+									<span className='font-dmSans font-medium text-sm'>EN</span>
+								</div>
+								{/* sign */}
+								<Button
+									href='#'
+									variant='sign'
+									className='flex rounded-xl py-[16px] px-[24px] w-[132px] max-lg:w-full max-lg:justify-center'
+								>
+									<span className='mr-[7px]'>Sign In</span>
+									<ArrowRight className='w-[24px]' />
+								</Button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		)
+	}
+	if (!isMainPage) {
 		return (
 			<header className='relative pt-[56px] mx-[16px] bg-transparent max-lg:pt-[24px] max-md:mx-0'>
 				<div className='__container'>
@@ -86,23 +161,17 @@ export const Header = () => {
 	return (
 		<header
 			className={`${
-				pathname === '/search'
-					? 'h-[88px] max-lg:h-full overflow-hidden'
-					: 'py-[48px]'
-			} ${
 				isOpen ? 'overflow-visible' : ''
-			} bg-[#0a58ca] relative max-lg:py-[24px]`}
+			} py-[48px] bg-[#0a58ca] relative max-lg:py-[24px]`}
 		>
 			{isOpen && (
 				<div className='absolute left-0 top-0 w-full h-[100vh] bg-[#0a58ca] z-20'></div>
 			)}
 			{/* background SVGs */}
 			<div
-				className={`${isOpen ? 'z-20' : 'z-10'} ${
-					pathname === '/search' || pathname === '/thank-you'
-						? 'hidden '
-						: 'flex'
-				} absolute inset-0 z-10 pointer-events-none`}
+				className={`${
+					isOpen ? 'z-20' : 'z-10'
+				} flex absolute inset-0 z-10 pointer-events-none`}
 			>
 				<IconBuildings className='absolute top-0 right-[-40px] w-[958px] h-[539px]' />
 				<IconRoads className='absolute top-0 right-[-80px] w-[1241px] h-[550px]' />
@@ -113,20 +182,14 @@ export const Header = () => {
 				{/* body */}
 				<div className='flex justify-between items-center'>
 					{/* logo */}
-					<Logo
-						className={`${
-							pathname === '/search'
-								? 'hidden max-lg:inline-block'
-								: 'inline-block'
-						} z-30`}
-					/>
+					<Logo className='inline-block z-30' />
 					{/* burger */}
 					<Burger isOpen={isOpen} handleBurger={handleBurger} />
 					{/* nav */}
 					<div
-						className={`justify-between items-center w-full max-lg:absolute max-lg:justify-start max-lg:flex-col max-lg:items-start max-lg:top-0 max-lg:pt-[128px] max-lg:px-[15px] z-20 ${
+						className={`flex justify-between items-center w-full max-lg:absolute max-lg:justify-start max-lg:flex-col max-lg:items-start max-lg:top-0 max-lg:pt-[128px] max-lg:px-[15px] z-20 ${
 							isOpen ? 'max-lg:left-0' : 'max-lg:left-[-100%]'
-						} ${pathname === '/search' ? 'hidden max-lg:flex' : 'flex'}`}
+						}`}
 					>
 						<Nav
 							links={headerLinks}

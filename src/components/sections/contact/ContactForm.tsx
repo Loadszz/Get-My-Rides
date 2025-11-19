@@ -23,11 +23,14 @@ const ContactForm = () => {
 		register,
 		handleSubmit,
 		trigger,
+		reset,
 		formState: { errors },
 	} = useForm<ICompanyFormProps>()
 
 	const onSubmit: SubmitHandler<ICompanyFormProps> = data => {
 		console.log('Success', data)
+		alert('Success')
+		reset()
 	}
 
 	const handleAlertSubmit = async () => {

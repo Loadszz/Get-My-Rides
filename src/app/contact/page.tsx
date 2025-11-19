@@ -1,10 +1,12 @@
 import IconClock from '@/assets/icons/contact/clock.svg'
 import IconMail from '@/assets/icons/contact/mail.svg'
+import BreadCrumbs from '@/components/breadcrumbs/BreadCrumbs'
 import CompanyDetails from '@/components/common/CompanyDetails'
 import Hero from '@/components/common/Hero'
 import ContactForm from '@/components/sections/contact/ContactForm'
 import Link from 'next/link'
 const page = () => {
+	const crumbs = [{ label: 'Home', href: '/' }, { label: 'Contact' }]
 	return (
 		<>
 			<Hero
@@ -19,6 +21,7 @@ const page = () => {
 				className='pt-[216px] pb-[96px] max-md:py-[128px]'
 				bodyClassName='space-y-[24px] max-w-[906px] max-md:space-y-[16px] max-md:text-left'
 			/>
+			<BreadCrumbs items={crumbs} />
 			{/* customer-support */}
 			<section className='pt-[56px] max-md:pt-[32px]'>
 				<div className='__container'>

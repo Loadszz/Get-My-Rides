@@ -6,6 +6,7 @@ import WhyBook from '@/components/common/WhyBook'
 import { SearchForm } from '@/components/search/SearchForm'
 import CarRentalLocation from '@/components/sections/car-rental/CarRentalLocation'
 // import Hero from '@/components/sections/car-rental/Hero'
+import BreadCrumbs from '@/components/breadcrumbs/BreadCrumbs'
 import TipsAndGuides from '@/components/common/TipsAndGuides'
 import Information from '@/components/sections/car-rental/Information'
 import PopularLocations from '@/components/sections/car-rental/PopularLocations'
@@ -14,6 +15,7 @@ import { faqCarRentalProps } from '@/data/car-rental/faqCarRental.type'
 import Link from 'next/link'
 
 const page = () => {
+	const crumbs = [{ label: 'Home', href: '/' }, { label: 'Car Rental' }]
 	return (
 		<>
 			{/* <Hero /> */}
@@ -21,7 +23,7 @@ const page = () => {
 				bgImage='/images/sections/car-rental/hero-bg.jpg'
 				title={
 					<h1 className='h1'>
-						Car Rental Made Easy - Compare & Book with Get My Rides
+						Car Rental Made Easy -<br /> Compare & Book with Get My Rides
 					</h1>
 				}
 				button={
@@ -36,6 +38,7 @@ const page = () => {
 				bodyClassName='space-y-[40px] max-w-[906px] mb-[122px] max-md:space-y-[24px] max-md:mb-[32px]'
 				variants='withForm'
 			/>
+			<BreadCrumbs items={crumbs} />
 			<SubHero />
 			<CarRentalLocation />
 			<PopularLocations />
@@ -72,7 +75,11 @@ const page = () => {
 					<div className='h2 max-w-[906px] mx-auto mb-[56px] max-md:mb-[32px]'>
 						Frequently Asked Questions about Car Rental
 					</div>
-					<FAQSection faqProps={faqCarRentalProps} type='reverse' />
+					<FAQSection
+						faqProps={faqCarRentalProps}
+						type='reverse'
+						imageClass='h-[508px]'
+					/>
 				</div>
 			</section>
 		</>

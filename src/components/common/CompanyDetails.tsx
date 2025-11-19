@@ -11,7 +11,9 @@ const CompanyDetails = ({ title, description, variant }: IProps) => {
 	return (
 		<section
 			className={`${
-				variant === 'contact' ? 'pt-[144px]' : 'pt-[88px]'
+				variant === 'contact'
+					? 'pt-[144px] pb-[80px] max-md:pb-[48px]'
+					: 'pt-[88px]'
 			} max-md:pt-[72px]`}
 		>
 			<div className='__container'>

@@ -8,7 +8,7 @@ const Information = () => {
 			<div className='__container'>
 				{/* body */}
 				<div className='grid grid-cols-4 gap-[16px] max-lg:grid-cols-2 max-md:flex max-md:gap-[8px] max-md:overflow-x-auto max-md:mx-[-16px] px-[16px] overflow-visible no-scrollbar'>
-					{/* column */}
+					{/* column-1 */}
 					<div className='p-[24px] bg-white rounded-2xl space-y-[24px] max-md:flex-[0_0_330px]'>
 						{/* header */}
 						<div className='flex items-start gap-x-[16px]'>
@@ -16,7 +16,7 @@ const Information = () => {
 							<IconCar className='w-[32px]  shrink-0' />
 							{/* title */}
 							<div className='font-lato font-bold text-xl text-[#1a1a1a]'>
-								Planning to rent a car in Bulgaria or Europe?
+								Planning to Rent a Car in Europe?
 							</div>
 						</div>
 						{/* text */}
@@ -64,22 +64,18 @@ const Information = () => {
 							<IconMapLocation className='w-[32px]  shrink-0' />
 							{/* title */}
 							<div className='font-lato font-bold text-xl text-[#1a1a1a]'>
-								Go Beyond the City
+								Freedom to Go Beyond the City
 							</div>
 						</div>
 						{/* text */}
 						<div className='font-dmSans text-sm text-[#757575]'>
-							Whether you`re heading from{' '}
-							<span className='font-medium text-[#1a1a1a]'>
-								Sofia to the Rila Mountains,
-							</span>{' '}
-							exploring the{' '}
-							<span className='font-medium text-[#1a1a1a]'>
-								Black Sea coast from Varna,
-							</span>{' '}
+							Whether you`re heading from the busy city capital to the{' '}
+							<span className='font-medium text-[#1a1a1a]'>mountains,</span>
+							exploring the beautiful sea{' '}
+							<span className='font-medium text-[#1a1a1a]'>coast,</span>
 							or planning a{' '}
 							<span className='font-medium text-[#1a1a1a]'>
-								cross-border drive into Greece or Romania,
+								cross-border drive
 							</span>{' '}
 							our guides will help you travel{' '}
 							<span className='font-medium text-[#1a1a1a]'>
@@ -87,7 +83,7 @@ const Information = () => {
 							</span>
 						</div>
 					</div>
-					{/* column */}
+					{/* column-4 */}
 					<div className='p-[24px] bg-white rounded-2xl space-y-[24px] max-md:flex-[0_0_330px]'>
 						{/* header */}
 						<div className='flex items-start gap-x-[16px]'>
@@ -95,7 +91,7 @@ const Information = () => {
 							<IconTarget className='w-[32px]  shrink-0' />
 							{/* title */}
 							<div className='font-lato font-bold text-xl text-[#1a1a1a]'>
-								Explore More, Freely
+								Explore More With Our Tailored Guides
 							</div>
 						</div>
 						{/* text */}

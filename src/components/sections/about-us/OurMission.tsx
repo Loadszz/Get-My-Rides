@@ -126,7 +126,7 @@ const OurMission = () => {
 								fill
 								unoptimized
 								alt='Meet the Founder'
-								className='object-cover rounded-2xl'
+								className='object-cover rounded-2xl object-top'
 							/>
 							{/* info */}
 							<div className='absolute bottom-[-40px] flex items-center gap-x-[8px]'>
