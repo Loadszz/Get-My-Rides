@@ -1,4 +1,3 @@
-import BreadCrumbs from '@/components/breadcrumbs/BreadCrumbs'
 import { AvailableCars } from '@/components/common/AvailableCars'
 import { FAQSection } from '@/components/common/FAQSection'
 import Hero from '@/components/common/Hero'
@@ -15,11 +14,6 @@ import { faqVarnaCroProps } from '@/data/varna-cro/faqVarnaCro'
 import { getProducts } from '@/lib/getProducts'
 
 export default async function page() {
-	const crumbs = [
-		{ label: 'Home', href: '/' },
-		{ label: 'Car Rental', href: '/car-rental' },
-		{ label: 'Varna' },
-	]
 	const products = await getProducts()
 	return (
 		<>
@@ -67,7 +61,6 @@ export default async function page() {
 				bodyClassName='max-w-[1050px] space-y-[16px] mb-[78px] max-md:mb-[16px] max-md:text-center'
 				variants='withForm'
 			/>
-			<BreadCrumbs items={crumbs} />
 			<AvailableCars products={products} />
 			<WhyBook variants='varna-cro' />
 			<AboutUs />
