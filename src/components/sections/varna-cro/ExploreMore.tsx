@@ -33,7 +33,6 @@ const ExploreMore = () => {
 											src={item.image}
 											fill
 											sizes='(max-width: 768px) 285px, 330px'
-											quality={100}
 											alt={item.place || ''}
 											className='object-cover rounded-2xl'
 										/>
