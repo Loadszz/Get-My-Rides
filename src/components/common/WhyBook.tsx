@@ -31,7 +31,7 @@ const WhyBook = ({ variants }: IWhyBookProps) => {
 					</div>
 				</div>
 				{/* body */}
-				<div className='flex justify-between gap-[32px] max-lg:flex-col-reverse max-md:gap-[16px]'>
+				<div className='flex justify-between gap-[32px] max-lg:flex-col-reverse max-md:gap-[24px]'>
 					{/* column-left */}
 					<div className='flex-[0_0_404px] space-y-[24px] max-lg:flex-[0_0_auto]'>
 						{whyBookProps.map(item => (

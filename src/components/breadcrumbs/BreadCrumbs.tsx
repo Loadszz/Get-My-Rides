@@ -13,11 +13,14 @@ const BreadCrumbs = ({ items }: BreadcrumbsProps) => {
 		<section className='pt-[24px] max-md:pt-[32px]'>
 			<div className='__container'>
 				{/* list */}
-				<ul className='flex font-dmSans font-bold text-[#8c8c8c]'>
+				<ul className='flex font-dmSans  text-[#8c8c8c]'>
 					{items.map((item, i) => (
 						<li key={i} className='flex items-center'>
 							{item.href ? (
-								<Link href={item.href} className=''>
+								<Link
+									href={item.href}
+									className='border-b border-transparent transform-all duration-500 hover:border-[#8c8c8c]'
+								>
 									{item.label}
 								</Link>
 							) : (

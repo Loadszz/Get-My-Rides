@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation'
 export const Header = () => {
 	const pathname = usePathname()
 	const isBookingPage = pathname.startsWith('/booking')
+	const isVarnaPage = pathname.startsWith('/car-rental/varna-cro')
 	const mainPages = ['/', '/search', '/booking,', '/thank-you']
 	const otherPages = ['/search', '/thank-you']
 	const isMainPage = mainPages.includes(pathname)
@@ -114,24 +115,20 @@ export const Header = () => {
 					{/* body */}
 					<div className='flex justify-between items-center'>
 						{/* logo */}
-						<Logo
-							className={`${
-								pathname === '/search'
-									? 'hidden max-lg:inline-block'
-									: 'inline-block'
-							} z-30`}
-						/>
+						<Logo className='inline-block z-30' />
 						{/* burger */}
 						<Burger isOpen={isOpen} handleBurger={handleBurger} />
 						{/* nav */}
 						<div
-							className={`flex justify-between items-center w-full max-lg:absolute max-lg:justify-start max-lg:flex-col max-lg:items-start max-lg:top-0 max-lg:pt-[128px] max-lg:px-[15px] z-20 ${
+							className={`flex justify-between items-center max-lg:absolute max-lg:justify-start max-lg:flex-col max-lg:items-start max-lg:top-0 max-lg:pt-[128px] max-lg:px-[15px] z-20 ${
 								isOpen ? 'max-lg:left-0' : 'max-lg:left-[-100%]'
-							}`}
+							} ${isVarnaPage ? 'max-lg:w-full' : 'w-full'}`}
 						>
 							<Nav
 								links={headerLinks}
-								navClassName='w-full max-lg:mb-[56px]'
+								navClassName={`${
+									isVarnaPage ? 'hidden max-lg:block' : ''
+								} w-full max-lg:mb-[56px]`}
 								ulClassName='flex justify-center divide-x-1 gap-[23px] max-xl:gap-[12px] max-lg:flex-col max-lg:gap-[48px] max-lg:divide-none'
 								liClassName='relative border-white/25 xl:not-last:pr-[23px] lg:not-last:pr-[12px] max-lg:before:absolute max-lg:before:w-[1px] max-lg:before:border-white/25 max-lg:not-last:before:border-b-[16px] max-lg:before:bottom-[-32px] max-lg:before:left-[9px] max-lg:before:rotate-90'
 								linkClassName='font-dmSans text-base font-medium border-b border-transparent transform-all duration-500 hover:border-white'

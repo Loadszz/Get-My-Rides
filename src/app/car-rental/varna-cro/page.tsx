@@ -63,7 +63,7 @@ export default async function page() {
 						))}
 					</div>
 				}
-				className='pt-[216px] pb-[32px] max-md:pt-[96px] max-md:pb-[24px]'
+				className='!bg-bottom pt-[196px] pb-[32px] max-md:pt-[96px] max-md:pb-[24px]'
 				bodyClassName='max-w-[1050px] space-y-[16px] mb-[78px] max-md:mb-[16px] max-md:text-center'
 				variants='withForm'
 			/>

@@ -7,7 +7,7 @@ const Information = () => {
 		<section className='bg-[url(/images/sections/car-rental/information-bg.jpg)] bg-cover bg-center bg-no-repeat py-[112px] max-md:py-[66px]'>
 			<div className='__container'>
 				{/* body */}
-				<div className='grid grid-cols-4 gap-[16px] max-lg:grid-cols-2 max-md:flex max-md:gap-[8px] max-md:overflow-x-auto max-md:mx-[-16px] px-[16px] overflow-visible no-scrollbar'>
+				<div className='grid grid-cols-4 gap-[16px] max-lg:grid-cols-2 max-md:flex max-md:gap-[8px] max-md:overflow-x-auto max-md:mx-[-16px] max-md:px-[16px] overflow-visible no-scrollbar'>
 					{/* column-1 */}
 					<div className='p-[24px] bg-white rounded-2xl space-y-[24px] max-md:flex-[0_0_330px]'>
 						{/* header */}

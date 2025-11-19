@@ -41,7 +41,7 @@ const WhereWeOperate = () => {
 								{/* text */}
 								<Link
 									href={item.link.href}
-									className='font-dmSans text-base text-[#1a1a1a] opacity-[0.78] underline underline-offset-2'
+									className='font-dmSans text-base text-[#1a1a1a] opacity-[0.78] border-b border-transparent transform-all duration-500 hover:border-[#8c8c8c]'
 								>
 									{item.link.text}
 								</Link>

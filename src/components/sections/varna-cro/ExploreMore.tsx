@@ -50,12 +50,14 @@ const ExploreMore = () => {
 										{item.text}
 									</div>
 									{/* link */}
-									<Link
-										href={item.link?.href || '#'}
-										className='font-dmSans font-medium text-sm text-[#0a58ca] mt-auto underline underline-offset-2'
-									>
-										{item.link?.text || ''}
-									</Link>
+									<div className='mt-auto'>
+										<Link
+											href={item.link?.href || '#'}
+											className='font-dmSans font-medium text-sm text-[#0a58ca] border-b border-transparent transform-all duration-500 hover:border-[#0a58ca]'
+										>
+											{item.link?.text || ''}
+										</Link>
+									</div>
 								</div>
 							))}
 						</div>

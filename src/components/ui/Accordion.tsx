@@ -17,7 +17,7 @@ export const Accordion = ({
 	className,
 }: AccordionProps) => {
 	const [accordionOpen, setAccordionOpen] = useState<number[] | number | null>(
-		multiple ? [] : null
+		multiple ? [0] : 0
 	)
 
 	const toggle = (index: number) => {
