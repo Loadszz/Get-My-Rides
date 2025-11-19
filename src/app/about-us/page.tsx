@@ -10,6 +10,7 @@ import OurMission from '@/components/sections/about-us/OurMission'
 import WhereWeOperate from '@/components/sections/about-us/WhereWeOperate'
 import { faqAboutUsProps } from '@/data/about-us/faqAboutUs.type'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const page = () => {
 	const crumbs = [{ label: 'Home', href: '/' }, { label: 'About Us' }]
@@ -103,12 +104,12 @@ const page = () => {
 						Have questions, feedback, or partnership ideas? We`d love to hear
 						from you. <br />
 						Visit our{' '}
-						<a
+						<Link
 							href='#'
-							className='font-bold text-[#0a58ca] underline underline-offset-2'
+							className='font-bold text-[#0a58ca] border-b border-transparent transform-all duration-500 hover:border-[#0a58ca]'
 						>
 							contact page
-						</a>{' '}
+						</Link>{' '}
 						to leave a message.
 					</div>
 				}

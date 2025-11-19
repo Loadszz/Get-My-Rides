@@ -71,16 +71,16 @@ const page = () => {
 								</div>
 								{/* list */}
 								<ul className='grid grid-cols-2 gap-y-[16px] font-dmSans text-base text-[#1a1a1a] border-b border-[#dadada] pb-[16px] max-md:grid-cols-1'>
-									<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
 										Vehicle pick-up or drop-off
 									</li>
-									<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
 										Deposits and payments on site
 									</li>
-									<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
 										Insurance coverage
 									</li>
-									<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
 										Roadside assistance or accidents
 									</li>
 								</ul>

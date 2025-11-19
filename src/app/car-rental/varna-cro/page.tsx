@@ -61,7 +61,13 @@ export default async function page() {
 				bodyClassName='max-w-[1050px] space-y-[16px] mb-[78px] max-md:mb-[16px] max-md:text-center'
 				variants='withForm'
 			/>
-			<AvailableCars products={products} />
+			<AvailableCars
+				key='available-cars-varna'
+				products={products}
+				title={
+					<div className='h2 max-lg:max-w-[500px]'>See available cars</div>
+				}
+			/>
 			<WhyBook variants='varna-cro' />
 			<AboutUs />
 			<Steps />

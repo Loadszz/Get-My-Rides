@@ -4,6 +4,7 @@ export type Location = {
 }
 
 export type Characteristic = {
+	id: number
 	value: string | number
 	icon: string
 }
@@ -54,10 +55,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-mechanic.svg' },
+			{ id: 1, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 2, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 3, value: 4, icon: '/icons/doors.svg' },
+			{ id: 4, value: 'Manual', icon: '/icons/gearbox-mechanic.svg' },
 		],
 		price: 20,
 		location: [
@@ -89,10 +90,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-mechanic.svg' },
+			{ id: 5, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 6, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 7, value: 4, icon: '/icons/doors.svg' },
+			{ id: 8, value: 'Manual', icon: '/icons/gearbox-mechanic.svg' },
 		],
 		price: 130,
 		location: [
@@ -123,10 +124,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 9, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 10, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 11, value: 4, icon: '/icons/doors.svg' },
+			{ id: 12, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [
@@ -157,10 +158,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 13, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 14, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 15, value: 4, icon: '/icons/doors.svg' },
+			{ id: 16, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [
@@ -191,10 +192,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 17, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 18, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 19, value: 4, icon: '/icons/doors.svg' },
+			{ id: 20, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [
@@ -225,10 +226,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 21, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 22, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 23, value: 4, icon: '/icons/doors.svg' },
+			{ id: 24, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [
@@ -259,10 +260,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 25, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 26, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 27, value: 4, icon: '/icons/doors.svg' },
+			{ id: 28, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [
@@ -293,10 +294,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 29, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 30, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 31, value: 4, icon: '/icons/doors.svg' },
+			{ id: 32, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [
@@ -327,10 +328,10 @@ export const products: Product[] = [
 		rating: 5,
 		grade: 8.7,
 		characteristics: [
-			{ value: 4, icon: '/icons/passenger.svg' },
-			{ value: 3, icon: '/icons/baggage.svg' },
-			{ value: 4, icon: '/icons/doors.svg' },
-			{ value: 'Manual', icon: '/icons/gearbox-auto.svg' },
+			{ id: 33, value: 4, icon: '/icons/passenger.svg' },
+			{ id: 34, value: 3, icon: '/icons/baggage.svg' },
+			{ id: 35, value: 4, icon: '/icons/doors.svg' },
+			{ id: 36, value: 'Manual', icon: '/icons/gearbox-auto.svg' },
 		],
 		price: 65,
 		location: [

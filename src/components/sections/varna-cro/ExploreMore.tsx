@@ -36,11 +36,6 @@ const ExploreMore = () => {
 											alt={item.place || ''}
 											className='rounded-2xl object-right'
 										/>
-										<img
-											className='w-[330px] h-[224px] absolute top-[224px]'
-											src='/images/explore-more-top-1.jpg'
-											alt=''
-										/>
 										<div className='absolute top-[16px] right-[16px] flex items-center gap-x-[8px] py-[8px] px-[16px] border border-[rgba(255,255,255,0.56)] bg-[rgba(255,255,255,0.24)] rounded-full max-md:py-[4px] max-md:px-[8px]'>
 											<div>
 												<item.icon className='w-[24px] max-md:w-[16px]' />

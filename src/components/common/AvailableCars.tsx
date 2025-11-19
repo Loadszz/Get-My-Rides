@@ -3,20 +3,26 @@ import ArrowRight from '@/assets/icons/arrow-right.svg'
 import { Button } from '@/components/ui/Button'
 import { Star } from '@/components/ui/Star'
 import SwiperButtons from '@/components/ui/SwiperButtons'
-import { Product } from '@/data/products.type'
+import type { Product } from '@/data/products.type'
 import Image from 'next/image'
+import { ReactNode } from 'react'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const AvailableCars = ({ products }: { products: Product[] }) => {
+interface IAvailableCarsProps {
+	products: Product[]
+	title: ReactNode
+}
+
+export const AvailableCars = ({ products, title }: IAvailableCarsProps) => {
 	return (
 		<section className='pt-[64px] max-md:pt-[44px]'>
 			<div className='__container'>
 				<div className='flex justify-between items-center mb-[48px] max-sm:mb-[32px]'>
-					{/* title */}
-					<div className='title max-lg:max-w-[500px]'>
-						Explore the available car fleet
-					</div>
+					<>
+						{/* title */}
+						{title}
+					</>
 					{/* swiper-buttons */}
 					<SwiperButtons
 						name='cars'
@@ -54,20 +60,25 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 						className='!pb-[10px]'
 					>
 						{/* products */}
-						{products.map((product, index) => (
+						{products.map(product => (
 							<SwiperSlide
-								key={index}
+								key={product.id}
 								className='shadow-md rounded-[16px] max-sm:flex-[0_0_285px]'
 							>
 								{/* product-image */}
-								<Image
-									src={product.image}
-									width={330}
-									height={224}
-									alt={product.name}
-									priority
-									className='w-full object-cover'
-								/>
+								<div className='relative'>
+									<Image
+										src={product.image}
+										width={330}
+										height={224}
+										alt={product.name}
+										priority
+										className='w-full object-cover'
+									/>
+									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-1'>
+										Cheapest
+									</div>
+								</div>
 								{/* product */}
 								<div className='p-[16px]'>
 									{/* product-header */}
@@ -92,8 +103,8 @@ export const AvailableCars = ({ products }: { products: Product[] }) => {
 											Features
 										</div>
 										<div className='flex gap-x-[16px]'>
-											{product.characteristics.slice(0, 3).map((ch, index) => (
-												<div key={index} className='flex gap-x-[8px]'>
+											{product.characteristics.slice(0, 3).map(ch => (
+												<div key={ch.id} className='flex gap-x-[8px]'>
 													<Image
 														src={ch.icon}
 														width={24}

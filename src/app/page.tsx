@@ -12,7 +12,15 @@ export default async function Home() {
 	return (
 		<>
 			<Hero />
-			<AvailableCars products={products} />
+			<AvailableCars
+				key='available-cars-home'
+				products={products}
+				title={
+					<div className='h2 max-lg:max-w-[313pxpx]'>
+						View the available car fleet
+					</div>
+				}
+			/>
 			<RentalDestinations />
 			<SpecialOffers />
 			<AboutUs />
