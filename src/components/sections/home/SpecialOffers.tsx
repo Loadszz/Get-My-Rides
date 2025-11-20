@@ -38,14 +38,16 @@ export const SpecialOffers = () => {
 									{card.description}
 								</div>
 								{/* button */}
-								<Button
-									className='flex rounded-xl py-[12px] pl-[24px] w-[153px] max-sm:w-full max-sm:justify-center'
-									href='#'
-									variant='primary'
-								>
-									<span className='mr-[10px]'>{card.buttonText}</span>
-									<ArrowRight className='w-[24px]' />
-								</Button>
+								<div className='flex'>
+									<Button
+										className='flex rounded-xl py-[12px] px-[18px] max-sm:w-full max-sm:justify-center'
+										href='#'
+										variant='primary'
+									>
+										<span className='mr-[10px]'>{card.buttonText}</span>
+										<ArrowRight className='w-[24px]' />
+									</Button>
+								</div>
 							</div>
 							{/* discount */}
 							<div className='absolute top-[32px] right-[32px] w-[149px] h-[149px] max-2xl:w-[96px] max-2xl:h-[96px] max-2xl:top-[16px] max-2xl:right-[16px]'>

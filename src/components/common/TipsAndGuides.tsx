@@ -77,7 +77,7 @@ const TipsAndGuides = ({ variants }: ITipsAndGuidesProps) => {
 								{/* link */}
 								<Link
 									href={item.link.href}
-									className='font-dmSans font-medium text-sm underline underline-offset-2'
+									className='font-dmSans font-medium text-sm border-b border-transparent transform-all duration-500 hover:border-white'
 								>
 									{item.link.text}
 								</Link>
@@ -138,7 +138,7 @@ const TipsAndGuides = ({ variants }: ITipsAndGuidesProps) => {
 										{/* link */}
 										<Link
 											href={item.link.href}
-											className='font-dmSans font-medium text-sm text-[#0a58ca] underline underline-offset-2'
+											className='font-dmSans font-medium text-sm text-[#0a58ca] border-b border-transparent transform-all duration-500 hover:border-[#0a58ca]'
 										>
 											{item.link.text}
 										</Link>

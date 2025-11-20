@@ -1,3 +1,4 @@
+import IconEclipse from '@/assets/icons/common/ellipse-text.svg'
 import IconClock from '@/assets/icons/contact/clock.svg'
 import IconMail from '@/assets/icons/contact/mail.svg'
 import BreadCrumbs from '@/components/breadcrumbs/BreadCrumbs'
@@ -71,16 +72,20 @@ const page = () => {
 								</div>
 								{/* list */}
 								<ul className='grid grid-cols-2 gap-y-[16px] font-dmSans text-base text-[#1a1a1a] border-b border-[#dadada] pb-[16px] max-md:grid-cols-1'>
-									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='flex items-center gap-x-[8px]'>
+										<IconEclipse className='w-[6px] text-[#0a58ca]' />
 										Vehicle pick-up or drop-off
 									</li>
-									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='flex items-center gap-x-[8px]'>
+										<IconEclipse className='w-[6px] text-[#0a58ca]' />
 										Deposits and payments on site
 									</li>
-									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='flex items-center gap-x-[8px]'>
+										<IconEclipse className='w-[6px] text-[#0a58ca]' />
 										Insurance coverage
 									</li>
-									<li className='list-disc list-outside ml-[18px]  marker:text-[#0a58ca]'>
+									<li className='flex items-center gap-x-[8px]'>
+										<IconEclipse className='w-[6px] text-[#0a58ca]' />
 										Roadside assistance or accidents
 									</li>
 								</ul>
@@ -111,7 +116,7 @@ const page = () => {
 									Check our{' '}
 									<Link
 										href='#'
-										className='font-bold text-[#0a58ca] underline underline-offset-2'
+										className='font-bold text-[#0a58ca] border-b border-transparent transform-all duration-500 hover:border-[#0a58ca]'
 									>
 										FAQ page
 									</Link>{' '}
@@ -119,18 +124,22 @@ const page = () => {
 								</div>
 							</div>
 							{/* list */}
-							<ul className='grid grid-cols-2 gap-y-[16px] font-dmSans text-base text-[#1a1a1a] max-md:grid-cols-1'>
-								<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+							<ul className='grid grid-cols-2 gap-x-[64px] gap-y-[16px] font-dmSans text-base text-[#1a1a1a] max-md:grid-cols-1'>
+								<li className='flex items-center gap-x-[8px]'>
+									<IconEclipse className='w-[6px] text-[#0a58ca]' />
 									How to modify or cancel a booking
 								</li>
-								<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+								<li className='flex items-center gap-x-[8px]'>
+									<IconEclipse className='w-[6px] text-[#0a58ca]' />
+									What payment options are available
+								</li>
+								<li className='flex items-center gap-x-[8px]'>
+									<IconEclipse className='w-[6px] text-[#0a58ca]' />
 									Driver license and age requirements
 								</li>
-								<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
+								<li className='flex items-center gap-x-[8px]'>
+									<IconEclipse className='w-[6px] text-[#0a58ca]' />
 									Insurance and deposit rules
-								</li>
-								<li className='list-disc list-outside [text-indent:-0.4rem] ml-[18px]  marker:text-[#0a58ca]'>
-									Roadside assistance or accidents
 								</li>
 							</ul>
 						</div>

@@ -64,12 +64,14 @@ const ChooseYourVehicle = () => {
 									</ul>
 								</div>
 								{/* info-link */}
-								<Link
-									href={item.link.href}
-									className='font-dmSans font-medium text-sm text-[#0a58ca] underline underline-offset-2 mt-auto'
-								>
-									{item.link.text}
-								</Link>
+								<div className='mt-auto'>
+									<Link
+										href={item.link.href}
+										className='font-dmSans font-medium text-sm text-[#0a58ca] border-b border-transparent transform-all duration-500 hover:border-[#0a58ca]'
+									>
+										{item.link.text}
+									</Link>
+								</div>
 							</div>
 						</div>
 					))}

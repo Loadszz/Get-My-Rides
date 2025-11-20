@@ -13,20 +13,22 @@ export const RentalDestinations = () => {
 					Explore popular car rental destinations
 				</div>
 				{/* body */}
-				<div className='flex gap-[16px] items-stretch mb-[64px] max-lg:flex-wrap max-lg:justify-around max-md:flex-nowrap max-md:justify-normal max-md:overflow-scroll max-md:pb-[16px] max-md:mb-[20px]'>
+				<div className='flex gap-[16px] items-stretch mb-[64px] no-scrollbar max-lg:flex-wrap max-lg:justify-around max-md:flex-nowrap max-md:justify-normal max-md:overflow-x-scroll max-md:mb-[36px] max-md:mx-[-15px] max-md:px-[15px]'>
 					{/* card */}
 					{destinationsCards.map((card, index) => (
 						<div
 							key={index}
 							className='flex flex-col flex-[0_1_25%] max-lg:flex-[0_0_330px] max-md:flex-[0_0_284px]'
 						>
-							<Image
-								src={card.image}
-								width={330}
-								height={224}
-								alt={card.title}
-								className='object-cover mb-[16px] max-md:mb-[8px]'
-							/>
+							<div className='relative min-h-[224px] mb-[16px] max-md:mb-[8px]'>
+								<Image
+									src={card.image}
+									fill
+									sizes='(max-width: 768px) 224px, 330px'
+									alt={card.title}
+									className='object-cover rounded-2xl'
+								/>
+							</div>
 							{/* title */}
 							<div className='font-bold text-xl text-[#1a1a1a] mb-[16px] max-md:mb-[8px]'>
 								{card.title}
@@ -36,12 +38,14 @@ export const RentalDestinations = () => {
 								{card.description}
 							</div>
 							{/* link */}
-							<Link
-								className='mt-auto font-dmSans font-medium text-sm text-[#0a58ca] underline'
-								href={card.buttonUrl}
-							>
-								Read More
-							</Link>
+							<div className='mt-auto'>
+								<Link
+									className='font-dmSans font-medium text-sm text-[#0a58ca] border-b border-transparent transform-all duration-500 hover:border-[#0a58ca]'
+									href={card.buttonUrl}
+								>
+									Read More
+								</Link>
+							</div>
 						</div>
 					))}
 				</div>
@@ -50,9 +54,9 @@ export const RentalDestinations = () => {
 					<Button
 						href='#'
 						variant='secondary'
-						className='flex rounded-xl py-[16px] pl-[28px] w-[166px] max-sm:w-full max-sm:justify-center'
+						className='flex rounded-xl py-[16px] px-[26px] max-sm:w-full max-sm:justify-center'
 					>
-						<span className='mr-[10px]'>Book Now</span>
+						<span className='mr-[10px]'>View More</span>
 						<ArrowRight className='w-[24px]' />
 					</Button>
 				</div>

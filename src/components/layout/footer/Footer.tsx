@@ -78,7 +78,7 @@ const Footer = () => {
 								variant='secondary'
 								className='absolute top-[50%] translate-y-[-50%] right-[4px] flex justify-center py-[16px] w-[159px] rounded-xl max-md:w-[159px] max-sm:w-[130px]'
 							>
-								<span className='mr-[10px]'>Send</span>
+								<span className='mr-[10px]'>Subscribe</span>
 								<ArrowRight className='w-[24px]' />
 							</Button>
 							{errors.email && (

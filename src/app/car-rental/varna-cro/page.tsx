@@ -79,6 +79,7 @@ export default async function page() {
 					<SearchForm
 						variant='secondary'
 						buttonTitle='Find Your Car in Varna'
+						buttonClassName='px-[33px]'
 						className='bg-[#0a58ca]'
 					/>
 				</div>

@@ -63,17 +63,17 @@ export const AvailableCars = ({ products, title }: IAvailableCarsProps) => {
 						{products.map(product => (
 							<SwiperSlide
 								key={product.id}
-								className='shadow-md rounded-[16px] max-sm:flex-[0_0_285px]'
+								className='shadow-md rounded-2xl max-sm:flex-[0_0_285px]'
 							>
 								{/* product-image */}
-								<div className='relative'>
+								<div className='relative min-h-[224px]'>
 									<Image
 										src={product.image}
-										width={330}
-										height={224}
+										fill
+										sizes='(max-width: 768px) 285px, 330px'
 										alt={product.name}
 										priority
-										className='w-full object-cover'
+										className='object-cover'
 									/>
 									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-1'>
 										Cheapest
@@ -129,7 +129,7 @@ export const AvailableCars = ({ products, title }: IAvailableCarsProps) => {
 										<Button
 											type='button'
 											variant='transparent'
-											className='flex rounded-xl py-[8px] pl-[24px] w-[157px] rounded-[6px]'
+											className='flex py-[8px] px-[24px] rounded-md'
 										>
 											<span className='mr-[10px]'>Book Now</span>
 											<ArrowRight className='w-[24px]' />

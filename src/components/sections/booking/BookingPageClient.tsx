@@ -122,7 +122,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 										formName='bookingForm'
 										type='submit'
 										variant='secondary'
-										className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px]'
+										className='flex justify-center py-[16px] px-[148px] rounded-md'
 									>
 										<span className='mr-[10px]'>Book Now</span>
 										<ArrowRight className='w-[24px]' />
@@ -165,7 +165,7 @@ const BookingPageClient = ({ product }: { product: Product }) => {
 								formName='bookingForm'
 								type='submit'
 								variant='secondary'
-								className='flex justify-center rounded-xl py-[16px] w-[404px] rounded-[6px] max-md:w-full'
+								className='flex justify-center py-[16px] px-[148px] rounded-md max-md:w-full'
 							>
 								<span className='mr-[10px]'>Book Now</span>
 								<ArrowRight className='w-[24px]' />

@@ -77,23 +77,24 @@ const Choice = ({ product }: { product: Product }) => {
 							className='my-class h-full max-sm:!overflow-visible'
 						>
 							{product.imageSlider.map((imgPath, index) => (
-								<SwiperSlide key={index} className='!w-full !h-full'>
+								<SwiperSlide key={index} className='relative !w-full !h-full'>
+									<div className='relative min-h-[303px] max-sm:min-h-[216px]'></div>
 									<Image
 										src={imgPath}
-										width={461}
-										height={303}
+										fill
+										sizes='(max-width: 768px) 343px, 461px'
 										alt={product.image}
 										priority
-										className='w-full h-full object-cover rounded-2xl'
+										className='object-cover rounded-2xl max-md:object-bottom'
 									/>
+									{product.cheapest === true && (
+										<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
+											Cheapest
+										</div>
+									)}
 								</SwiperSlide>
 							))}
 						</Swiper>
-						{product.cheapest === true && (
-							<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-10'>
-								Cheapest
-							</div>
-						)}
 					</div>
 					{/* product-item */}
 					<div className='flex-[0_0_330px] max-md:flex-[0_0_auto]'>

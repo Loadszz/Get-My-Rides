@@ -148,14 +148,14 @@ export default function SearchResults({
 									</div>
 								</div>
 								{/* product-image */}
-								<div className='relative'>
+								<div className='relative min-h-[170px] max-sm:min-h-[152px] mb-[16px]'>
 									<Image
 										src={product.imageSearch}
-										width={398}
-										height={170}
+										fill
+										sizes='(max-width: 768px) 311px, 398px'
 										alt={product.name}
 										priority
-										className='w-full h-full max-sm:h-[152px] object-cover mb-[16px] rounded-xl'
+										className='object-cover rounded-xl'
 									/>
 									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-1'>
 										Cheapest
@@ -195,7 +195,7 @@ export default function SearchResults({
 										onClick={() =>
 											goToBooking(router, product, { from, to, city })
 										}
-										className='text-center py-[8px] w-[157px] rounded-xl max-lg:w-full'
+										className='text-center shrink-0 py-[8px] px-[42px] rounded-xl max-lg:w-full'
 									>
 										View Deal
 									</Button>
@@ -215,10 +215,10 @@ export default function SearchResults({
 						<Button
 							onClick={handleLoadMore}
 							variant='transparent'
-							className='flex py-[16px] pl-[26px] w-[166px] rounded-2xl max-sm:w-full max-sm:justify-center'
+							className='flex py-[16px] px-[26px] rounded-2xl max-sm:w-full max-sm:justify-center'
 						>
 							<span className='mr-[10px]'>View More</span>
-							<ArrowRight className='w-[24px] text-[#0a58ca]' />
+							<ArrowRight className='w-[24px]' />
 						</Button>
 					</div>
 				)}

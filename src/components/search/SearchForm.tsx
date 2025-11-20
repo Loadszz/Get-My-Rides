@@ -16,6 +16,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 type FormProps = {
 	className?: string
 	textClassName?: string
+	buttonClassName?: string
 	buttonTitle?: string
 	variant?: 'primary' | 'secondary'
 }
@@ -25,6 +26,7 @@ type CustomButtonProps = {
 }
 export const SearchForm = ({
 	className = '',
+	buttonClassName = 'px-[88px]',
 	buttonTitle = 'Search',
 	variant = 'primary',
 }: FormProps) => {
@@ -318,25 +320,15 @@ export const SearchForm = ({
 				</div>
 			</div>
 
-			<div className='flex pt-[38px] max-sm:w-full max-sm:pt-[16px]'>
+			<div className='flex flex-[0_0_266px] pt-[38px] max-sm:w-full max-sm:pt-[16px] max-lg:flex-[0_0_100%]'>
 				<Button
 					type='submit'
 					variant={`${variant === 'primary' ? 'secondary' : 'white'}`}
 					formName='my-form'
-					className='flex justify-center items-center rounded-xl py-[16px] w-[264px] max-sm:w-full max-sm:justify-center'
+					className={`${buttonClassName} flex justify-center items-center rounded-xl py-[16px] max-sm:w-full max-sm:justify-center`}
 				>
-					<span
-						className={`${
-							variant === 'primary' ? 'text-white' : 'text-[#1a1a1a]'
-						} mr-[10px]`}
-					>
-						{buttonTitle}
-					</span>
-					<IconSearch
-						className={`${
-							variant === 'primary' ? 'text-white' : 'text-[#1a1a1a]'
-						} w-[24px]`}
-					/>
+					<span className='mr-[10px]'>{buttonTitle}</span>
+					<IconSearch className='w-[24px]' />
 				</Button>
 			</div>
 		</form>
