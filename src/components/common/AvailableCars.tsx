@@ -71,6 +71,7 @@ export const AvailableCars = ({ products, title }: IAvailableCarsProps) => {
 										src={product.image}
 										fill
 										sizes='(max-width: 768px) 285px, 330px'
+										quality={100}
 										alt={product.name}
 										priority
 										className='object-cover rounded-t-2xl'
