@@ -98,7 +98,7 @@ const OurMission = () => {
 								</p>
 								<p>
 									I`ve spent more than a decade building online travel and
-									marketplace platforms, learning how to make complex services
+									marketplace platforms, learning how to make complex services{' '}
 									<b>simple and reliable</b> for people everywhere. Along the
 									way, I`ve also traveled extensively - driving across Europe`s
 									coastlines and mountains, navigating the open roads of the

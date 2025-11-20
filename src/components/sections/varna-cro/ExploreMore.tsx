@@ -33,9 +33,11 @@ const ExploreMore = () => {
 											src={item.image}
 											fill
 											sizes='(max-width: 768px) 285px, 330px'
+											quality={100}
 											alt={item.place || ''}
-											className='rounded-2xl object-right'
+											className='rounded-2xl object-cover'
 										/>
+										<div className='absolute w-full h-full bg-gradient-to-t from-transparent to-black/40 rounded-2xl' />
 										<div className='absolute top-[16px] right-[16px] flex items-center gap-x-[8px] py-[8px] px-[16px] border border-[rgba(255,255,255,0.56)] bg-[rgba(255,255,255,0.24)] rounded-full max-md:py-[4px] max-md:px-[8px]'>
 											<div>
 												<item.icon className='w-[24px] max-md:w-[16px]' />

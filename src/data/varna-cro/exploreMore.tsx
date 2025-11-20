@@ -5,7 +5,7 @@ import pictureBottom3 from '@/assets/images/sections/varna-cro/explore-more-bott
 import pictureBottom4 from '@/assets/images/sections/varna-cro/explore-more-bottom-4.jpg'
 import pictureTop1 from '@/assets/images/sections/varna-cro/explore-more-top-1.jpg'
 import pictureTop2 from '@/assets/images/sections/varna-cro/explore-more-top-2.jpg'
-import pictureTop3 from '@/assets/images/sections/varna-cro/explore-more-top-3.jpg'
+import pictureTop3 from '@/assets/images/sections/varna-cro/explore-more-top-3.png'
 import pictureTop4 from '@/assets/images/sections/varna-cro/explore-more-top-4.jpg'
 import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
