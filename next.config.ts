@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next'
 const path = require('path')
 const nextConfig: NextConfig = {
+	images: {
+		qualities: [75, 100],
+	},
 	webpack(config) {
 		// config.resolve.alias = {
 		// 	...config.resolve.alias,

@@ -63,7 +63,7 @@ export const AvailableCars = ({ products, title }: IAvailableCarsProps) => {
 						{products.map(product => (
 							<SwiperSlide
 								key={product.id}
-								className='shadow-md rounded-2xl max-sm:flex-[0_0_285px]'
+								className='shadow-md rounded-b-2xl max-sm:flex-[0_0_285px]'
 							>
 								{/* product-image */}
 								<div className='relative min-h-[224px]'>
@@ -73,14 +73,14 @@ export const AvailableCars = ({ products, title }: IAvailableCarsProps) => {
 										sizes='(max-width: 768px) 285px, 330px'
 										alt={product.name}
 										priority
-										className='object-cover'
+										className='object-cover rounded-t-2xl'
 									/>
 									<div className='font-dmSans font-medium text-xs text-[#0a58ca] py-[4px] px-[9px] bg-white rounded-2xl absolute top-[24px] left-[24px] z-1'>
 										Cheapest
 									</div>
 								</div>
 								{/* product */}
-								<div className='p-[16px]'>
+								<div className='p-[16px] rounded-2xl'>
 									{/* product-header */}
 									<div className='flex justify-between items-center mb-[6px]'>
 										<div className='font-bold text-xl text-[#1a1a1a]'>

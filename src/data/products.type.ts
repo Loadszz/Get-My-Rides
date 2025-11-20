@@ -36,7 +36,7 @@ export type Product = {
 export const products: Product[] = [
 	{
 		id: 1,
-		image: '/images/product-1.jpg',
+		image: '/images/1.jpg',
 		imageSearch: '/images/product/search/product-search-1.jpg',
 		imageSlider: [
 			'/images/product/booking/product-booking-1.jpg',
@@ -73,7 +73,7 @@ export const products: Product[] = [
 	},
 	{
 		id: 2,
-		image: '/images/product-2.jpg',
+		image: '/images/2.jpeg',
 		imageSearch: '/images/product/search/product-search-2.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
@@ -107,7 +107,7 @@ export const products: Product[] = [
 	},
 	{
 		id: 3,
-		image: '/images/product-3.jpg',
+		image: '/images/3.webp',
 		imageSearch: '/images/product/search/product-search-3.jpg',
 		imageSlider: [
 			'/images/product-1.jpg',
